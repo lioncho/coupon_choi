@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MOML>
+
+    <UILAYOUT portrait="720,1280" >
+
+        <WINDOW>
+
+            <BUTTON text="**쿠폰" />
+
+            <LABEL text="인기쿠폰" />
+
+            <BUTTON /> <!-- 위치 -->
+
+            <BUTTON /> <!-- 검색 -->
+        </WINDOW>
+
+        <WINDOW>
+
+            <LABEL text="인기쿠폰" />
+
+            <BUTTON text="구매순" />
+        </WINDOW>
+
+        <WINDOW>
+
+            <LABEL text="1" />
+
+            <BUTTON />
+
+            <LABEL text="2" />
+
+            <BUTTON />
+
+            <LABEL text="3" />
+
+            <BUTTON />
+
+            <LABEL text="4" />
+
+            <BUTTON />
+        </WINDOW>
+    </UILAYOUT>
+
+</MOML>

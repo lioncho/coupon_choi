@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MOML>
+
+    <UILAYOUT portrait="720,1280" >
+        <WINDOW>
+            <BUTTON text="**쿠폰" />
+
+            <LABEL text="영업점 정보" />
+
+            <BUTTON /> <!-- 위치 -->
+
+            <BUTTON /> <!-- 검색 -->
+        </WINDOW>
+        <WINDOW>
+            <LABEL text="롯데(?)" />
+
+            <WINDOW>
+                <IMAGE />
+
+                <WINDOW>
+                    <WINDOW>
+                    </WINDOW>
+
+                    <LABEL text="한국 브랜드파워 1위 면세점" />
+                    <LABEL text="면세점, 최대 10%할인" />
+                </WINDOW>
+            </WINDOW>
+            <WINDOW>
+                <BUTTON text="기본정보" />
+                <BUTTON text="쿠폰정보" />
+            </WINDOW>
+
+            <IMAGE />
+
+            <!-- 추가 정보 -->
+
+            <WINDOW>
+                <LABEL text="사진" />
+
+                <WINDOW>
+                    <IMAGE />
+                    <IMAGE />
+                    <IMAGE />
+                </WINDOW>
+            </WINDOW>
+            <WINDOW>
+                <WINDOW>
+                    <LABEL text="평가" />
+                    <LABEL text="100명/9.38점" />
+
+                    <BUTTON text="평가하기" />
+
+                    <LABEL text="더보기" />
+                </WINDOW>
+                <WINDOW>
+                    <WINDOW>
+                        <IMAGE />
+
+                        <WINDOW>
+                            <WINDOW>
+                                <LABEL text="가나다(" />
+
+                                <IMAGE />
+
+                                <LABEL text=")" />
+                                <LABEL text="2013.11.10" />
+                            </WINDOW>
+
+                            <LABEL text="롯데백화점 쿠폰이 좋아요. 아주 좋아요. ...." />
+                        </WINDOW>
+                    </WINDOW>
+                    <WINDOW>
+                        <IMAGE />
+
+                        <WINDOW>
+                            <WINDOW>
+                                <LABEL text="가나다(" />
+
+                                <IMAGE />
+
+                                <LABEL text=")" />
+                                <LABEL text="2013.11.10" />
+                            </WINDOW>
+
+                            <LABEL text="롯데백화점 쿠폰이 좋아요. 아주 좋아요. ...." />
+                        </WINDOW>
+                    </WINDOW>
+                </WINDOW>
+            </WINDOW>
+        </WINDOW>
+    </UILAYOUT>
+
+</MOML>

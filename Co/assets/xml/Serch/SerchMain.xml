@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MOML>
+
+    <UILAYOUT portrait="720,1280" >
+        <WINDOW>
+            <BUTTON text="**쿠폰" />
+
+            <LABEL text="업종별 쿠폰검색" />
+
+            <BUTTON /> <!-- 위치 -->
+            <BUTTON /> <!-- 검색 -->
+        </WINDOW>
+        <WINDOW>
+            <BUTTON />
+            <BUTTON />
+            <BUTTON />
+            <BUTTON />
+        </WINDOW>
+        <WINDOW>
+            <LABEL text="금주의 인기쿠폰" />
+
+            <BUTTON />
+            <BUTTON />
+            <BUTTON />
+        </WINDOW>
+        <WINDOW>
+            <LABEL text="신규 쿠폰" />
+
+            <BUTTON />
+            <BUTTON />
+            <BUTTON />
+        </WINDOW>
+        <WINDOW>
+            <BUTTON />
+            <BUTTON />
+            <BUTTON />
+            <BUTTON />
+        </WINDOW>
+    </UILAYOUT>
+
+</MOML>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MOML>
+
+    <UILAYOUT portrait="720,1280" >
+
+        <WINDOW>
+
+            <BUTTON text="**쿠폰" />
+
+            <LABEL text="상세검색" />
+
+            <BUTTON /> <!-- 위치 -->
+
+            <BUTTON /> <!-- 검색 -->
+        </WINDOW>
+
+        <WINDOW>
+
+            <WINDOW>
+
+                <LABEL text="키워드" />
+
+                <EDIT />
+            </WINDOW>
+
+            <WINDOW>
+
+                <LABEL text="지역별" />
+
+                <BUTTON text="A" />
+            </WINDOW>
+
+            <WINDOW>
+
+                <LABEL text="지역별" />
+
+                <BUTTON text="현재 위치" />
+            </WINDOW>
+
+            <WINDOW>
+
+                <LABEL text="업종별" />
+
+                <BUTTON text="전체 업종" />
+            </WINDOW>
+
+            <WINDOW>
+
+                <LABEL text="평점별" />
+
+                <BUTTON text="전체 평점" />
+            </WINDOW>
+
+            <WINDOW>
+
+                <LABEL text="지원언어" />
+
+                <BUTTON text="전체 언어" />
+            </WINDOW>
+
+            <WINDOW>
+
+                <LABEL text="지역별" />
+
+                <CHECKBOX text="제공함"/>
+                <CHECKBOX text="제공하지 않음"/>
+            </WINDOW>
+            
+            <BUTTON text ="검색"/>
+        </WINDOW>
+    </UILAYOUT>
+
+</MOML>

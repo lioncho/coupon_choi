@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MOML>
+
+    <UILAYOUT portrait="720,1280" >
+        <LABEL
+            defaultImg="#ff0000 "
+            fontSize="20"
+            layout="150,50"
+            text="가입하기"
+            textAlign="center"
+            textColor="#0000ff" />
+
+        <WINDOW
+            direction="vertical"
+            layout="50,50,650,300" >
+            <WINDOW direction="horizontal" >
+                <LABEL
+                    text="국가"
+                    textAlign="right" />
+
+                <BUTTON
+                    defaultImg="#ff00ff"
+                    layout="100,1000,500,100"
+                    text="china" />
+            </WINDOW>
+            <WINDOW direction="horizontal" >
+                <LABEL />
+
+                <BUTTON
+                    defaultImg="#ff00ff"
+                    layout="100,1000,500,100"
+                    text="+86-10-2222-3333" />
+            </WINDOW>
+            <WINDOW direction="horizontal" >
+                <LABEL />
+
+                <BUTTON
+                    defaultImg="#ff00ff"
+                    layout="100,1000,500,100"
+                    text="Chiness" />
+            </WINDOW>
+            <WINDOW direction="horizontal" >
+                <LABEL />
+
+                <BUTTON
+                    defaultImg="#ff00ff"
+                    layout="100,1000,500,100"
+                    text="하나투어" />
+            </WINDOW>
+        </WINDOW>
+
+        <CHECKBOX
+            layout="100,100"
+            text="이용약관에 동의합니다" />
+        <CHECKBOX
+            layout="100,100"
+            text="개인정보취급방침에 동의합니다" />
+
+        <BUTTON
+            defaultImg="#ff00ff"
+            layout="100,1000,500,100"
+            text="확인" />
+    </UILAYOUT>
+    <!--알람-->
+
+</MOML>

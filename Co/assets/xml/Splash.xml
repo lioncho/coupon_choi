@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MOML>
+
+    <UI>
+        <UILAYOUT portrait="720,1280" >
+            <IMAGE
+                defaultImg="res/test.png"
+                layout="100,50" />
+        </UILAYOUT>
+    </UI>
+
+</MOML>

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MOML version="1.0.0" >
+
+    <THEMES id="themeMenu" >
+        <THEME
+            id="thLeftButton"
+            align="linear:horizontal|center"
+            defaultImg="#3E3E3E"
+            layout="385,76"
+            margin="0,1,2,0"
+            pressedImg="#4DB8CA" />
+        <THEME
+            id="thLabel1"
+            layout="38,38"
+            margin="15,2,15,2" />
+        <THEME
+            id="thLabel2"
+            fontColor="#ffffff"
+            fontSize="28"
+            layout="300,40"
+            margin="5,2,0,2"
+            textAlign="vCenter" />
+    </THEMES>
+
+    <FUNCTIONLIST>
+        <FUNCTION id="fn_slide" >
+            <FUNCTIONITEM condition="userVariable.menuView==&apos;0&apos;" >
+                <font size="2" >
+                </font>
+                               cmd="{id_rightArea.left=0, userVariable.menuView='1',animation.flyIn('id_rightArea', 385,0, 640, 960, 'easeOut1', 500, '')}"
+                               elseCmd="{id_rightArea.left=385, userVariable.menuView='0',animation.flyIn('id_rightArea',-385, 0, 640, 960, 'easeOut1', 500, '')}"/>
+            </FUNCTIONITEM>
+        </FUNCTION>
+        <FUNCTION id="go_userFind" >
+            <FUNCTIONITEM cmd="{function.fn_slide}" />
+            <FUNCTIONITEM cmd="action:go(&apos;root.startNavigation&apos;,&apos;recommandUserView&apos;)" />
+        </FUNCTION>
+        <FUNCTION id="go_userProfile" >
+            <FUNCTIONITEM cmd="{function.fn_slide}" />
+            <FUNCTIONITEM cmd="action:go(&apos;root.startNavigation&apos;,&apos;profileView&apos;)" />
+        </FUNCTION>
+        <FUNCTION id="go_userPic" >
+            <FUNCTIONITEM cmd="{function.fn_slide}" />
+            <FUNCTIONITEM cmd="action:go(&apos;root.startNavigation&apos;,&apos;pictureView&apos;)" />
+        </FUNCTION>
+    </FUNCTIONLIST>
+
+    <FUNCTIONCALL cmd="{userVariable.menuView=&apos;0&apos;}" />
+
+    <UI>
+        <UILAYOUT
+            portrait="640,960"
+            theme="themeMenu" >
+            <WINDOW
+                align="relative"
+                defaultImg="#000000"
+                layout="0,0,640,960" >
+                <WINDOW
+                    id="id_leftMenu"
+                    align="linear:vertical"
+                    defaultImg="#000000"
+                    layout="0,0,385,960" >
+                    <BUTTON
+                        margin="0,0,2,0"
+                        onClick="{}"
+                        themeId="th_leftButton" >
+                        <LABEL
+                            defaultImg="./image/ic_nav_home.png"
+                            themeId="thLabel1" />
+                        <LABEL
+                            text="Home"
+                            themeId="thLabel2" />
+                    </BUTTON>
+                    <BUTTON
+                        onClick="{function.go_userFind}"
+                        themeId="th_leftButton" >
+                        <LABEL
+                            defaultImg="./image/ic_nav_circles.png"
+                            themeId="thLabel1" />
+                        <LABEL
+                            text="Find User"
+                            themeId="thLabel2" />
+                    </BUTTON>
+                    <BUTTON
+                        onClick="{function.go_userProfile}"
+                        themeId="th_leftButton" >
+                        <LABEL
+                            defaultImg="./image/ic_nav_profile.png"
+                            themeId="thLabel1" />
+                        <LABEL
+                            text="Profile"
+                            themeId="thLabel2" />
+                    </BUTTON>
+                    <BUTTON
+                        onClick="{function.go_userPic}"
+                        themeId="th_leftButton" >
+                        <LABEL
+                            defaultImg="./image/ic_nav_myphotos.png"
+                            themeId="thLabel1" />
+                        <LABEL
+                            text="Photos"
+                            themeId="thLabel2" />
+                    </BUTTON>
+                    <BUTTON
+                        onClick="{}"
+                        themeId="th_leftButton" >
+                        <LABEL
+                            defaultImg="./image/ic_nav_communities.png"
+                            themeId="thLabel1" />
+                        <LABEL
+                            text="Communities"
+                            themeId="thLabel2" />
+                    </BUTTON>
+                    <BUTTON
+                        onClick="{}"
+                        themeId="th_leftButton" >
+                        <LABEL
+                            defaultImg="./image/ic_nav_hangouts.png"
+                            themeId="thLabel1" />
+                        <LABEL
+                            text="Hangout"
+                            themeId="thLabel2" />
+                    </BUTTON>
+                    <BUTTON
+                        onClick="{}"
+                        themeId="th_leftButton" >
+                        <LABEL
+                            defaultImg="./image/ic_nav_events.png"
+                            themeId="thLabel1" />
+                        <LABEL
+                            text="Events"
+                            themeId="thLabel2" />
+                    </BUTTON>
+                    <BUTTON
+                        onClick="{}"
+                        themeId="th_leftButton" >
+                        <LABEL
+                            defaultImg="./image/ic_nav_messenger.png"
+                            themeId="thLabel1" />
+                        <LABEL
+                            text="+Tolk"
+                            themeId="thLabel2" />
+                    </BUTTON>
+                    <BUTTON
+                        onClick="{}"
+                        themeId="th_leftButton" >
+                        <LABEL
+                            defaultImg="./image/ic_nav_local.png"
+                            themeId="thLabel1" />
+                        <LABEL
+                            text="Local"
+                            themeId="thLabel2" />
+                    </BUTTON>
+
+                    <LABEL
+                        layout="385,267"
+                        themeId="th_leftButton" >
+                        <BUTTON
+                            defaultImg="./image/ic_sliding_tab_jog_left.png"
+                            layout="90,90"
+                            margin="15,2,15,2" />
+
+                        <LABEL
+                            layout="200,90"
+                            text="Call"
+                            themeId="thLabel2" />
+                    </LABEL>
+                </WINDOW>
+                <WINDOW
+                    id="id_rightArea"
+                    align="linear:vertical"
+                    defaultImg="#E5E5E5"
+                    layout="385,0,640,960" >
+                    <LABEL
+                        id="id_rightTitle"
+                        align="linear:horizontal|left"
+                        defaultImg="image/ab_solid_light_holo.9.png"
+                        layout="640,75" >
+                        <BUTTON
+                            id="id_ShiftBtn"
+                            align="relative"
+                            layout="95,75"
+                            onClick="{function.fn_slide}"
+                            pressedImg="#4DB8CA" >
+                            <IMAGE
+                                defaultImg="./image/ic_left_arrow.png"
+                                layout="5,25,10,22" />
+                            <IMAGE
+                                defaultImg="./image/ic_actionbar_gplus.png"
+                                layout="20,0,75,75" />
+                        </BUTTON>
+                        <BUTTON
+                            id="id_FindtBtn"
+                            align="relative"
+                            layout="160,75"
+                            onClick="{function.fn_slide}"
+                            pressedImg="#4DB8CA" >
+                            <LABEL
+                                fontColor="#000000"
+                                fontSize="28"
+                                layout="3,15,120,45"
+                                text="Find User"
+                                textAlign="vCenter" />
+
+                            <IMAGE
+                                defaultImg="./image/gd_action_bar_group.png"
+                                layout="125,40,35,35" />
+                        </BUTTON>
+                    </LABEL>
+
+                    <WINDOW
+                        align="relative"
+                        layout="640,885" >
+                        <NAVIGATIONCONTAINER
+                            id="startNavigation"
+                            layout="0,75,640,885"
+                            selectItem="recommandUserView" >
+                            <VIEWITEM
+                                id="recommandUserView"
+                                src="url:./recommandUserView.xml"
+                                transitionInEffect="slide:rightIn|leftOut" />
+                            <VIEWITEM
+                                id="profileView"
+                                src="url:./profileView.xml"
+                                transitionInEffect="slide:rightIn|leftOut" />
+                            <VIEWITEM
+                                id="pictureView"
+                                src="url:./pictureView.xml"
+                                transitionInEffect="slide:rightIn|leftOut" />
+                        </NAVIGATIONCONTAINER>
+                    </WINDOW>
+                </WINDOW>
+            </WINDOW>
+        </UILAYOUT>
+    </UI>
+
+</MOML>

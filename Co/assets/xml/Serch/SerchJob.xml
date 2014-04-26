@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MOML>
+
+    <UILAYOUT portrait="720,1280" >
+        <WINDOW>
+            <BUTTON text="**쿠폰" />
+
+            <LABEL text="업종별 쿠폰검색" />
+
+            <BUTTON /> <!-- 위치 -->
+            <BUTTON /> <!-- 검색 -->
+        </WINDOW>
+        <WINDOW
+            direction="vertical"
+            layout="0,50" >
+            <BUTTON text="면세점" />
+            <BUTTON text="백화점" />
+            <BUTTON text="아울렛" />
+            <BUTTON text="전문점" />
+            <BUTTON text="관광지/민속촌" />
+            <BUTTON text="테마파크/놀이공원" />
+            <BUTTON text="카지노" />
+            <BUTTON text="호텔/숙박" />
+            <BUTTON text="음식점/맛집" />
+            <BUTTON text="병원/의료/건강" />
+            <BUTTON text="미용/화장품" />
+            <BUTTON text="편의시설" />
+            <BUTTON text="기타" />
+        </WINDOW>
+    </UILAYOUT>
+    
+
+</MOML>

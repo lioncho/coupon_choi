@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MOML>
+
+    <UILAYOUT portrait="720,1280" >
+        <WINDOW>
+            <BUTTON text="**쿠폰" />
+
+            <LABEL text="업종별 쿠폰검색" />
+
+            <BUTTON /> <!-- 위치 -->
+            <BUTTON /> <!-- 검색 -->
+        </WINDOW>
+        <WINDOW>
+            <BUTTON text="현재 위치" />
+            <BUTTON text="지도에서 지정" />
+            <BUTTON text="서울시" />
+            <BUTTON text="인천시" />
+            <BUTTON text="제주시" />
+            <BUTTON text="부산시" />
+        </WINDOW>
+    </UILAYOUT>
+
+</MOML>

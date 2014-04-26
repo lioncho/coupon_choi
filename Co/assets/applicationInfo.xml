@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MOML>
+        <APPLICATIONINFO>
+               <!-- Load xml file in asset.-->
+               <START url="xml/hello_moml.xml"/>
+               
+        </APPLICATIONINFO>
+</MOML>

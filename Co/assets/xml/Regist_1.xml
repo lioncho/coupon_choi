@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MOML>
+
+    <UI>
+        <UILAYOUT portrait="720,1280" >
+            <WINDOW
+                align="linear:vertical"
+                layout="”0,0,720,1280”" >
+                <LABEL
+                    defaultImg="#ff0000 "
+                    fontSize="20"
+                    layout="150,50"
+                    text="글로벌여행쿠폰이란?"
+                    textAlign="center"
+                    textColor="#0000ff" />
+
+                <IMAGE
+                    defaultImg="res/test.png"
+                    layout="100,50" />
+
+                <BUTTON
+                    defaultImg="#ff00ff"
+                    layout="100,1000,500,100"
+                    text="가입하기" />
+            </WINDOW>
+        </UILAYOUT>
+    </UI>
+
+</MOML>

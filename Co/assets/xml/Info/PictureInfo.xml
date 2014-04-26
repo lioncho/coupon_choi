@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MOML>
+
+    <UILAYOUT portrait="720,1280" >
+
+        <WINDOW>
+
+            <BUTTON text="**쿠폰" />
+
+            <LABEL text="사진정보" />
+
+            <BUTTON /> <!-- 위치 -->
+
+            <BUTTON /> <!-- 검색 -->
+        </WINDOW>
+
+        <LABEL text="롯데(?)" />
+
+        <WINDOW>
+
+            <IMAGE />
+
+            <WINDOW>
+
+                <WINDOW>
+                </WINDOW>
+
+                <LABEL text="한국 브랜드파워 1위 면세점" />
+
+                <LABEL text="면세점, 최대 10%할인" />
+            </WINDOW>
+        </WINDOW>
+        
+        <WINDOW>
+            <LABEL text="사진정보"/>
+            <BUTTON text="사진등록"/>
+        </WINDOW>
+        
+        <WINDOW>
+            <IMAGE/>
+            <IMAGE/>
+            <IMAGE/>
+            <IMAGE/>
+            <IMAGE/>
+            <IMAGE/>
+            <IMAGE/>
+            <IMAGE/>
+            <IMAGE/>
+        </WINDOW>
+    </UILAYOUT>
+
+</MOML>
