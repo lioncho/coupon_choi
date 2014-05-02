@@ -4,8 +4,9 @@
     <UI>
         <UILAYOUT portrait="720,1280" >
             <IMAGE
-                defaultImg="res/test.png"
-                layout="100,50" />
+                defaultImg="res/bg.png"
+                
+                 />
         </UILAYOUT>
     </UI>
 
