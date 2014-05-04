@@ -3,7 +3,7 @@
 <MOML>
         <APPLICATIONINFO>
                <!-- Load xml file in asset.-->
-               <START url="xml/hello_moml.xml"/>
+               <START url="xml/Splash.xml"/>
                
         </APPLICATIONINFO>
 </MOML>
