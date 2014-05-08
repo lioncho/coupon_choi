@@ -1,18 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MOML>
 
-    <UILAYOUT portrait="720,1280" >
-        <LABEL nultLine="true"text="고객님의 회원가입을 축하드립니다. 고객님이 함께 여행하고 싶은 친구에게 **쿠폰 초대장을 보내보세요" />
-        <LABEL text="가입 기념으로 고객님과 초대하신 친구분에게 한국 최대 면세점 초대쿠폰을 보내드립니다." />
-        <WINDOW direction="vertical">
-            <BUTTON/>
-            <BUTTON/>
-            <BUTTON/>
-            <BUTTON/>
-        </WINDOW>
-        <WINDOW>
-            <BUTTON text="건너뛰기"/>
-        </WINDOW>
-    </UILAYOUT>
+    <FUNCTIONLIST>
+        <FUNCTION id="func1" >
+            <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;Loading&apos;)" />
+        </FUNCTION>
+    </FUNCTIONLIST>
+
+    <UI>
+        <UILAYOUT
+            landscape="1080,1920"
+            portrait="1080,1920" >
+            <WINDOW
+                align="relative"
+                defaultImg="embed:/res/pri_4/bg.png"
+                layout="0,0,1080,1920" >
+                <WINDOW defaultImg="#ff0000" >
+                    <LABEL
+                        fontColor="#ffffff"
+                        fontSize="72"
+                        layout="0,0,1080,120"
+                        text="친구 초대하기"
+                        textAlign="center" />
+                </WINDOW>
+
+                <LABEL
+                    fontColor="#ffffff"
+                    fontSize="64"
+                    layout="0,290,1080,120"
+                    text="고객님의 회원가입을 축하드립니다."
+                    textAlign="center" />
+
+                <IMAGE
+                    defaultImg="embed:/res/pri_4/gray_box_1.png"
+                    layout="40,370,1000,501" >
+                    <LABEL
+                        fontColor="#ffffff"
+                        fontSize="64"
+                        margin="50,50"
+                        multiLine="true"
+                        text="고객님이 어쩌고저쩌고" />
+                </IMAGE>
+
+                <LABEL
+                    fontColor="#ffffff"
+                    fontSize="64"
+                    layout="0,990,1080,120"
+                    text="친구 초대하기"
+                    textAlign="center" />
+
+                <IMAGE
+                    align="linear:horizontal|vCenter"
+                    defaultImg="embed:/res/pri_4/gray_box_2.png"
+                    layout="40,1070,1000,262" >
+                    <IMAGE
+                        defaultImg="embed:/res/pri_4/wechat.png"
+                        layout="165,165" />
+                    <IMAGE
+                        defaultImg="embed:/res/pri_4/kakao.png"
+                        layout="165,165" />
+                    <IMAGE
+                        defaultImg="embed:/res/pri_4/line.png"
+                        layout="165,165" />
+                    <IMAGE
+                        defaultImg="embed:/res/pri_4/sns.png"
+                        layout="165,165" />
+                </IMAGE>
+
+                <BUTTON
+                    defaultImg="embed:/res/pri_4/red_box.png"
+                    fontSize="72"
+                    layout="340,1600,450,90"
+                    onClick="{function.func1}"
+                    text="건너뛰기" />
+            </WINDOW>
+        </UILAYOUT>
+    </UI>
 
 </MOML>

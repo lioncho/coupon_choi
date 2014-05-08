@@ -5,10 +5,12 @@
         <UILAYOUT portrait="1080,1920" landscape="1080,1920">
             <WINDOW align="relative">
                 <IMAGE layout="0,0,1080,1920" defaultImg="embed:/res/pri_1/bg.png" />
-                <IMAGE id="test" layout="200,430,700,test.height" defaultImg="embed:/res/pri_1/logo.png"/>
+                <IMAGE layout="200,430,700,530" defaultImg="embed:/res/pri_1/logo.png"/>
 
             </WINDOW>
         </UILAYOUT>
     </UI>
+    
+        <FUNCTIONCALL cmd="action:go('root.navigation','Regist_1')" delay="2000"/>
 
 </MOML>

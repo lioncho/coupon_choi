@@ -1,66 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MOML>
 
-    <UILAYOUT portrait="720,1280" >
-        <LABEL
-            defaultImg="#ff0000 "
-            fontSize="20"
-            layout="150,50"
-            text="가입하기"
-            textAlign="center"
-            textColor="#0000ff" />
+    <FUNCTIONLIST>
+        <FUNCTION id="func1" >
+            <FUNCTIONITEM cmd="action:go('root.navigation','RegistOk')" />
+        </FUNCTION>
+    </FUNCTIONLIST>
 
-        <WINDOW
-            direction="vertical"
-            layout="50,50,650,300" >
-            <WINDOW direction="horizontal" >
+    <UI>
+        <UILAYOUT
+            landscape="1080,1920"
+            portrait="1080,1920" >
+            <WINDOW
+                align="relative"
+                defaultImg="embed:/res/pri_3/bg.png"
+                layout="0,0,1080,1920" >
+                <WINDOW defaultImg="#ff0000" >
+                    <LABEL
+                        fontColor="#ffffff"
+                        fontSize="72"
+                        layout="0,0,1080,120"
+                        text="가입하기"
+                        textAlign="center" />
+                </WINDOW>
+                <WINDOW
+                    align="linear:vertical"
+                    layout="40,250,1000,566" >
+                    <WINDOW>
+                        <IMAGE
+                            defaultImg="embed:/res/pri_3/join_gray_box_1.png"
+                            layout="1000,141" />
+                    </WINDOW>
+                    <WINDOW>
+                        <IMAGE
+                            defaultImg="embed:/res/pri_3/join_gray_box_2.png"
+                            layout="1000,142" />
+                    </WINDOW>
+                    <WINDOW>
+                        <IMAGE
+                            defaultImg="embed:/res/pri_3/join_gray_box_3.png"
+                            layout="1000,141" />
+                    </WINDOW>
+                    <WINDOW>
+                        <IMAGE
+                            defaultImg="embed:/res/pri_3/join_gray_box_4.png"
+                            layout="1000,142" />
+                    </WINDOW>
+                </WINDOW>
+
+                <CHECKBOX
+                    checkedImg="embed:/res/pri_3/check_on.png"
+                    defaultImg="embed:/res/pri_3/check_off.png"
+                    layout="115,1090,45,45" />
+
                 <LABEL
-                    text="국가"
-                    textAlign="right" />
+                    fontSize="42"
+                    layout="190,1090,1000,60"
+                    text="이용약관에 동의하겠습니다." />
+
+                <CHECKBOX
+                    checkedImg="embed:/res/pri_3/check_on.png"
+                    defaultImg="embed:/res/pri_3/check_off.png"
+                    layout="115,1300,45,45" />
+
+                <LABEL
+                    fontSize="42"
+                    layout="190,1300,1000,60"
+                    text="개인 정보취급방침에 동의하겠습니다." />
 
                 <BUTTON
-                    defaultImg="#ff00ff"
-                    layout="100,1000,500,100"
-                    text="china" />
+                    defaultImg="embed:/res/pri_3/gray_box.png"
+                    fontSize="72"
+                    layout="340,1600,450,90"
+                    onClick="{function.func1}"
+                    text="확인" />
             </WINDOW>
-            <WINDOW direction="horizontal" >
-                <LABEL />
+        </UILAYOUT>
+        <!-- 알람 -->
 
-                <BUTTON
-                    defaultImg="#ff00ff"
-                    layout="100,1000,500,100"
-                    text="+86-10-2222-3333" />
-            </WINDOW>
-            <WINDOW direction="horizontal" >
-                <LABEL />
-
-                <BUTTON
-                    defaultImg="#ff00ff"
-                    layout="100,1000,500,100"
-                    text="Chiness" />
-            </WINDOW>
-            <WINDOW direction="horizontal" >
-                <LABEL />
-
-                <BUTTON
-                    defaultImg="#ff00ff"
-                    layout="100,1000,500,100"
-                    text="하나투어" />
-            </WINDOW>
-        </WINDOW>
-
-        <CHECKBOX
-            layout="100,100"
-            text="이용약관에 동의합니다" />
-        <CHECKBOX
-            layout="100,100"
-            text="개인정보취급방침에 동의합니다" />
-
-        <BUTTON
-            defaultImg="#ff00ff"
-            layout="100,1000,500,100"
-            text="확인" />
-    </UILAYOUT>
-    <!--알람-->
+    </UI>
 
 </MOML>

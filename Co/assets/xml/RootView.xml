@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MOML version="1.0.0" >
+
+    <UI>
+        <UILAYOUT
+            landscape="1080,1920"
+            portrait="1080,1920" >
+            <WINDOW align="relative" >
+                <NAVIGATIONCONTAINER
+                    id="navigation"
+                    layout="0,0,1080,1920"
+                    selectItem="Splash" >
+                    <VIEWITEM
+                        id="Splash"
+                        src="Splash.xml" />
+                    <VIEWITEM
+                        id="Regist_1"
+                        src="Regist_1.xml" />
+                    <VIEWITEM
+                        id="Regist_2"
+                        src="Regist_2.xml" />
+                    <VIEWITEM
+                        id="RegistOk"
+                        src="RegistOk.xml" />
+                    <VIEWITEM
+                        id="Loading"
+                        src="Loading.xml" />
+                </NAVIGATIONCONTAINER>
+            </WINDOW>
+        </UILAYOUT>
+    </UI>
+
+</MOML>
