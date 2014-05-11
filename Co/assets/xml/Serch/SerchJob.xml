@@ -1,33 +1,397 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MOML>
 
-    <UILAYOUT portrait="720,1280" >
-        <WINDOW>
-            <BUTTON text="**쿠폰" />
+    <FUNCTIONLIST>
 
-            <LABEL text="업종별 쿠폰검색" />
+        <FUNCTION id="func1" >
 
-            <BUTTON /> <!-- 위치 -->
-            <BUTTON /> <!-- 검색 -->
-        </WINDOW>
-        <WINDOW
-            direction="vertical"
-            layout="0,50" >
-            <BUTTON text="면세점" />
-            <BUTTON text="백화점" />
-            <BUTTON text="아울렛" />
-            <BUTTON text="전문점" />
-            <BUTTON text="관광지/민속촌" />
-            <BUTTON text="테마파크/놀이공원" />
-            <BUTTON text="카지노" />
-            <BUTTON text="호텔/숙박" />
-            <BUTTON text="음식점/맛집" />
-            <BUTTON text="병원/의료/건강" />
-            <BUTTON text="미용/화장품" />
-            <BUTTON text="편의시설" />
-            <BUTTON text="기타" />
-        </WINDOW>
-    </UILAYOUT>
-    
+            <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;Loading&apos;)" />
+        </FUNCTION>
+    </FUNCTIONLIST>
+
+    <UI>
+
+        <UILAYOUT
+            landscape="1080,1920"
+            portrait="1080,1920" >
+
+            <WINDOW
+                align="relative"
+                layout="0,0,1080,1920" >
+
+                <WINDOW
+                    align="linear:vertical"
+                    defaultImg="embed:/res/pri_7/bg.png"
+                    layout="0,120,1080,1920"
+                    scroll="vertical"
+                    scrollBarVisible="true" >
+
+                    <BUTTON
+                        align="linear:vCenter"
+                        defaultImg="embed:/res/pri_7/gray_box.png"
+                        layout="1080,250" >
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="370,250" >
+
+                            <IMAGE
+                                defaultImg="embed:/res/pri_7/duty_free.png"
+                                layout="153,160" />
+                        </WINDOW>
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="710,250" >
+
+                            <LABEL
+                                fontColor="#ffffff"
+                                fontSize="96"
+                                text="면세점"
+                                textAlign="center" />
+                        </WINDOW>
+                    </BUTTON>
+
+                    <BUTTON
+                        align="linear:vCenter"
+                        defaultImg="embed:/res/pri_7/gray_box.png"
+                        layout="1080,250" >
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="370,250" >
+
+                            <IMAGE
+                                defaultImg="embed:/res/pri_7/department_store.png"
+                                layout="118,169" />
+                        </WINDOW>
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="710,250" >
+
+                            <LABEL
+                                fontColor="#ffffff"
+                                fontSize="96"
+                                text="백화점"
+                                textAlign="center" />
+                        </WINDOW>
+                    </BUTTON>
+
+                    <BUTTON
+                        align="linear:vCenter"
+                        defaultImg="embed:/res/pri_7/gray_box.png"
+                        layout="1080,250" >
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="370,250" >
+
+                            <IMAGE
+                                defaultImg="embed:/res/pri_7/outlet_store.png"
+                                layout="155,122" />
+                        </WINDOW>
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="710,250" >
+
+                            <LABEL
+                                fontColor="#ffffff"
+                                fontSize="96"
+                                text="아울렛"
+                                textAlign="center" />
+                        </WINDOW>
+                    </BUTTON>
+
+                    <BUTTON
+                        align="linear:vCenter"
+                        defaultImg="embed:/res/pri_7/gray_box.png"
+                        layout="1080,250" >
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="370,250" >
+
+                            <IMAGE
+                                defaultImg="embed:/res/pri_7/specialty_store.png"
+                                layout="160,176" />
+                        </WINDOW>
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="710,250" >
+
+                            <LABEL
+                                fontColor="#ffffff"
+                                fontSize="96"
+                                text="전문점"
+                                textAlign="center" />
+                        </WINDOW>
+                    </BUTTON>
+
+                    <BUTTON
+                        align="linear:vCenter"
+                        defaultImg="embed:/res/pri_7/gray_box.png"
+                        layout="1080,250" >
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="370,250" >
+
+                            <IMAGE
+                                defaultImg="embed:/res/pri_7/tourist_attraction.png"
+                                layout="179,129" />
+                        </WINDOW>
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="710,250" >
+
+                            <LABEL
+                                fontColor="#ffffff"
+                                fontSize="96"
+                                text="관광지/민속촌"
+                                textAlign="center" />
+                        </WINDOW>
+                    </BUTTON>
+
+                    <BUTTON
+                        align="linear:vCenter"
+                        defaultImg="embed:/res/pri_7/gray_box.png"
+                        layout="1080,250" >
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="370,250" >
+
+                            <IMAGE
+                                defaultImg="embed:/res/pri_7/theme_park.png"
+                                layout="149,186" />
+                        </WINDOW>
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="710,250" >
+
+                            <LABEL
+                                fontColor="#ffffff"
+                                fontSize="96"
+                                text="테마파크/놀이공원"
+                                textAlign="center" />
+                        </WINDOW>
+                    </BUTTON>
+
+                    <BUTTON
+                        align="linear:vCenter"
+                        defaultImg="embed:/res/pri_7/gray_box.png"
+                        layout="1080,250" >
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="370,250" >
+
+                            <IMAGE
+                                defaultImg="embed:/res/pri_7/casino.png"
+                                layout="174,145" />
+                        </WINDOW>
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="710,250" >
+
+                            <LABEL
+                                fontColor="#ffffff"
+                                fontSize="96"
+                                text="카지노"
+                                textAlign="center" />
+                        </WINDOW>
+                    </BUTTON>
+
+                    <BUTTON
+                        align="linear:vCenter"
+                        defaultImg="embed:/res/pri_7/gray_box.png"
+                        layout="1080,250" >
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="370,250" >
+
+                            <IMAGE
+                                defaultImg="embed:/res/pri_7/accommodation.png"
+                                layout="186,121" />
+                        </WINDOW>
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="710,250" >
+
+                            <LABEL
+                                fontColor="#ffffff"
+                                fontSize="96"
+                                text="호텔/숙박"
+                                textAlign="center" />
+                        </WINDOW>
+                    </BUTTON>
+
+                    <BUTTON
+                        align="linear:vCenter"
+                        defaultImg="embed:/res/pri_7/gray_box.png"
+                        layout="1080,250" >
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="370,250" >
+
+                            <IMAGE
+                                defaultImg="embed:/res/pri_7/restaurant.png"
+                                layout="118,186" />
+                        </WINDOW>
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="710,250" >
+
+                            <LABEL
+                                fontColor="#ffffff"
+                                fontSize="96"
+                                text="음식점/맛집"
+                                textAlign="center" />
+                        </WINDOW>
+                    </BUTTON>
+
+                    <BUTTON
+                        align="linear:vCenter"
+                        defaultImg="embed:/res/pri_7/gray_box.png"
+                        layout="1080,250" >
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="370,250" >
+
+                            <IMAGE
+                                defaultImg="embed:/res/pri_7/clinic.png"
+                                layout="190,124" />
+                        </WINDOW>
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="710,250" >
+
+                            <LABEL
+                                fontColor="#ffffff"
+                                fontSize="96"
+                                text="병원/의료/건강"
+                                textAlign="center" />
+                        </WINDOW>
+                    </BUTTON>
+
+                    <BUTTON
+                        align="linear:vCenter"
+                        defaultImg="embed:/res/pri_7/gray_box.png"
+                        layout="1080,250" >
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="370,250" >
+
+                            <IMAGE
+                                defaultImg="embed:/res/pri_7/beauty.png"
+                                layout="93,175" />
+                        </WINDOW>
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="710,250" >
+
+                            <LABEL
+                                fontColor="#ffffff"
+                                fontSize="96"
+                                text="미용/화장품"
+                                textAlign="center" />
+                        </WINDOW>
+                    </BUTTON>
+
+                    <BUTTON
+                        align="linear:vCenter"
+                        defaultImg="embed:/res/pri_7/gray_box.png"
+                        layout="1080,250" >
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="370,250" >
+
+                            <IMAGE
+                                defaultImg="embed:/res/pri_7/amenities.png"
+                                layout="117,169" />
+                        </WINDOW>
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="710,250" >
+
+                            <LABEL
+                                fontColor="#ffffff"
+                                fontSize="96"
+                                text="편의시설"
+                                textAlign="center" />
+                        </WINDOW>
+                    </BUTTON>
+
+                    <BUTTON
+                        align="linear:vCenter"
+                        defaultImg="embed:/res/pri_7/gray_box.png"
+                        layout="1080,250" >
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="370,250" >
+
+                            <IMAGE
+                                defaultImg="embed:/res/pri_7/etc.png"
+                                layout="145,133" />
+                        </WINDOW>
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="710,250" >
+
+                            <LABEL
+                                fontColor="#ffffff"
+                                fontSize="96"
+                                text="기타"
+                                textAlign="center" />
+                        </WINDOW>
+                    </BUTTON>
+                </WINDOW>
+
+                <WINDOW
+                    defaultImg="#ff0000"
+                    layout="0,0,1080,120" >
+
+                    <LABEL
+                        fontColor="#ffffff"
+                        fontSize="72"
+                        layout="0,0,1080,120"
+                        text="업종별 쿠폰 검색"
+                        textAlign="center" />
+
+                    <BUTTON
+                        defaultImg="embed:/res/pri_7/home_button.png"
+                        layout="25,15,220,90" />
+
+                    <BUTTON
+                        defaultImg="embed:/res/pri_7/red_position_off.png"
+                        layout="815,10,100,100"
+                        prossedImg="embed:/res/pri_7/red_position_on.png" />
+
+                    <BUTTON
+                        defaultImg="embed:/res/pri_7/red_search_off.png"
+                        layout="940,10,100,100"
+                        prossedImg="embed:/res/pri_7/red_search_on.png" />
+                </WINDOW>
+            </WINDOW>
+        </UILAYOUT>
+    </UI>
 
 </MOML>

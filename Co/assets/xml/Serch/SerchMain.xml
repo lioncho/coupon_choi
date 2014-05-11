@@ -1,41 +1,162 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MOML>
 
-    <UILAYOUT portrait="720,1280" >
-        <WINDOW>
-            <BUTTON text="**쿠폰" />
+    <FUNCTIONLIST>
 
-            <LABEL text="업종별 쿠폰검색" />
+        <FUNCTION id="func1" >
 
-            <BUTTON /> <!-- 위치 -->
-            <BUTTON /> <!-- 검색 -->
-        </WINDOW>
-        <WINDOW>
-            <BUTTON />
-            <BUTTON />
-            <BUTTON />
-            <BUTTON />
-        </WINDOW>
-        <WINDOW>
-            <LABEL text="금주의 인기쿠폰" />
+            <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;Loading&apos;)" />
+        </FUNCTION>
+    </FUNCTIONLIST>
 
-            <BUTTON />
-            <BUTTON />
-            <BUTTON />
-        </WINDOW>
-        <WINDOW>
-            <LABEL text="신규 쿠폰" />
+    <UI>
 
-            <BUTTON />
-            <BUTTON />
-            <BUTTON />
-        </WINDOW>
-        <WINDOW>
-            <BUTTON />
-            <BUTTON />
-            <BUTTON />
-            <BUTTON />
-        </WINDOW>
-    </UILAYOUT>
+        <UILAYOUT
+            landscape="1080,1920"
+            portrait="1080,1920" >
+
+            <WINDOW
+                align="relative"
+                layout="0,0,1080,1920" >
+
+                <WINDOW
+                    defaultImg="embed:/res/pri_6/bg.png"
+                    layout="0,0,1080,1920"
+                    scroll="vertical"
+                    scrollBarVisible="true" >
+
+                    <IMAGE
+                        defaultImg="embed:/res/pri_6/gray_box_1.png"
+                        layout="40,230,1000,727" />
+
+                    <WINDOW
+                        align="linear:vertical|center"
+                        layout="40,230,500,363" >
+
+                        <BUTTON
+                            defaultImg="embed:/res/pri_6/business_off.png"
+                            layout="250,250"
+                            pressedImg="embed:/res/pri_6/business_on.png" />
+                    </WINDOW>
+
+                    <WINDOW
+                        align="linear:vertical|center"
+                        layout="540,230,500,363" >
+
+                        <BUTTON
+                            defaultImg="embed:/res/pri_6/position_off.png"
+                            layout="250,250"
+                            pressedImg="embed:/res/pri_6/position_on.png" />
+                    </WINDOW>
+
+                    <WINDOW
+                        align="linear:vertical|center"
+                        layout="40,594,500,363" >
+
+                        <BUTTON
+                            defaultImg="embed:/res/pri_6/favorite_off.png"
+                            layout="250,250"
+                            pressedImg="embed:/res/pri_6/favorite_on.png" />
+                    </WINDOW>
+
+                    <WINDOW
+                        align="linear:vertical|center"
+                        layout="540,594,500,363" >
+
+                        <BUTTON
+                            defaultImg="embed:/res/pri_6/recommend_off.png"
+                            layout="250,250"
+                            pressedImg="embed:/res/pri_6/recommend_on.png" />
+                    </WINDOW>
+
+                    <LABEL
+                        fontColor="#ffffff"
+                        fontSize="72"
+                        layout="0,990,1080,80"
+                        text="금주의 인기쿠폰"
+                        textAlign="center" />
+
+                    <WINDOW
+                        align="linear:vertical"
+                        layout="40,1075,1000,770" >
+
+                        <IMAGE
+                            defaultImg="embed:/res/pri_6/gray_box_arrow_1.png"
+                            layout="1000,270" />
+
+                        <IMAGE
+                            defaultImg="embed:/res/pri_6/gray_box_2.png"
+                            layout="1000,250" />
+
+                        <IMAGE
+                            defaultImg="embed:/res/pri_6/gray_box_2.png"
+                            layout="1000,250" />
+                    </WINDOW>
+
+                    <LABEL
+                        fontColor="#ffffff"
+                        fontSize="72"
+                        layout="0,1890,1080,80"
+                        text="금주의 인기쿠폰"
+                        textAlign="center" />
+
+                    <WINDOW
+                        align="linear:vertical"
+                        layout="40,1975,1000,900" >
+
+                        <IMAGE
+                            defaultImg="embed:/res/pri_6/gray_box_arrow_1.png"
+                            layout="1000,270" />
+
+                        <IMAGE
+                            defaultImg="embed:/res/pri_6/gray_box_2.png"
+                            layout="1000,250" />
+
+                        <IMAGE
+                            defaultImg="embed:/res/pri_6/gray_box_2.png"
+                            layout="1000,250" />
+                    </WINDOW>
+                </WINDOW>
+
+                <WINDOW
+                    defaultImg="#ff0000"
+                    layout="0,0,1080,120" >
+
+                    <LABEL
+                        fontColor="#ffffff"
+                        fontSize="72"
+                        layout="0,0,1080,120"
+                        text="쿠폰검색"
+                        textAlign="center" />
+                </WINDOW>
+
+                <WINDOW
+                    align="linear:horizontal"
+                    layout="0,1750,1080,170"
+                    defaultImg="#ffffff" >
+
+                    <BUTTON
+                        defaultImg="embed:/res/pri_6/gray_search_off.png"
+                        layout="270,170"
+                        pressedImg="embed:/res/pri_6/gray_search_on.png" />
+
+                    <BUTTON
+                        defaultImg="embed:/res/pri_6/gray_coupon_off.png"
+                        layout="270,170"
+                        pressedImg="embed:/res/pri_6/gray_coupon_on.png" />
+
+                    <BUTTON
+                        defaultImg="embed:/res/pri_6/gray_treasure_off.png"
+                        layout="270,170"
+                        pressedImg="embed:/res/pri_6/gray_treasure_on.png" />
+
+                    <BUTTON
+                        defaultImg="embed:/res/pri_6/gray_treasure_off.png"
+                        layout="270,170"
+                        pressedImg="embed:/res/pri_6/gray_treasure_on.png" />
+                </WINDOW>
+            </WINDOW>
+        </UILAYOUT>
+    </UI>
 
 </MOML>

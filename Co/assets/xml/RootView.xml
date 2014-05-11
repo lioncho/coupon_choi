@@ -9,7 +9,7 @@
                 <NAVIGATIONCONTAINER
                     id="navigation"
                     layout="0,0,1080,1920"
-                    selectItem="Splash" >
+                    selectItem="SerchJob" >
                     <VIEWITEM
                         id="Splash"
                         src="Splash.xml" />
@@ -25,6 +25,12 @@
                     <VIEWITEM
                         id="Loading"
                         src="Loading.xml" />
+                    <VIEWITEM
+                        id="SerchMain"
+                        src="Serch/SerchMain.xml" />
+                    <VIEWITEM
+                        id="SerchJob"
+                        src="Serch/SerchJob.xml" />
                 </NAVIGATIONCONTAINER>
             </WINDOW>
         </UILAYOUT>
