@@ -7,6 +7,10 @@
 
             <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;Loading&apos;)" />
         </FUNCTION>
+        
+		<FUNCTION id="toHome">
+            <FUNCTIONITEM cmd="action:go('root.navigation','SerchMain')"/>
+        </FUNCTION>
     </FUNCTIONLIST>
 
     <UI>
@@ -377,18 +381,20 @@
                         textAlign="center" />
 
                     <BUTTON
-                        defaultImg="embed:/res/pri_7/home_button.png"
-                        layout="25,15,220,90" />
+                        defaultImg="embed:/res/pri/home_button.png"
+                        layout="25,15,220,90"
+                        onClick="{function.toHome}"
+                         />
 
                     <BUTTON
-                        defaultImg="embed:/res/pri_7/red_position_off.png"
+                        defaultImg="embed:/res/pri/red_position_off.png"
                         layout="815,10,100,100"
-                        prossedImg="embed:/res/pri_7/red_position_on.png" />
+                        prossedImg="embed:/res/pri/red_position_on.png" />
 
                     <BUTTON
-                        defaultImg="embed:/res/pri_7/red_search_off.png"
+                        defaultImg="embed:/res/pri/red_search_off.png"
                         layout="940,10,100,100"
-                        prossedImg="embed:/res/pri_7/red_search_on.png" />
+                        prossedImg="embed:/res/pri/red_search_on.png" />
                 </WINDOW>
             </WINDOW>
         </UILAYOUT>
