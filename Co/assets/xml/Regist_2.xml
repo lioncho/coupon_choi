@@ -26,26 +26,20 @@
                 <WINDOW
                     align="linear:vertical"
                     layout="40,250,1000,566" >
-                    <WINDOW>
                         <IMAGE
                             defaultImg="embed:/res/pri_3/join_gray_box_1.png"
                             layout="1000,141" />
-                    </WINDOW>
-                    <WINDOW>
+
                         <IMAGE
                             defaultImg="embed:/res/pri_3/join_gray_box_2.png"
                             layout="1000,142" />
-                    </WINDOW>
-                    <WINDOW>
                         <IMAGE
                             defaultImg="embed:/res/pri_3/join_gray_box_3.png"
                             layout="1000,141" />
-                    </WINDOW>
-                    <WINDOW>
+
                         <IMAGE
                             defaultImg="embed:/res/pri_3/join_gray_box_4.png"
                             layout="1000,142" />
-                    </WINDOW>
                 </WINDOW>
 
                 <CHECKBOX

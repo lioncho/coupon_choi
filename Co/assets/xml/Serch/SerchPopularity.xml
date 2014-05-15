@@ -1,44 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MOML>
 
-    <UILAYOUT portrait="720,1280" >
+    <FUNCTIONLIST>
 
-        <WINDOW>
+        <FUNCTION id="toHome" >
 
-            <BUTTON text="**쿠폰" />
+            <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;SerchMain&apos;)" />
 
-            <LABEL text="인기쿠폰" />
+            <FUNCTION id="toSerch" >
 
-            <BUTTON /> <!-- 위치 -->
+                <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;SerchDetail&apos;)" />
+            </FUNCTION>
+        </FUNCTION>
+    </FUNCTIONLIST>
 
-            <BUTTON /> <!-- 검색 -->
-        </WINDOW>
+    <UI>
 
-        <WINDOW>
+        <UILAYOUT
+            landscape="1080,1920"
+            portrait="1080,1920" >
 
-            <LABEL text="인기쿠폰" />
+            <WINDOW
+                align="relative"
+                defaultImg="embed:/res/pri_11/bg.png"
+                layout="0,0,1080,1920" >
 
-            <BUTTON text="구매순" />
-        </WINDOW>
+                <BUTTON
+                    defaultImg="embed:/res/pri_11/gray_box.png"
+                    layout="40,237,1000,140" />
 
-        <WINDOW>
+                <IMAGE
+                    defaultImg="embed:/res/pri_11/list_box.png"
+                    layout="40,430,300,350" />
 
-            <LABEL text="1" />
+                <IMAGE
+                    defaultImg="embed:/res/pri_11/list_off.png"
+                    layout="390,430,300,350" />
 
-            <BUTTON />
+                <IMAGE
+                    defaultImg="embed:/res/pri_11/list_off.png"
+                    layout="740,430,300,350" />
 
-            <LABEL text="2" />
+                <IMAGE
+                    defaultImg="embed:/res/pri_11/list_off.png"
+                    layout="40,830,300,350" />
 
-            <BUTTON />
+                <IMAGE
+                    defaultImg="embed:/res/pri_11/list_off.png"
+                    layout="390,830,300,350" />
 
-            <LABEL text="3" />
+                <IMAGE
+                    defaultImg="embed:/res/pri_11/list_off.png"
+                    layout="740,830,300,350" />
 
-            <BUTTON />
+                <IMAGE
+                    defaultImg="embed:/res/pri_11/list_off.png"
+                    layout="40,1230,300,350" />
 
-            <LABEL text="4" />
+                <IMAGE
+                    defaultImg="embed:/res/pri_11/list_off.png"
+                    layout="390,1230,300,350" />
 
-            <BUTTON />
-        </WINDOW>
-    </UILAYOUT>
+                <IMAGE
+                    defaultImg="embed:/res/pri_11/list_off.png"
+                    layout="740,1230,300,350" />
+
+                <WINDOW
+                    defaultImg="#ff0000"
+                    layout="0,0,1080,120" >
+
+                    <LABEL
+                        fontColor="#ffffff"
+                        fontSize="72"
+                        layout="0,0,1080,120"
+                        text="인기쿠폰"
+                        textAlign="center" />
+
+                    <BUTTON
+                        defaultImg="embed:/res/pri/home_button.png"
+                        layout="25,15,220,90"
+                        onClick="{function.toHome}" />
+
+                    <BUTTON
+                        defaultImg="embed:/res/pri/red_position_off.png"
+                        layout="815,10,100,100"
+                        prossedImg="embed:/res/pri/red_position_on.png" />
+
+                    <BUTTON
+                        defaultImg="embed:/res/pri/red_search_off.png"
+                        layout="940,10,100,100"
+                        onClick="{function.toSerch}"
+                        prossedImg="embed:/res/pri/red_search_on.png" />
+                </WINDOW>
+            </WINDOW>
+        </UILAYOUT>
+    </UI>
 
 </MOML>

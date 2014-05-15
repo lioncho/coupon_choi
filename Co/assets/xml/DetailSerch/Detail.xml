@@ -1,26 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MOML>
 
-    <UILAYOUT portrait="720,1280" >
+    <FUNCTIONLIST>
 
-        <WINDOW>
+        <FUNCTION id="toHome" >
 
-            <BUTTON text="**쿠폰" />
+            <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;SerchMain&apos;)" />
+        </FUNCTION>
+        
+        <FUNCTION id="toSerch">
+            <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;SerchDetail&apos;)" />
+        </FUNCTION>
+    </FUNCTIONLIST>
 
-            <LABEL text="상세검색" />
+    <UI>
 
-            <BUTTON /> <!-- 위치 -->
+        <UILAYOUT
+            landscape="1080,1920"
+            portrait="1080,1920" >
 
-            <BUTTON /> <!-- 검색 -->
-        </WINDOW>
-        <WINDOW>
-            <LABEL text ="상세검색"/>
-            <BUTTON />
-            <BUTTON />
-            <BUTTON />
-            <BUTTON />
-            <BUTTON />
-        </WINDOW>
-    </UILAYOUT>
+            <WINDOW
+                align="relative"
+                layout="0,0,1080,1920" >
+
+                <WINDOW
+                    defaultImg="embed:/res/pri_10/bg.png"
+                    layout="0,120,1080,1920"
+                    scroll="vertical"
+                    scrollBarVisible="true" >
+
+                    <LABEL
+                        fontColor="#ffffff"
+                        fontSize="72"
+                        layout="0,0,1080,120"
+                        text="상세검색"
+                        textAlign="center" />
+
+                    <WINDOW
+                        align="linear:vertical"
+                        layout="40,120,1000,2520" >
+
+                        <IMAGE
+                            defaultImg="embed:/res/pri_10/gray_box_arrow_1.png"
+                            layout="1000,270" />
+
+                        <IMAGE
+                            defaultImg="embed:/res/pri_10/gray_box_2.png"
+                            layout="1000,250" />
+
+                        <IMAGE
+                            defaultImg="embed:/res/pri_10/gray_box_2.png"
+                            layout="1000,250" />
+
+                        <IMAGE
+                            defaultImg="embed:/res/pri_10/gray_box_2.png"
+                            layout="1000,250" />
+
+                        <IMAGE
+                            defaultImg="embed:/res/pri_10/gray_box_2.png"
+                            layout="1000,250" />
+
+                        <IMAGE
+                            defaultImg="embed:/res/pri_10/gray_box_2.png"
+                            layout="1000,250" />
+
+                        <IMAGE
+                            defaultImg="embed:/res/pri_10/gray_box_2.png"
+                            layout="1000,250" />
+
+                        <IMAGE
+                            defaultImg="embed:/res/pri_10/gray_box_2.png"
+                            layout="1000,250" />
+
+                        <IMAGE
+                            defaultImg="embed:/res/pri_10/gray_box_2.png"
+                            layout="1000,250" />
+
+                        <IMAGE
+                            defaultImg="embed:/res/pri_10/gray_box_2.png"
+                            layout="1000,250" />
+                    </WINDOW>
+                </WINDOW>
+
+                <WINDOW
+                    defaultImg="#ff0000"
+                    layout="0,0,1080,120" >
+
+                    <LABEL
+                        fontColor="#ffffff"
+                        fontSize="72"
+                        layout="0,0,1080,120"
+                        text="상세검색"
+                        textAlign="center" />
+
+                    <BUTTON
+                        defaultImg="embed:/res/pri/home_button.png"
+                        layout="25,15,220,90"
+                        onClick="{function.toHome}" />
+
+                    <BUTTON
+                        defaultImg="embed:/res/pri/red_position_off.png"
+                        layout="815,10,100,100"
+                        prossedImg="embed:/res/pri/red_position_on.png" />
+
+                    <BUTTON
+                        defaultImg="embed:/res/pri/red_search_off.png"
+                        layout="940,10,100,100"
+                        prossedImg="embed:/res/pri/red_search_on.png"
+                        onClick="{function.toSerch}" />
+                </WINDOW>
+            </WINDOW>
+        </UILAYOUT>
+    </UI>
 
 </MOML>

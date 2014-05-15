@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MOML>
+
+    <FUNCTIONLIST>
+
+        <FUNCTION id="toHome" >
+
+            <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;SerchMain&apos;)" />
+        </FUNCTION>
+
+        <FUNCTION id="toSerch" >
+
+            <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;SerchDetail&apos;)" />
+        </FUNCTION>
+    </FUNCTIONLIST>
+
+    <UI>
+
+        <UILAYOUT
+            landscape="1080,1920"
+            portrait="1080,1920" >
+
+            <WINDOW
+                align="relative"
+                layout="0,0,1080,1920" >
+
+                <WINDOW
+                    defaultImg="#ffffff"
+                    layout="0,120,1080,1920"
+                    scroll="vertical"
+                    scrollBarVisible="true" >
+
+                    <IMAGE
+                        defaultImg="embed:/res/pri_8/gray_box_arrow.png"
+                        layout="40,40,1000,201" >
+
+                        <LABEL
+                            fontColor="#ffffff"
+                            fontSize="72"
+                            layout="0,0,1000,201"
+                            text="롯데면세점(??)"
+                            textAlign="center" >
+                        </LABEL>
+                    </IMAGE>
+
+                    <IMAGE
+                        defaultImg="embed:/res/pri_8/photo.png"
+                        layout="40,430,1000,901" />
+
+                    <IMAGE
+                        defaultImg="embed:/res/pri_8/twitter.png"
+                        layout="190,2260,100,93" />
+
+                    <IMAGE
+                        defaultImg="embed:/res/pri_8/facebook.png"
+                        layout="330,2260,100,93" />
+
+                    <IMAGE
+                        defaultImg="embed:/res/pri_8/qq_off.png"
+                        layout="470,2260,100,93" />
+
+                    <IMAGE
+                        defaultImg="embed:/res/pri_8/weibo.png"
+                        layout="610,2260,100,93" />
+
+                    <IMAGE
+                        defaultImg="embed:/res/pri_8/renren.png"
+                        layout="750,2260,100,93" />
+
+                    <IMAGE
+                        defaultImg="embed:/res/pri_8/renren_off.png"
+                        layout="750,4000,0,0" />
+
+                    <IMAGE
+                        defaultImg="embed:/res/pri_8/gray_bar.png"
+                        layout="0,2400,1080,93" />
+
+                    <IMAGE
+                        defaultImg="embed:/res/pri_8/gray_bar.png"
+                        layout="0,2700,1080,93" />
+
+                    <IMAGE
+                        defaultImg="embed:/res/pri_8/gray_bar.png"
+                        layout="0,3700,1080,93" />
+                </WINDOW>
+
+                <WINDOW
+                    defaultImg="#ff0000"
+                    layout="0,0,1080,120" >
+
+                    <LABEL
+                        fontColor="#ffffff"
+                        fontSize="72"
+                        layout="0,0,1080,120"
+                        text="상세정보"
+                        textAlign="center" />
+
+                    <BUTTON
+                        defaultImg="embed:/res/pri/home_button.png"
+                        layout="25,15,220,90"
+                        onClick="{function.toHome}" />
+
+                    <BUTTON
+                        defaultImg="embed:/res/pri/red_position_off.png"
+                        layout="815,10,100,100"
+                        prossedImg="embed:/res/pri/red_position_on.png" />
+
+                    <BUTTON
+                        defaultImg="embed:/res/pri/red_search_off.png"
+                        layout="940,10,100,100"
+                        onClick="{function.toSerch}"
+                        prossedImg="embed:/res/pri/red_search_on.png" />
+                </WINDOW>
+            </WINDOW>
+        </UILAYOUT>
+    </UI>
+
+</MOML>

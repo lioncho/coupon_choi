@@ -1,52 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MOML>
 
-    <UILAYOUT portrait="720,1280" >
+    <FUNCTIONLIST>
 
-        <WINDOW>
+        <FUNCTION id="toHome" >
 
-            <BUTTON text="**쿠폰" />
+            <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;SerchMain&apos;)" />
 
-            <LABEL text="사진정보" />
+            <FUNCTION id="toSerch" >
 
-            <BUTTON /> <!-- 위치 -->
+                <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;SerchDetail&apos;)" />
+            </FUNCTION>
+        </FUNCTION>
+    </FUNCTIONLIST>
 
-            <BUTTON /> <!-- 검색 -->
-        </WINDOW>
+    <UI>
 
-        <LABEL text="롯데(?)" />
+        <UILAYOUT
+            landscape="1080,1920"
+            portrait="1080,1920" >
 
-        <WINDOW>
+            <WINDOW
+                align="relative"
+                defaultImg="embed:/res/pri_12/bg.png"
+                layout="0,0,1080,1920" >
 
-            <IMAGE />
+                <IMAGE
+                    defaultImg="embed:/res/pri_12/gray_box_arrow.png"
+                    layout="40,230,1000,201" />
 
-            <WINDOW>
+                <IMAGE
+                    defaultImg="embed:/res/pri_12/dotted_line.png"
+                    layout="47,590,985,4" />
 
-                <WINDOW>
+                <IMAGE
+                    defaultImg="embed:/res/pri_12/line.png"
+                    layout="45,760,990,4" />
+
+                <IMAGE
+                    defaultImg="embed:/res/pri_12/dotted_line.png"
+                    layout="47,1790,985,4" />
+
+                <WINDOW
+                    defaultImg="#ff0000"
+                    layout="0,0,1080,120" >
+
+                    <LABEL
+                        fontColor="#ffffff"
+                        fontSize="72"
+                        layout="0,0,1080,120"
+                        text="사진정보"
+                        textAlign="center" />
+
+                    <BUTTON
+                        defaultImg="embed:/res/pri/home_button.png"
+                        layout="25,15,220,90"
+                        onClick="{function.toHome}" />
+
+                    <BUTTON
+                        defaultImg="embed:/res/pri/red_position_off.png"
+                        layout="815,10,100,100"
+                        prossedImg="embed:/res/pri/red_position_on.png" />
+
+                    <BUTTON
+                        defaultImg="embed:/res/pri/red_search_off.png"
+                        layout="940,10,100,100"
+                        onClick="{function.toSerch}"
+                        prossedImg="embed:/res/pri/red_search_on.png" />
                 </WINDOW>
-
-                <LABEL text="한국 브랜드파워 1위 면세점" />
-
-                <LABEL text="면세점, 최대 10%할인" />
             </WINDOW>
-        </WINDOW>
-        
-        <WINDOW>
-            <LABEL text="사진정보"/>
-            <BUTTON text="사진등록"/>
-        </WINDOW>
-        
-        <WINDOW>
-            <IMAGE/>
-            <IMAGE/>
-            <IMAGE/>
-            <IMAGE/>
-            <IMAGE/>
-            <IMAGE/>
-            <IMAGE/>
-            <IMAGE/>
-            <IMAGE/>
-        </WINDOW>
-    </UILAYOUT>
+        </UILAYOUT>
+    </UI>
 
 </MOML>

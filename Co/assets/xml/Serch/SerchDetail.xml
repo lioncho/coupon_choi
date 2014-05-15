@@ -1,73 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MOML>
 
-    <UILAYOUT portrait="720,1280" >
+    <FUNCTIONLIST>
 
-        <WINDOW>
+        <FUNCTION id="toHome" >
 
-            <BUTTON text="**쿠폰" />
+            <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;SerchMain&apos;)" />
+        </FUNCTION>
 
-            <LABEL text="상세검색" />
+        <FUNCTION id="toDetail" >
 
-            <BUTTON /> <!-- 위치 -->
+            <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;Detail&apos;)" />
+        </FUNCTION>
+    </FUNCTIONLIST>
 
-            <BUTTON /> <!-- 검색 -->
-        </WINDOW>
+    <UI>
 
-        <WINDOW>
+        <UILAYOUT
+            landscape="1080,1920"
+            portrait="1080,1920" >
 
-            <WINDOW>
+            <WINDOW
+                align="relative"
+                defaultImg="embed:/res/pri_9/bg.png"
+                layout="0,0,1080,1920" >
 
-                <LABEL text="키워드" />
+                <WINDOW
+                    align="linear:vertical"
+                    layout="40,250,1001,850" >
 
-                <EDIT />
+                    <IMAGE
+                        defaultImg="embed:/res/pri_9/gray_box_1.png"
+                        layout="1001,142" />
+
+                    <IMAGE
+                        defaultImg="embed:/res/pri_9/gray_box_2.png"
+                        layout="1001,142" />
+
+                    <IMAGE
+                        defaultImg="embed:/res/pri_9/gray_box_2.png"
+                        layout="1001,142" />
+
+                    <IMAGE
+                        defaultImg="embed:/res/pri_9/gray_box_2.png"
+                        layout="1001,142" />
+
+                    <IMAGE
+                        defaultImg="embed:/res/pri_9/gray_box_3.png"
+                        layout="1001,140" />
+                </WINDOW>
+
+                <BUTTON
+                    defaultImg="embed:/res/pri_9/gray_box.png"
+                    layout="314,1580,452,91"
+                    onClick="{function.toDetail}"
+                     />
+
+                <WINDOW
+                    defaultImg="#ff0000"
+                    layout="0,0,1080,120" >
+
+                    <LABEL
+                        fontColor="#ffffff"
+                        fontSize="72"
+                        layout="0,0,1080,120"
+                        text="상세검색"
+                        textAlign="center" />
+
+                    <BUTTON
+                        defaultImg="embed:/res/pri/home_button.png"
+                        layout="25,15,220,90"
+                        onClick="{function.toHome}" />
+
+                    <BUTTON
+                        defaultImg="embed:/res/pri/red_position_off.png"
+                        layout="815,10,100,100"
+                        prossedImg="embed:/res/pri/red_position_on.png" />
+
+                    <BUTTON
+                        defaultImg="embed:/res/pri/red_search_off.png"
+                        layout="940,10,100,100"
+                        prossedImg="embed:/res/pri/red_search_on.png" />
+                </WINDOW>
             </WINDOW>
-
-            <WINDOW>
-
-                <LABEL text="지역별" />
-
-                <BUTTON text="A" />
-            </WINDOW>
-
-            <WINDOW>
-
-                <LABEL text="지역별" />
-
-                <BUTTON text="현재 위치" />
-            </WINDOW>
-
-            <WINDOW>
-
-                <LABEL text="업종별" />
-
-                <BUTTON text="전체 업종" />
-            </WINDOW>
-
-            <WINDOW>
-
-                <LABEL text="평점별" />
-
-                <BUTTON text="전체 평점" />
-            </WINDOW>
-
-            <WINDOW>
-
-                <LABEL text="지원언어" />
-
-                <BUTTON text="전체 언어" />
-            </WINDOW>
-
-            <WINDOW>
-
-                <LABEL text="지역별" />
-
-                <CHECKBOX text="제공함"/>
-                <CHECKBOX text="제공하지 않음"/>
-            </WINDOW>
-            
-            <BUTTON text ="검색"/>
-        </WINDOW>
-    </UILAYOUT>
+        </UILAYOUT>
+    </UI>
 
 </MOML>
