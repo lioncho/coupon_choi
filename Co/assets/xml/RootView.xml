@@ -9,7 +9,7 @@
                 <NAVIGATIONCONTAINER
                     id="navigation"
                     layout="0,0,1080,1920"
-                    selectItem="Splash" >
+                    selectItem="NoticeAgree" >
                     <VIEWITEM
                         id="Splash"
                         src="Splash.xml" />
@@ -49,8 +49,22 @@
                     <VIEWITEM
                         id="Setting"
                         src="Setting/Setting.xml" />
-                    
-                    
+                    <VIEWITEM
+                        id="UseCupon"
+                        src="UseCupon.xml" />
+                    <VIEWITEM
+                        id="UsedCupon"
+                        src="UsedCupon.xml" />
+                    <VIEWITEM
+                        id="TreasureInfo"
+                        src="TreasureInfo.xml" />
+                    <VIEWITEM
+                        id="TreasureMission"
+                        src="TreasureMission.xml" />
+                    <VIEWITEM
+                        id="NoticeAgree"
+                        src="NoticeAgree.xml" />
+                        
                 </NAVIGATIONCONTAINER>
             </WINDOW>
         </UILAYOUT>

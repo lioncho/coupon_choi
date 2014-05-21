@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MOML>
+
+    <FUNCTIONLIST>
+        <FUNCTION id="toHome" >
+            <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;SerchMain&apos;)" />
+
+            <FUNCTION id="toSerch" >
+                <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;SerchDetail&apos;)" />
+            </FUNCTION>
+        </FUNCTION>
+    </FUNCTIONLIST>
+
+    <UI>
+        <UILAYOUT
+            landscape="1080,1920"
+            portrait="1080,1920" >
+            <WINDOW
+                align="relative"
+                defaultImg="embed:/res/pri_25/bg.png"
+                layout="0,0,1080,1920" >
+                <BUTTON
+                    defaultImg="embed:/res/pri_25/coupon_off.png"
+                    layout="115,300,auto,auto"
+                    pressedImg="embed:/res/pri_25/coupon_on.png" />
+                <BUTTON
+                    defaultImg="embed:/res/pri_25/treasure_hunt_off.png"
+                    layout="440,300,auto,auto"
+                    pressedImg="embed:/res/pri_25/treasure_hunt_on.png" />
+                <BUTTON
+                    defaultImg="embed:/res/pri_25/notice_off.png"
+                    layout="765,300,auto,auto"
+                    pressedImg="embed:/res/pri_25/notice_on.png" />
+
+                <IMAGE
+                    align="relative"
+                    defaultImg="embed:/res/pri_25/gray_box_big.png"
+                    layout="40,640,1000,420" >
+                    <LABEL
+                        fontColor="#ffffff"
+                        fontSize="64"
+                        layout="30,60,940,auto"
+                        minFontSize="0"
+                        multiLine="true"
+                        text="想要比别人快一步收到最新折扣券信息及积
+分情况吗？
+请选择接收推送信息的种类。"
+                        textAlign="center" />
+                </IMAGE>
+                
+                <BUTTON
+                        align="linear:vertical|center"
+                        defaultImg="embed:/res/pri_25/gray_box.png"
+                        layout="45,1380,450,90"
+                         >
+                        <LABEL
+                            fontColor="#ffffff"
+                            fontSize="64"
+                            text="确 认"
+                            textAlign="center" />
+                    </BUTTON>
+                    
+                <BUTTON
+                        align="linear:vertical|center"
+                        defaultImg="embed:/res/pri_25/gray_box.png"
+                        layout="585,1380,450,90"
+                         >
+                        <LABEL
+                            fontColor="#ffffff"
+                            fontSize="64"
+                            text="取 消"
+                            textAlign="center" />
+                    </BUTTON>
+
+                <WINDOW
+                    defaultImg="#ff0000"
+                    layout="0,0,1080,120" >
+                    <LABEL
+                        fontColor="#ffffff"
+                        fontSize="72"
+                        layout="0,0,1080,120"
+                        text="推送信息设置"
+                        textAlign="center" />
+
+                    <BUTTON
+                        defaultImg="embed:/res/pri/home_button.png"
+                        layout="25,15,220,90"
+                        onClick="{function.toHome}" />
+                    <BUTTON
+                        defaultImg="embed:/res/pri/red_position_off.png"
+                        layout="815,10,100,100"
+                        prossedImg="embed:/res/pri/red_position_on.png" />
+                    <BUTTON
+                        defaultImg="embed:/res/pri/red_search_off.png"
+                        layout="940,10,100,100"
+                        onClick="{function.toSerch}"
+                        prossedImg="embed:/res/pri/red_search_on.png" />
+                </WINDOW>
+            </WINDOW>
+        </UILAYOUT>
+    </UI>
+
+</MOML>
