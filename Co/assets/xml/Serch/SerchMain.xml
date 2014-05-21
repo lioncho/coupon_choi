@@ -157,8 +157,8 @@
                     <BUTTON
                         defaultImg="embed:/res/pri/red_search_off.png"
                         layout="940,10,100,100"
-                        onClick="{function.toSerch}"
-                        prossedImg="embed:/res/pri/red_search_on.png" />
+                        prossedImg="embed:/res/pri/red_search_on.png"
+                        onClick="{function.toSerch}" />
                 </WINDOW>
 
                 <WINDOW
@@ -169,8 +169,8 @@
                     <BUTTON
                         defaultImg="embed:/res/pri/gray_search_off.png"
                         layout="270,170"
-                        onClick="{function.toSerch}"
-                        pressedImg="embed:/res/pri/gray_search_on.png" />
+                        pressedImg="embed:/res/pri/gray_search_on.png"
+                        onClick="{function.toSerch}" />
 
                     <BUTTON
                         defaultImg="embed:/res/pri/gray_coupon_off.png"
