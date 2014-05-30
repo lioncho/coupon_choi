@@ -6,5 +6,7 @@
 	<classpathentry exported="true" kind="lib" path="libs/MOMLLibrary.jar"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
+	<classpathentry exported="true" kind="lib" path="libs/componentqrcodelibrary.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/libbarcodeencoder.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

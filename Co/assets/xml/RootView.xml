@@ -9,7 +9,7 @@
                 <NAVIGATIONCONTAINER
                     id="navigation"
                     layout="0,0,1080,1920"
-                    selectItem="NoticeAgree" >
+                    selectItem="QRCode" >
                     <VIEWITEM
                         id="Splash"
                         src="Splash.xml" />
@@ -64,7 +64,9 @@
                     <VIEWITEM
                         id="NoticeAgree"
                         src="NoticeAgree.xml" />
-                        
+                    <VIEWITEM
+                        id="QRCode"
+                        src="QRCode.xml" />
                 </NAVIGATIONCONTAINER>
             </WINDOW>
         </UILAYOUT>
