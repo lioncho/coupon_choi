@@ -52,7 +52,7 @@
                             <LABEL
                                 fontColor="#ffffff"
                                 fontSize="96"
-                                text="면세점"
+                                text="免税店"
                                 textAlign="center" />
                         </WINDOW>
                     </BUTTON>
@@ -78,7 +78,7 @@
                             <LABEL
                                 fontColor="#ffffff"
                                 fontSize="96"
-                                text="백화점"
+                                text="百货店"
                                 textAlign="center" />
                         </WINDOW>
                     </BUTTON>
@@ -104,7 +104,7 @@
                             <LABEL
                                 fontColor="#ffffff"
                                 fontSize="96"
-                                text="아울렛"
+                                text="奥特莱特"
                                 textAlign="center" />
                         </WINDOW>
                     </BUTTON>
@@ -130,7 +130,7 @@
                             <LABEL
                                 fontColor="#ffffff"
                                 fontSize="96"
-                                text="전문점"
+                                text="专门店"
                                 textAlign="center" />
                         </WINDOW>
                     </BUTTON>
@@ -156,7 +156,7 @@
                             <LABEL
                                 fontColor="#ffffff"
                                 fontSize="96"
-                                text="관광지/민속촌"
+                                text="旅游区/民俗村"
                                 textAlign="center" />
                         </WINDOW>
                     </BUTTON>
@@ -182,7 +182,7 @@
                             <LABEL
                                 fontColor="#ffffff"
                                 fontSize="96"
-                                text="테마파크/놀이공원"
+                                text="主题公园/游乐场"
                                 textAlign="center" />
                         </WINDOW>
                     </BUTTON>
@@ -208,7 +208,7 @@
                             <LABEL
                                 fontColor="#ffffff"
                                 fontSize="96"
-                                text="카지노"
+                                text="赌场"
                                 textAlign="center" />
                         </WINDOW>
                     </BUTTON>
@@ -234,7 +234,7 @@
                             <LABEL
                                 fontColor="#ffffff"
                                 fontSize="96"
-                                text="호텔/숙박"
+                                text="宾馆/住宿"
                                 textAlign="center" />
                         </WINDOW>
                     </BUTTON>
@@ -260,7 +260,7 @@
                             <LABEL
                                 fontColor="#ffffff"
                                 fontSize="96"
-                                text="음식점/맛집"
+                                text="餐饮/美食"
                                 textAlign="center" />
                         </WINDOW>
                     </BUTTON>
@@ -286,7 +286,7 @@
                             <LABEL
                                 fontColor="#ffffff"
                                 fontSize="96"
-                                text="병원/의료/건강"
+                                text="医院/医疗/健康"
                                 textAlign="center" />
                         </WINDOW>
                     </BUTTON>
@@ -312,7 +312,7 @@
                             <LABEL
                                 fontColor="#ffffff"
                                 fontSize="96"
-                                text="미용/화장품"
+                                text="美容/化妆品"
                                 textAlign="center" />
                         </WINDOW>
                     </BUTTON>
@@ -338,7 +338,7 @@
                             <LABEL
                                 fontColor="#ffffff"
                                 fontSize="96"
-                                text="편의시설"
+                                text="便利设施"
                                 textAlign="center" />
                         </WINDOW>
                     </BUTTON>
@@ -364,7 +364,7 @@
                             <LABEL
                                 fontColor="#ffffff"
                                 fontSize="96"
-                                text="기타"
+                                text="其他"
                                 textAlign="center" />
                         </WINDOW>
                     </BUTTON>
@@ -378,7 +378,7 @@
                         fontColor="#ffffff"
                         fontSize="72"
                         layout="0,0,1080,120"
-                        text="업종별 쿠폰 검색"
+                        text="按行业搜索"
                         textAlign="center" />
 
                     <BUTTON

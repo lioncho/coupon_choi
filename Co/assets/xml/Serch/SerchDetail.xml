@@ -30,29 +30,49 @@
                     layout="40,250,1001,850" >
 
                     <IMAGE
+                        align="relative"
                         defaultImg="embed:/res/pri_9/gray_box_1.png"
-                        layout="1001,142" />
+                        layout="1001,142" >
+                        <LABEL fontColor="#ffffff" layout="0,0,360,141" text="关键字" textAlign="center" fontSize="72"/>
+                    </IMAGE>
 
                     <IMAGE
+                        align="relative"
                         defaultImg="embed:/res/pri_9/gray_box_2.png"
-                        layout="1001,142" />
+                        layout="1001,142" >
+                        <LABEL fontColor="#ffffff" layout="0,0,360,141" text="地区" textAlign="center" fontSize="72"/>
+                        <LABEL fontColor="#ffffff" layout="400,0,620,141" text="当前位置" textAlign="center" fontSize="72"/>
+                    </IMAGE>
 
                     <IMAGE
+                        align="relative"
                         defaultImg="embed:/res/pri_9/gray_box_2.png"
-                        layout="1001,142" />
+                        layout="1001,142" >
+                        <LABEL fontColor="#ffffff" layout="0,0,360,141" text="行业" textAlign="center" fontSize="72"/>
+                        <LABEL fontColor="#ffffff" layout="400,0,620,141" text="所有行业" textAlign="center" fontSize="72"/>
+                    </IMAGE>
 
                     <IMAGE
+                        align="relative"
                         defaultImg="embed:/res/pri_9/gray_box_2.png"
-                        layout="1001,142" />
+                        layout="1001,142" >
+                        <LABEL fontColor="#ffffff" layout="0,0,360,141" text="评分" textAlign="center" fontSize="72"/>
+                        <LABEL fontColor="#ffffff" layout="400,0,620,141" text="所有评分" textAlign="center" fontSize="72"/>
+                    </IMAGE>
 
                     <IMAGE
+                        align="relative"
                         defaultImg="embed:/res/pri_9/gray_box_3.png"
-                        layout="1001,140" />
+                        layout="1001,140" >
+                        <LABEL fontColor="#ffffff" layout="0,0,360,141" text="外语支持" textAlign="center" fontSize="72"/>
+                        <LABEL fontColor="#ffffff" layout="400,0,620,141" text="所有语言" textAlign="center" fontSize="72"/>
+                    </IMAGE>
                 </WINDOW>
 
                 <BUTTON
                     defaultImg="embed:/res/pri_9/gray_box.png"
                     layout="314,1580,452,91"
+                    text="搜索"
                     onClick="{function.toDetail}"
                      />
 
@@ -64,7 +84,7 @@
                         fontColor="#ffffff"
                         fontSize="72"
                         layout="0,0,1080,120"
-                        text="상세검색"
+                        text="详细搜索"
                         textAlign="center" />
 
                     <BUTTON

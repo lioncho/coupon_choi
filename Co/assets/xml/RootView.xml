@@ -9,7 +9,7 @@
                 <NAVIGATIONCONTAINER
                     id="navigation"
                     layout="0,0,1080,1920"
-                    selectItem="QRCode" >
+                    selectItem="UseCupon" >
                     <VIEWITEM
                         id="Splash"
                         src="Splash.xml" />

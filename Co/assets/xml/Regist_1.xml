@@ -22,7 +22,7 @@
                         fontColor="#ffffff"
                         fontSize="72"
                         layout="0,0,1080,120"
-                        text="글로벌여행쿠폰이란?"
+                        text="韩国旅行折扣券?"
                         textAlign="center" />
                 </WINDOW>
 
@@ -35,7 +35,7 @@
                     fontSize="48"
                     layout="310,1320,450,90"
                     onClick="{function.func1}"
-                    text="가입하기" />
+                    text="会员申请" />
             </WINDOW>
         </UILAYOUT>
     </UI>

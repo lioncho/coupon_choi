@@ -89,7 +89,7 @@
                         fontColor="#ffffff"
                         fontSize="72"
                         layout="0,990,1080,80"
-                        text="금주의 인기쿠폰"
+                        text="本周的人气折扣券"
                         textAlign="center" />
 
                     <WINDOW
@@ -113,7 +113,7 @@
                         fontColor="#ffffff"
                         fontSize="72"
                         layout="0,1890,1080,80"
-                        text="금주의 인기쿠폰"
+                        text="本周的人气折扣券"
                         textAlign="center" />
 
                     <WINDOW
@@ -142,7 +142,7 @@
                         fontColor="#ffffff"
                         fontSize="72"
                         layout="0,0,1080,120"
-                        text="쿠폰검색"
+                        text="折扣券搜索"
                         textAlign="center" />
 
                     <BUTTON

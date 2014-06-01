@@ -3,7 +3,7 @@
 
     <FUNCTIONLIST>
         <FUNCTION id="func1" >
-            <FUNCTIONITEM cmd="action:go('root.navigation','RegistOk')" />
+            <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;RegistOk&apos;)" />
         </FUNCTION>
     </FUNCTIONLIST>
 
@@ -20,26 +20,43 @@
                         fontColor="#ffffff"
                         fontSize="72"
                         layout="0,0,1080,120"
-                        text="가입하기"
+                        text="会员申请"
                         textAlign="center" />
                 </WINDOW>
                 <WINDOW
                     align="linear:vertical"
                     layout="40,250,1000,566" >
-                        <IMAGE
-                            defaultImg="embed:/res/pri_3/join_gray_box_1.png"
-                            layout="1000,141" />
-
-                        <IMAGE
-                            defaultImg="embed:/res/pri_3/join_gray_box_2.png"
-                            layout="1000,142" />
-                        <IMAGE
-                            defaultImg="embed:/res/pri_3/join_gray_box_3.png"
-                            layout="1000,141" />
-
-                        <IMAGE
-                            defaultImg="embed:/res/pri_3/join_gray_box_4.png"
-                            layout="1000,142" />
+                    <IMAGE
+                        align="relative"
+                        defaultImg="embed:/res/pri_3/join_gray_box_1.png"
+                        layout="1000,141" >
+                        <LABEL fontColor="#ffffff" layout="0,0,360,141" text="国家" textAlign="center" fontSize="72"/>
+                        <LABEL fontColor="#ffffff" layout="400,0,620,141" text="中国" textAlign="center" fontSize="72"/>
+                    </IMAGE>
+                    <IMAGE
+                        align="relative"
+                        defaultImg="embed:/res/pri_3/join_gray_box_2.png"
+                        layout="1000,142" >
+                        
+                        <LABEL fontColor="#ffffff" layout="0,0,360,141" text="手机号码" textAlign="center" fontSize="72"/>
+                        <LABEL fontColor="#ffffff" layout="400,0,620,141" text="device.phoneNumber" textAlign="center" fontSize="72"/>
+                        </IMAGE>
+                    <IMAGE
+                        align="relative"
+                        defaultImg="embed:/res/pri_3/join_gray_box_3.png"
+                        layout="1000,141" >
+                        
+                        <LABEL fontColor="#ffffff" layout="0,0,360,141" text="使用语言" textAlign="center" fontSize="72"/>
+                        <LABEL fontColor="#ffffff" layout="400,0,620,141" text="中文(简体)" textAlign="center" fontSize="72"/>
+                        </IMAGE>
+                    <IMAGE
+                        align="relative"
+                        defaultImg="embed:/res/pri_3/join_gray_box_4.png"
+                        layout="1000,142" >
+                        
+                        <LABEL fontColor="#ffffff" layout="0,0,360,141" text="쿠폰추천업체" textAlign="center" fontSize="72"/>
+                        <LABEL fontColor="#ffffff" layout="400,0,620,141" text="하나투어" textAlign="center" fontSize="72"/>
+                        </IMAGE>
                 </WINDOW>
 
                 <CHECKBOX
@@ -48,9 +65,10 @@
                     layout="115,1090,45,45" />
 
                 <LABEL
+                    fontColor="#ffffff"
                     fontSize="42"
                     layout="190,1090,1000,60"
-                    text="이용약관에 동의하겠습니다." />
+                    text="同意使用条款" />
 
                 <CHECKBOX
                     checkedImg="embed:/res/pri_3/check_on.png"
@@ -58,16 +76,17 @@
                     layout="115,1300,45,45" />
 
                 <LABEL
+                    fontColor="#ffffff"
                     fontSize="42"
                     layout="190,1300,1000,60"
-                    text="개인 정보취급방침에 동의하겠습니다." />
+                    text="同意个人信息保护政策" />
 
                 <BUTTON
                     defaultImg="embed:/res/pri_3/gray_box.png"
                     fontSize="72"
                     layout="340,1600,450,90"
                     onClick="{function.func1}"
-                    text="확인" />
+                    text="确认" />
             </WINDOW>
         </UILAYOUT>
         <!-- 알람 -->

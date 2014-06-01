@@ -20,7 +20,7 @@
                         fontColor="#ffffff"
                         fontSize="72"
                         layout="0,0,1080,120"
-                        text="친구 초대하기"
+                        text="邀请好友"
                         textAlign="center" />
                 </WINDOW>
 
@@ -28,7 +28,7 @@
                     fontColor="#ffffff"
                     fontSize="64"
                     layout="0,290,1080,120"
-                    text="고객님의 회원가입을 축하드립니다."
+                    text="感谢您成为我们的会员"
                     textAlign="center" />
 
                 <IMAGE
@@ -39,33 +39,35 @@
                         fontSize="64"
                         margin="50,50"
                         multiLine="true"
-                        text="고객님이 어쩌고저쩌고" />
+                        text="发邀请给好友一起享受旅行折扣优惠吧。
+为了感谢您成为我们的会员,我们将向您
+所邀请的好友提供韩国最大免税店的邀请
+折扣券。" />
                 </IMAGE>
 
                 <LABEL
                     fontColor="#ffffff"
                     fontSize="64"
                     layout="0,990,1080,120"
-                    text="친구 초대하기"
+                    text="邀请好友"
                     textAlign="center" />
 
                 <IMAGE
-                    align="linear:horizontal|vCenter"
                     defaultImg="embed:/res/pri_4/gray_box_2.png"
                     layout="40,1070,1000,262" >
-                    <IMAGE
-                        defaultImg="embed:/res/pri_4/wechat.png"
-                        layout="165,165" />
-                    <IMAGE
-                        defaultImg="embed:/res/pri_4/kakao.png"
-                        layout="165,165" />
-                    <IMAGE
-                        defaultImg="embed:/res/pri_4/line.png"
-                        layout="165,165" />
-                    <IMAGE
-                        defaultImg="embed:/res/pri_4/sns.png"
-                        layout="165,165" />
                 </IMAGE>
+                <IMAGE
+                    defaultImg="embed:/res/pri_4/wechat.png"
+                    layout="100,1140,165,165" />
+                <IMAGE
+                    defaultImg="embed:/res/pri_4/kakao.png"
+                    layout="340,1140,165,165" />
+                <IMAGE
+                    defaultImg="embed:/res/pri_4/line.png"
+                    layout="570,1140,165,165" />
+                <IMAGE
+                    defaultImg="embed:/res/pri_4/sns.png"
+                    layout="800,1140,165,165" />
 
                 <BUTTON
                     defaultImg="embed:/res/pri_4/red_box.png"
