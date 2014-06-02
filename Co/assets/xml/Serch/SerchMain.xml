@@ -22,6 +22,11 @@
 
             <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;SerchDetail&apos;)" />
         </FUNCTION>
+
+        <FUNCTION id="toSetting" >
+
+            <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;Setting&apos;)" />
+        </FUNCTION>
     </FUNCTIONLIST>
 
     <UI>
@@ -183,9 +188,10 @@
                         pressedImg="embed:/res/pri/gray_treasure_on.png" />
 
                     <BUTTON
-                        defaultImg="embed:/res/pri/gray_treasure_off.png"
+                        defaultImg="embed:/res/pri/gray_setting_off.png"
                         layout="270,170"
-                        pressedImg="embed:/res/pri/gray_treasure_on.png" />
+                        pressedImg="embed:/res/pri/gray_setting_on.png"
+                        onClick="{function.toSetting}" />
                 </WINDOW>
             </WINDOW>
         </UILAYOUT>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MOML>
+
+    <FUNCTIONLIST>
+        <FUNCTION id="toHome" >
+            <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;SerchMain&apos;)" />
+
+            <FUNCTION id="toSerch" >
+                <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;SerchDetail&apos;)" />
+            </FUNCTION>
+        </FUNCTION>
+    </FUNCTIONLIST>
+
+    <UI>
+        <UILAYOUT
+            landscape="1080,1920"
+            portrait="1080,1920" >
+            <WINDOW
+                align="relative"
+                defaultImg="embed:/res/pri_16/bg.png"
+                layout="0,0,1080,1920" >
+                <IMAGE
+                    align="relative"
+                    defaultImg="embed:/res/pri_16/gray_box_arrow.png"
+                    layout="40,155,1000,200" >
+                    <IMAGE
+                        defaultImg="#ff0000"
+                        layout="20,20,160,140" />
+
+                    <LABEL
+                        fontColor="#ffffff"
+                        fontSize="72"
+                        layout="0,-30,1000,250"
+                        text="乐天免税店"
+                        textAlign="center" />
+                    <LABEL
+                        fontColor="#ffffff"
+                        fontSize="64"
+                        layout="240,-30,1000,250"
+                        text="(总店)"
+                        textAlign="center" />
+                </IMAGE>
+
+                <WINDOW
+                    align="linear:horizontal"
+                    layout="40,365,1000,50" >
+                    <IMAGE
+                        defaultImg="embed:/res/pri_16/star_on.png"
+                        layout="42,40"
+                        margin="0,0,20,0" />
+                    <IMAGE
+                        defaultImg="embed:/res/pri_16/star_on.png"
+                        layout="42,40"
+                        margin="0,0,20,0" />
+                    <IMAGE
+                        defaultImg="embed:/res/pri_16/star_on.png"
+                        layout="42,40"
+                        margin="0,0,20,0" />
+                    <IMAGE
+                        defaultImg="embed:/res/pri_16/star_on.png"
+                        layout="42,40"
+                        margin="0,0,20,0" />
+                    <IMAGE
+                        defaultImg="embed:/res/pri_16/star_off.png"
+                        layout="42,40"
+                        margin="0,0,20,0" />
+
+                    <LABEL
+                        fontColor="#ffffff"
+                        fontSize="30"
+                        layout="600,40"
+                        text="(100名 / 9.32分)" />
+                    <LABEL
+                        fontColor="#ffffff"
+                        fontSize="30"
+                        layout="100,40"
+                        text="免税店" />
+                </WINDOW>
+                <WINDOW
+                    align="linear:horizontal"
+                    layout="40,440,1000,50" >
+                    <LABEL
+                        fontColor="#ffffff"
+                        fontSize="50"
+                        layout="770,50"
+                        text="韩国品牌影响力第一免税店" />
+                    <LABEL
+                        fontColor="#ff0000"
+                        fontSize="50"
+                        layout="320,50"
+                        text="最高 10%折扣" />
+                </WINDOW>
+
+                <IMAGE
+                    defaultImg="embed:/res/pri_16/dotted_line.png"
+                    layout="47,530,985,4" />
+
+                <LABEL
+                    fontColor="#ffffff"
+                    fontSize="72"
+                    layout="40,570,1000,70"
+                    text="进行评价"
+                    textAlign="center" />
+
+                <WINDOW
+                    align="relative"
+                    defaultImg="embed:/res/pri_16/gray_box_big.png"
+                    layout="40,730,1000,900" >
+                    <LABEL
+                        fontColor="#ffffff"
+                        fontSize="72"
+                        layout="35,50,100,70"
+                        text="评分" />
+                    <LABEL
+                        fontColor="#ffffff"
+                        fontSize="72"
+                        layout="225,50,75,70"
+                        text="0점" />
+
+                    <WINDOW
+                        align="linear:horizontal"
+                        defaultImg="embed:/res/pri_16/star_box.png"
+                        layout="315,35,650,100" >
+                        <IMAGE
+                            defaultImg="embed:/res/pri_16/big_star_on.png"
+                            layout="79,76"
+                            margin="40,10,0,0" />
+                        <IMAGE
+                            defaultImg="embed:/res/pri_16/big_star_on.png"
+                            layout="79,76"
+                            margin="40,10,0,0" />
+                        <IMAGE
+                            defaultImg="embed:/res/pri_16/big_star_on.png"
+                            layout="79,76"
+                            margin="40,10,0,0" />
+                        <IMAGE
+                            defaultImg="embed:/res/pri_16/big_star_on.png"
+                            layout="79,76"
+                            margin="40,10,0,0" />
+                        <IMAGE
+                            defaultImg="embed:/res/pri_16/big_star_off.png"
+                            layout="79,76"
+                            margin="40,10,0,0" />
+                    </WINDOW>
+
+                    <IMAGE
+                        defaultImg="embed:/res/pri_16/dotted_line.png"
+                        layout="0,155,985,4" />
+
+                    <WINDOW
+                        defaultImg="embed:/res/pri_16/white_box.png"
+                        layout="0,220,1000,600" >
+                        <EDIT
+                            fontSize="40"
+                            layout="20,20,1960,560"
+                            textFormat="text" >
+                        </EDIT>
+                    </WINDOW>
+
+                    <LABEL
+                        fontColor="#ffffff"
+                        fontSize="40"
+                        layout="800,840,185,35"
+                        text="(0/500 byte)" />
+                </WINDOW>
+
+                <BUTTON
+                    align="linear:vertical|center"
+                    defaultImg="embed:/res/pri_16/gray_box.png"
+                    layout="40,1700,450,90" >
+                    <LABEL
+                        fontColor="#ffffff"
+                        fontSize="64"
+                        text="确 定"
+                        textAlign="center" />
+                </BUTTON>
+                <BUTTON
+                    align="linear:vertical|center"
+                    defaultImg="embed:/res/pri_16/gray_box.png"
+                    layout="590,1700,450,90" >
+                    <LABEL
+                        fontColor="#ffffff"
+                        fontSize="64"
+                        text="取 消"
+                        textAlign="center" />
+                </BUTTON>
+
+                <WINDOW
+                    defaultImg="#ff0000"
+                    layout="0,0,1080,120" >
+                    <LABEL
+                        fontColor="#ffffff"
+                        fontSize="72"
+                        layout="0,0,1080,120"
+                        text="进行评价"
+                        textAlign="center" />
+
+                    <BUTTON
+                        defaultImg="embed:/res/pri/home_button.png"
+                        layout="25,15,220,90"
+                        onClick="{function.toHome}" />
+                    <BUTTON
+                        defaultImg="embed:/res/pri/red_position_off.png"
+                        layout="815,10,100,100"
+                        prossedImg="embed:/res/pri/red_position_on.png" />
+                    <BUTTON
+                        defaultImg="embed:/res/pri/red_search_off.png"
+                        layout="940,10,100,100"
+                        onClick="{function.toSerch}"
+                        prossedImg="embed:/res/pri/red_search_on.png" />
+                </WINDOW>
+            </WINDOW>
+        </UILAYOUT>
+    </UI>
+
+</MOML>
