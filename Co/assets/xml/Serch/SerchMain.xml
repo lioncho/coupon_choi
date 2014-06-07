@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MOML>
+<MOML xmlns:xsi=http://www.w3.org/2001/XMLSchema-instance
+     xsi:noNamespaceSchemaLocation="http://www.applusform.com/xsd/moml_ui.xsd">
 
     <FUNCTIONLIST>
 
@@ -11,6 +12,11 @@
         <FUNCTION id="toJob" >
 
             <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;SerchJob&apos;)" />
+        </FUNCTION>
+        
+		<FUNCTION id="toPopularity" >
+
+            <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;SerchPopularity&apos;)" />
         </FUNCTION>
 
         <FUNCTION id="toDetail" >
@@ -27,6 +33,11 @@
 
             <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;Setting&apos;)" />
         </FUNCTION>
+        
+		<FUNCTION id="toTreasure" >
+
+            <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;TreasureInfo&apos;)" />
+        </FUNCTION>
     </FUNCTIONLIST>
 
     <UI>
@@ -34,6 +45,9 @@
         <UILAYOUT
             landscape="1080,1920"
             portrait="1080,1920" >
+            
+            
+            
 
             <WINDOW
                 align="relative"
@@ -69,10 +83,12 @@
                             layout="250,250"
                             pressedImg="embed:/res/pri_6/position_on.png" />
                     </WINDOW>
+                   	
 
                     <WINDOW
                         align="linear:vertical|center"
-                        layout="40,594,500,363" >
+                        layout="40,594,500,363" 
+                        onClick="{function.toPopularity}">
 
                         <BUTTON
                             defaultImg="embed:/res/pri_6/favorite_off.png"
@@ -185,7 +201,8 @@
                     <BUTTON
                         defaultImg="embed:/res/pri/gray_treasure_off.png"
                         layout="270,170"
-                        pressedImg="embed:/res/pri/gray_treasure_on.png" />
+                        pressedImg="embed:/res/pri/gray_treasure_on.png"
+                        onClick="{function.toTreasure}" />
 
                     <BUTTON
                         defaultImg="embed:/res/pri/gray_setting_off.png"

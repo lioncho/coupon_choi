@@ -74,6 +74,7 @@
                     layout="314,1580,452,91"
                     text="搜索"
                     onClick="{function.toDetail}"
+                    fontSize="72"
                      />
 
                 <WINDOW

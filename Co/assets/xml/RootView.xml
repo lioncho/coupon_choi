@@ -9,7 +9,7 @@
                 <NAVIGATIONCONTAINER
                     id="navigation"
                     layout="0,0,1080,1920"
-                    selectItem="TreasureInfo" >
+                    selectItem="Regist_2" >
                     <VIEWITEM
                         id="Splash"
                         src="Splash.xml" />

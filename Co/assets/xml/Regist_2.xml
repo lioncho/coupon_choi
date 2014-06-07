@@ -4,6 +4,7 @@
     <FUNCTIONLIST>
         <FUNCTION id="func1" >
             <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;RegistOk&apos;)" />
+            <FUNCTIONITEM cmd="http.post(-1,'http://tourcoupon.net/api/authorize/signin','region=CHINA|username=82|language=zh-TW|market_id=12345')"/>
         </FUNCTION>
     </FUNCTIONLIST>
 
