@@ -5,6 +5,8 @@
         <FUNCTION id="func1" >
             <FUNCTIONITEM cmd="action:go('root.navigation','Regist_2')" />
         </FUNCTION>
+        
+        
     </FUNCTIONLIST>
 
     <UI>

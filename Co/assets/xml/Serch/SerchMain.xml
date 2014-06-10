@@ -1,217 +1,168 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MOML xmlns:xsi=http://www.w3.org/2001/XMLSchema-instance
-     xsi:noNamespaceSchemaLocation="http://www.applusform.com/xsd/moml_ui.xsd">
+<MOML>
+	<!--<MOML version="1.1.5" xmlns:xsi=http://www.w3.org/2001/XMLSchema-instance 
+		xsi:noNamespaceSchemaLocation="http://www.applusform.com/xsd/moml_ui.xsd"> -->
 
-    <FUNCTIONLIST>
+	<FUNCTIONLIST>
 
-        <FUNCTION id="func1" >
+		<FUNCTION id="func1">
 
-            <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;Loading&apos;)" />
-        </FUNCTION>
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;Loading&apos;)" />
+		</FUNCTION>
 
-        <FUNCTION id="toJob" >
+		<FUNCTION id="toJob">
 
-            <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;SerchJob&apos;)" />
-        </FUNCTION>
-        
-		<FUNCTION id="toPopularity" >
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchJob&apos;)" />
+		</FUNCTION>
 
-            <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;SerchPopularity&apos;)" />
-        </FUNCTION>
+		<FUNCTION id="toPopularity">
 
-        <FUNCTION id="toDetail" >
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchPopularity&apos;)" />
+		</FUNCTION>
 
-            <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;SerchJob&apos;)" />
-        </FUNCTION>
+		<FUNCTION id="toDetail">
 
-        <FUNCTION id="toSerch" >
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchJob&apos;)" />
+		</FUNCTION>
 
-            <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;SerchDetail&apos;)" />
-        </FUNCTION>
+		<FUNCTION id="toSerch">
 
-        <FUNCTION id="toSetting" >
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchDetail&apos;)" />
+		</FUNCTION>
 
-            <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;Setting&apos;)" />
-        </FUNCTION>
-        
-		<FUNCTION id="toTreasure" >
+		<FUNCTION id="toLocation">
 
-            <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;TreasureInfo&apos;)" />
-        </FUNCTION>
-    </FUNCTIONLIST>
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchLocation&apos;)" />
+		</FUNCTION>
 
-    <UI>
+		<FUNCTION id="toSetting">
 
-        <UILAYOUT
-            landscape="1080,1920"
-            portrait="1080,1920" >
-            
-            
-            
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;Setting&apos;)" />
+		</FUNCTION>
 
-            <WINDOW
-                align="relative"
-                layout="0,0,1080,1920" >
+		<FUNCTION id="toTreasure">
 
-                <WINDOW
-                    defaultImg="embed:/res/pri_6/bg.png"
-                    layout="0,0,1080,1920"
-                    scroll="vertical"
-                    scrollBarVisible="true" >
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;TreasureInfo&apos;)" />
+		</FUNCTION>
+	</FUNCTIONLIST>
 
-                    <IMAGE
-                        defaultImg="embed:/res/pri_6/gray_box_1.png"
-                        layout="40,230,1000,727" />
+	<UI>
 
-                    <WINDOW
-                        align="linear:vertical|center"
-                        layout="40,230,500,363" >
+		<UILAYOUT landscape="1080,1920" portrait="1080,1920">
 
-                        <BUTTON
-                            defaultImg="embed:/res/pri_6/business_off.png"
-                            layout="250,250"
-                            onClick="{function.toJob}"
-                            pressedImg="embed:/res/pri_6/business_on.png" />
-                    </WINDOW>
 
-                    <WINDOW
-                        align="linear:vertical|center"
-                        layout="540,230,500,363" >
 
-                        <BUTTON
-                            defaultImg="embed:/res/pri_6/position_off.png"
-                            layout="250,250"
-                            pressedImg="embed:/res/pri_6/position_on.png" />
-                    </WINDOW>
-                   	
 
-                    <WINDOW
-                        align="linear:vertical|center"
-                        layout="40,594,500,363" 
-                        onClick="{function.toPopularity}">
+			<WINDOW align="relative" layout="0,0,1080,1920">
 
-                        <BUTTON
-                            defaultImg="embed:/res/pri_6/favorite_off.png"
-                            layout="250,250"
-                            pressedImg="embed:/res/pri_6/favorite_on.png" />
-                    </WINDOW>
+				<WINDOW defaultImg="embed:/res/pri_6/bg.png" layout="0,0,1080,1920"
+					scroll="vertical" scrollBarVisible="true">
 
-                    <WINDOW
-                        align="linear:vertical|center"
-                        layout="540,594,500,363" >
+					<IMAGE defaultImg="embed:/res/pri_6/gray_box_1.png" layout="40,230,1000,727" />
 
-                        <BUTTON
-                            defaultImg="embed:/res/pri_6/recommend_off.png"
-                            layout="250,250"
-                            pressedImg="embed:/res/pri_6/recommend_on.png" />
-                    </WINDOW>
+					<WINDOW onClick="{function.toJob}" layout="40,230,500,363">
 
-                    <LABEL
-                        fontColor="#ffffff"
-                        fontSize="72"
-                        layout="0,990,1080,80"
-                        text="本周的人气折扣券"
-                        textAlign="center" />
+						<BUTTON defaultImg="embed:/res/pri_6/business_off.png"
+							layout="115,25,250,250" pressedImg="embed:/res/pri_6/business_on.png" />
 
-                    <WINDOW
-                        align="linear:vertical"
-                        layout="40,1075,1000,770" >
+						<LABEL fontColor="#ffffff" fontSize="96" layout="115,290,auto,auto"
+							text="按行业搜索" />
+					</WINDOW>
 
-                        <IMAGE
-                            defaultImg="embed:/res/pri_6/gray_box_arrow_1.png"
-                            layout="1000,270" />
+					<WINDOW layout="540,230,500,363" onClick="{function.toLocation}">
 
-                        <IMAGE
-                            defaultImg="embed:/res/pri_6/gray_box_2.png"
-                            layout="1000,250" />
+						<BUTTON defaultImg="embed:/res/pri_6/position_off.png"
+							layout="115,25,250,250" pressedImg="embed:/res/pri_6/position_on.png" />
+						<LABEL fontColor="#ffffff" fontSize="96" layout="115,290,auto,auto"
+							text="按位置搜索" />
+					</WINDOW>
 
-                        <IMAGE
-                            defaultImg="embed:/res/pri_6/gray_box_2.png"
-                            layout="1000,250" />
-                    </WINDOW>
 
-                    <LABEL
-                        fontColor="#ffffff"
-                        fontSize="72"
-                        layout="0,1890,1080,80"
-                        text="本周的人气折扣券"
-                        textAlign="center" />
+					<WINDOW layout="40,594,500,363" onClick="{function.toPopularity}">
 
-                    <WINDOW
-                        align="linear:vertical"
-                        layout="40,1975,1000,900" >
+						<BUTTON defaultImg="embed:/res/pri_6/favorite_off.png"
+							layout="115,25,250,250" pressedImg="embed:/res/pri_6/favorite_on.png" />
+						<LABEL fontColor="#ffffff" fontSize="96" layout="115,290,auto,auto"
+							text="人气折扣券" />
+					</WINDOW>
 
-                        <IMAGE
-                            defaultImg="embed:/res/pri_6/gray_box_arrow_1.png"
-                            layout="1000,270" />
+					<WINDOW layout="540,594,500,363">
 
-                        <IMAGE
-                            defaultImg="embed:/res/pri_6/gray_box_2.png"
-                            layout="1000,250" />
+						<BUTTON defaultImg="embed:/res/pri_6/recommend_off.png"
+							layout="115,25,250,250" pressedImg="embed:/res/pri_6/recommend_on.png" />
 
-                        <IMAGE
-                            defaultImg="embed:/res/pri_6/gray_box_2.png"
-                            layout="1000,250" />
-                    </WINDOW>
-                </WINDOW>
+						<LABEL fontColor="#ffffff" fontSize="96" layout="115,290,auto,auto"
+							text="推荐折扣券 " />
+					</WINDOW>
 
-                <WINDOW
-                    defaultImg="#ff0000"
-                    layout="0,0,1080,120" >
+					<LABEL fontColor="#ffffff" fontSize="72" layout="0,990,1080,80"
+						text="本周的人气折扣券" textAlign="center" />
 
-                    <LABEL
-                        fontColor="#ffffff"
-                        fontSize="72"
-                        layout="0,0,1080,120"
-                        text="折扣券搜索"
-                        textAlign="center" />
+					<WINDOW align="linear:vertical" layout="40,1075,1000,770">
 
-                    <BUTTON
-                        defaultImg="embed:/res/pri/home_button.png"
-                        layout="25,15,220,90" />
+						<IMAGE defaultImg="embed:/res/pri_6/gray_box_arrow_1.png"
+							layout="1000,270" />
 
-                    <BUTTON
-                        defaultImg="embed:/res/pri/red_position_off.png"
-                        layout="815,10,100,100"
-                        prossedImg="embed:/res/pri/red_position_on.png" />
+						<IMAGE defaultImg="embed:/res/pri_6/gray_box_2.png" layout="1000,250" />
 
-                    <BUTTON
-                        defaultImg="embed:/res/pri/red_search_off.png"
-                        layout="940,10,100,100"
-                        onClick="{function.toSerch}"
-                        prossedImg="embed:/res/pri/red_search_on.png" />
-                </WINDOW>
+						<IMAGE defaultImg="embed:/res/pri_6/gray_box_2.png" layout="1000,250" />
+					</WINDOW>
 
-                <WINDOW
-                    align="linear:horizontal"
-                    defaultImg="#ffffff"
-                    layout="0,1750,1080,170" >
+					<LABEL fontColor="#ffffff" fontSize="72" layout="0,1890,1080,80"
+						text="本周的人气折扣券" textAlign="center" />
 
-                    <BUTTON
-                        defaultImg="embed:/res/pri/gray_search_off.png"
-                        layout="270,170"
-                        onClick="{function.toSerch}"
-                        pressedImg="embed:/res/pri/gray_search_on.png" />
+					<WINDOW align="linear:vertical" layout="40,1975,1000,900">
 
-                    <BUTTON
-                        defaultImg="embed:/res/pri/gray_coupon_off.png"
-                        layout="270,170"
-                        pressedImg="embed:/res/pri/gray_coupon_on.png" />
+						<IMAGE defaultImg="embed:/res/pri_6/gray_box_arrow_1.png"
+							layout="1000,270" />
 
-                    <BUTTON
-                        defaultImg="embed:/res/pri/gray_treasure_off.png"
-                        layout="270,170"
-                        pressedImg="embed:/res/pri/gray_treasure_on.png"
-                        onClick="{function.toTreasure}" />
+						<IMAGE defaultImg="embed:/res/pri_6/gray_box_2.png" layout="1000,250" />
 
-                    <BUTTON
-                        defaultImg="embed:/res/pri/gray_setting_off.png"
-                        layout="270,170"
-                        pressedImg="embed:/res/pri/gray_setting_on.png"
-                        onClick="{function.toSetting}" />
-                </WINDOW>
-            </WINDOW>
-        </UILAYOUT>
-    </UI>
+						<IMAGE defaultImg="embed:/res/pri_6/gray_box_2.png" layout="1000,250" />
+					</WINDOW>
+				</WINDOW>
+
+				<WINDOW defaultImg="#ff0000" layout="0,0,1080,120">
+
+					<LABEL fontColor="#ffffff" fontSize="72" layout="0,0,1080,120"
+						text="折扣券搜索" textAlign="center" />
+
+					<BUTTON defaultImg="embed:/res/pri/home_button.png" layout="25,15,220,90" />
+
+					<BUTTON defaultImg="embed:/res/pri/red_position_off.png"
+						layout="815,10,100,100" onClick="{function.toLocation}" prossedImg="embed:/res/pri/red_position_on.png" />
+
+					<BUTTON defaultImg="embed:/res/pri/red_search_off.png"
+						layout="940,10,100,100" onClick="{function.toSerch}" prossedImg="embed:/res/pri/red_search_on.png" />
+				</WINDOW>
+
+				<WINDOW align="linear:horizontal" defaultImg="#ffffff"
+					layout="0,1750,1080,170">
+
+					<BUTTON defaultImg="embed:/res/pri/gray_search_off.png"
+						layout="270,170" onClick="{function.toSerch}" pressedImg="embed:/res/pri/gray_search_on.png" />
+
+					<BUTTON defaultImg="embed:/res/pri/gray_coupon_off.png"
+						layout="270,170" pressedImg="embed:/res/pri/gray_coupon_on.png" />
+
+					<BUTTON defaultImg="embed:/res/pri/gray_treasure_off.png"
+						layout="270,170" pressedImg="embed:/res/pri/gray_treasure_on.png"
+						onClick="{function.toTreasure}" />
+
+					<BUTTON defaultImg="embed:/res/pri/gray_set_off.png"
+						layout="270,170"
+						onClick="{function.toSetting}" />
+				</WINDOW>
+			</WINDOW>
+		</UILAYOUT>
+	</UI>
 
 </MOML>

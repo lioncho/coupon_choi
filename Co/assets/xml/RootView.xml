@@ -9,7 +9,7 @@
                 <NAVIGATIONCONTAINER
                     id="navigation"
                     layout="0,0,1080,1920"
-                    selectItem="Regist_2" >
+                    selectItem="Useable" >
                     <VIEWITEM
                         id="Splash"
                         src="Splash.xml" />
@@ -50,6 +50,9 @@
                         id="Setting"
                         src="Setting/Setting.xml" />
                     <VIEWITEM
+                        id="Useable"
+                        src="Useable.xml" />
+                    <VIEWITEM
                         id="UseCupon"
                         src="UseCupon.xml" />
                     <VIEWITEM
@@ -67,6 +70,21 @@
                     <VIEWITEM
                         id="QRCode"
                         src="QRCode.xml" />
+                    <VIEWITEM
+                        id="SerchLocation"
+                        src="Serch/SerchLocation.xml" />
+                    <VIEWITEM
+                        id="SerchRecommend"
+                        src="Serch/SerchRecommend.xml" />
+                    <VIEWITEM
+                        id="ShowAppraise"
+                        src="ShowAppraise.xml" />
+                    <VIEWITEM
+                        id="Appraise"
+                        src="Appraise.xml" />
+                    <VIEWITEM
+                        id="Brand"
+                        src="Brand.xml" />
                 </NAVIGATIONCONTAINER>
             </WINDOW>
         </UILAYOUT>

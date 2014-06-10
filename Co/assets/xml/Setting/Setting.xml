@@ -89,7 +89,8 @@
                     <BUTTON
                         defaultImg="embed:/res/pri/red_position_off.png"
                         layout="815,10,100,100"
-                        prossedImg="embed:/res/pri/red_position_on.png" />
+                        prossedImg="embed:/res/pri/red_position_on.png"
+                        onClick="{function.toLocation}" />
 
                     <BUTTON
                         defaultImg="embed:/res/pri/red_search_off.png"

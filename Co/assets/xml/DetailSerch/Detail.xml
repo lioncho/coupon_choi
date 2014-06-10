@@ -7,9 +7,15 @@
 
             <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;SerchMain&apos;)" />
         </FUNCTION>
-        
-        <FUNCTION id="toSerch">
+
+        <FUNCTION id="toSerch" >
+
             <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;SerchDetail&apos;)" />
+        </FUNCTION>
+
+        <FUNCTION id="toLocation" >
+
+            <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;SerchLocation&apos;)" />
         </FUNCTION>
     </FUNCTIONLIST>
 
@@ -33,7 +39,7 @@
                         fontColor="#ffffff"
                         fontSize="72"
                         layout="0,0,1080,120"
-                        text="상세검색"
+                        text="详细搜索"
                         textAlign="center" />
 
                     <WINDOW
@@ -90,7 +96,7 @@
                         fontColor="#ffffff"
                         fontSize="72"
                         layout="0,0,1080,120"
-                        text="상세검색"
+                        text="详细搜索"
                         textAlign="center" />
 
                     <BUTTON
@@ -101,13 +107,14 @@
                     <BUTTON
                         defaultImg="embed:/res/pri/red_position_off.png"
                         layout="815,10,100,100"
-                        prossedImg="embed:/res/pri/red_position_on.png" />
+                        prossedImg="embed:/res/pri/red_position_on.png" 
+                        onClick="{function.toLocation}"/>
 
                     <BUTTON
                         defaultImg="embed:/res/pri/red_search_off.png"
                         layout="940,10,100,100"
-                        prossedImg="embed:/res/pri/red_search_on.png"
-                        onClick="{function.toSerch}" />
+                        onClick="{function.toSerch}"
+                        prossedImg="embed:/res/pri/red_search_on.png" />
                 </WINDOW>
             </WINDOW>
         </UILAYOUT>
