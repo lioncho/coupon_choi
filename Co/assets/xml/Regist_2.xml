@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MOML>
+<MOML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    version="1.1.5"
+    xsi:noNamespaceSchemaLocation="http://www.applusform.com/xsd/moml_ui.xsd" >
 
     <FUNCTIONLIST>
+        <FUNCTION id="v" >
+			<FUNCTIONITEM cmd=""/>
+        </FUNCITON>
+
         <FUNCTION id="func1" >
-            <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;RegistOk&apos;)" />
-            <FUNCTIONITEM cmd="http.post(-1,'http://tourcoupon.net/api/authorize/signin','region=CHINA|username=82|language=zh-TW|market_id=12345')"/>
+            <FUNCTIONITEM
+                cmd="{function.func2}"
+                condition="d1.selected"
+                elseCmd="" />
+        </FUNCTION>
+        <FUNCTION id="func2" >
+            <FUNCTIONITEM
+                cmd="{function.func3}"
+                condition="d2.selected"
+                elseCmd="" />
         </FUNCTION>
     </FUNCTIONLIST>
 
@@ -31,36 +45,74 @@
                         align="relative"
                         defaultImg="embed:/res/pri_3/join_gray_box_1.png"
                         layout="1000,141" >
-                        <LABEL fontColor="#ffffff" layout="0,0,360,141" text="国家" textAlign="center" fontSize="72"/>
-                        <LABEL fontColor="#ffffff" layout="400,0,620,141" text="中国" textAlign="center" fontSize="72"/>
+                        <LABEL
+                            fontColor="#ffffff"
+                            fontSize="72"
+                            layout="0,0,360,141"
+                            text="国家"
+                            textAlign="center" />
+                        <LABEL
+                            fontColor="#ffffff"
+                            fontSize="72"
+                            layout="400,0,620,141"
+                            text="中国"
+                            textAlign="center" />
                     </IMAGE>
                     <IMAGE
                         align="relative"
                         defaultImg="embed:/res/pri_3/join_gray_box_2.png"
                         layout="1000,142" >
-                        
-                        <LABEL fontColor="#ffffff" layout="0,0,360,141" text="手机号码" textAlign="center" fontSize="72"/>
-                        <LABEL fontColor="#ffffff" layout="400,0,620,141" text="device.phoneNumber" textAlign="center" fontSize="72"/>
-                        </IMAGE>
+                        <LABEL
+                            fontColor="#ffffff"
+                            fontSize="72"
+                            layout="0,0,360,141"
+                            text="手机号码"
+                            textAlign="center" />
+                        <LABEL
+                            fontColor="#ffffff"
+                            fontSize="72"
+                            layout="400,0,620,141"
+                            text="device.phoneNumber"
+                            textAlign="center" />
+                    </IMAGE>
                     <IMAGE
                         align="relative"
                         defaultImg="embed:/res/pri_3/join_gray_box_3.png"
                         layout="1000,141" >
-                        
-                        <LABEL fontColor="#ffffff" layout="0,0,360,141" text="使用语言" textAlign="center" fontSize="72"/>
-                        <LABEL fontColor="#ffffff" layout="400,0,620,141" text="中文(简体)" textAlign="center" fontSize="72"/>
-                        </IMAGE>
+                        <LABEL
+                            fontColor="#ffffff"
+                            fontSize="72"
+                            layout="0,0,360,141"
+                            text="使用语言"
+                            textAlign="center" />
+                        <LABEL
+                            fontColor="#ffffff"
+                            fontSize="72"
+                            layout="400,0,620,141"
+                            text="中文(简体)"
+                            textAlign="center" />
+                    </IMAGE>
                     <IMAGE
                         align="relative"
                         defaultImg="embed:/res/pri_3/join_gray_box_4.png"
                         layout="1000,142" >
-                        
-                        <LABEL fontColor="#ffffff" layout="0,0,360,141" text="쿠폰추천업체" textAlign="center" fontSize="72"/>
-                        <LABEL fontColor="#ffffff" layout="400,0,620,141" text="하나투어" textAlign="center" fontSize="72"/>
-                        </IMAGE>
+                        <LABEL
+                            fontColor="#ffffff"
+                            fontSize="72"
+                            layout="0,0,360,141"
+                            text="쿠폰추천업체"
+                            textAlign="center" />
+                        <LABEL
+                            fontColor="#ffffff"
+                            fontSize="72"
+                            layout="400,0,620,141"
+                            text="하나투어"
+                            textAlign="center" />
+                    </IMAGE>
                 </WINDOW>
 
                 <CHECKBOX
+                    id="d1"
                     checkedImg="embed:/res/pri_3/check_on.png"
                     defaultImg="embed:/res/pri_3/check_off.png"
                     layout="115,1090,45,45" />
@@ -72,6 +124,7 @@
                     text="同意使用条款" />
 
                 <CHECKBOX
+                    id="d2"
                     checkedImg="embed:/res/pri_3/check_on.png"
                     defaultImg="embed:/res/pri_3/check_off.png"
                     layout="115,1300,45,45" />
@@ -86,7 +139,7 @@
                     defaultImg="embed:/res/pri_3/gray_box.png"
                     fontSize="72"
                     layout="340,1600,450,90"
-                    onClick="{function.func1}"
+                    onClick="{function.v}"
                     text="确认" />
             </WINDOW>
         </UILAYOUT>
