@@ -11,8 +11,8 @@ public class MainActivity extends MOMLActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
         
-        boolean test=getMomlView().registerUIComponent("org.mospi.moml.component.qrcode.componentUIQrcode", "QRCODE", "WINDOW", null);
-        System.out.println(test);
+//        boolean test=getMomlView().registerUIComponent("org.mospi.moml.component.qrcode.componentUIQrcode", "QRCODE", "WINDOW", null);
+//        System.out.println(test);
         
 	    this.loadApplication("applicationInfo.xml");
 	}
