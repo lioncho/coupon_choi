@@ -16,10 +16,10 @@ import org.mospi.moml.framework.pub.objectapi.ObjectApiInfo;
 // Referenced classes of package org.mospi.moml.framework.pub.object.http:
 //            HttpRequest, HttpTransfer
 
-public class Http extends ed
+public class Http extends ef
 {
 
-    public String getName()
+    public String getDefaultName()
     {
         return "http";
     }
@@ -28,7 +28,8 @@ public class Http extends ed
     {
         if(objApiInfo == null)
         {
-            (objApiInfo = ObjectApiInfo.createObjectApiInfo("http", "1.1.0", "1.0.7", "", org/mospi/moml/framework/pub/object/http/Http.getSuperclass())).registerMethod("clearPostFileInfo", null, 1, "1.1.0", "1.0.7", "");
+            (objApiInfo = ObjectApiInfo.createObjectApiInfo("http", "1.1.5", "1.0.7", "", org/mospi/moml/framework/pub/object/http/Http.getSuperclass())).registerMethod("clearPostFileInfo", null, 1, "1.1.0", "1.0.7", "");
+            objApiInfo.registerMethod("addHeaderField", null, 3, "1.1.5", "1.1.5", "");
             objApiInfo.registerMethod("addPostFileInfo", null, 3, "1.1.0", "1.0.7", "");
             objApiInfo.registerMethod("removePostFileInfo", null, 2, "1.1.0", "1.0.7", "");
             objApiInfo.registerMethod("post", null, 3, "1.1.0", "1.0.7", "");
@@ -45,7 +46,7 @@ public class Http extends ed
         super(momlcontext);
         b = new ConcurrentHashMap();
         d = -1;
-        e = new hx(this);
+        e = new id(this);
         f = new HttpTransfer(momlcontext);
     }
 
@@ -72,6 +73,11 @@ public class Http extends ed
         a(i).addPostFileInfo(getMomlContext(), s, s1);
     }
 
+    public void addHeaderField(int i, String s, String s1)
+    {
+        a(i).addHeaderField(s, s1);
+    }
+
     public void removePostFileInfo(int i, String s)
     {
         HttpRequest httprequest;
@@ -83,7 +89,7 @@ public class Http extends ed
     {
         if(i == -1)
             i = getNextRequestId();
-        (new Thread((new hy(this)).a(i, s, s1))).start();
+        (new Thread((new ie(this)).a(i, s, s1))).start();
         return i;
     }
 
@@ -91,7 +97,7 @@ public class Http extends ed
     {
         if(i == -1)
             i = getNextRequestId();
-        (new Thread((new hz(this)).a(i, s, s1))).start();
+        (new Thread((new if(this)).a(i, s, s1))).start();
         return i;
     }
 
@@ -107,22 +113,22 @@ public class Http extends ed
         b.remove(Integer.valueOf(i));
     }
 
-    private void a(id id1)
+    private void a(ij ij1)
     {
-        b(id1.d());
+        b(ij1.d());
         Message message;
         (message = new Message()).what = 0;
         ArrayList arraylist;
-        (arraylist = new ArrayList()).add(c[ia.a.ordinal()]);
-        arraylist.add(Integer.toString(id1.d()));
-        arraylist.add(c[ia.b.ordinal()]);
-        arraylist.add(Integer.toString(id1.e()));
-        arraylist.add(c[ia.c.ordinal()]);
-        arraylist.add(Integer.toString(id1.a()));
-        arraylist.add(c[ia.d.ordinal()]);
-        arraylist.add(id1.c());
-        arraylist.add(c[ia.e.ordinal()]);
-        arraylist.add(id1.b());
+        (arraylist = new ArrayList()).add(c[ig.a.ordinal()]);
+        arraylist.add(Integer.toString(ij1.d()));
+        arraylist.add(c[ig.b.ordinal()]);
+        arraylist.add(Integer.toString(ij1.e()));
+        arraylist.add(c[ig.c.ordinal()]);
+        arraylist.add(Integer.toString(ij1.a()));
+        arraylist.add(c[ig.d.ordinal()]);
+        arraylist.add(ij1.c());
+        arraylist.add(c[ig.e.ordinal()]);
+        arraylist.add(ij1.b());
         message.obj = arraylist;
         e.sendMessage(message);
     }
@@ -167,9 +173,9 @@ public class Http extends ed
         return http.d;
     }
 
-    public static void a(Http http, id id1)
+    public static void a(Http http, ij ij1)
     {
-        http.a(id1);
+        http.a(ij1);
     }
 
     private static int a = 0;

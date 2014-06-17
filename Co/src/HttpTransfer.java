@@ -23,14 +23,14 @@ public class HttpTransfer
         d = momlcontext;
     }
 
-    public id getInputStream(Http.REQMETHOD_TYPE reqmethod_type, HttpRequest httprequest, int i)
+    public ij getInputStream(Http.REQMETHOD_TYPE reqmethod_type, HttpRequest httprequest, int i)
     {
-        id id1;
+        ij ij1;
         HttpURLConnection httpurlconnection;
-        id1 = new id(httprequest.getRequestId());
+        ij1 = new ij(httprequest.getRequestId());
         httpurlconnection = null;
         if(httprequest.getUrl() == null || httprequest.getUrl().length() == 0)
-            return id1;
+            return ij1;
         try
         {
             StringBuffer stringbuffer = new StringBuffer(httprequest.getUrl());
@@ -72,7 +72,7 @@ public class HttpTransfer
                 httpurlconnection.setConnectTimeout(i);
             if(reqmethod_type == Http.REQMETHOD_TYPE.POST)
             {
-                httpurlconnection.setRequestMethod("post".toUpperCase());
+                httpurlconnection.setRequestMethod("post".toUpperCase(Locale.US));
                 httpurlconnection.setDoOutput(true);
             }
             if(Http.CONTENT_TYPE_STR[Http.CONTENT_TYPE.XML.ordinal()].equals(httprequest.getContentType()))
@@ -80,6 +80,12 @@ public class HttpTransfer
             else
             if(httprequest.getContentType() != null && httprequest.getContentType().length() > 0)
                 httpurlconnection.setRequestProperty("Content-Type", httprequest.getContentType());
+            for(int k = 0; k < httprequest.getHederFields().size(); k++)
+            {
+                String as[] = (String[])httprequest.getHederFields().get(k);
+                httpurlconnection.setRequestProperty(as[0], as[1]);
+            }
+
             org.mospi.moml.core.framework.a.a(d);
             org.mospi.moml.core.framework.a.a(httpurlconnection, httprequest.getUrl(), hashmap);
             httpurlconnection.connect();
@@ -90,12 +96,12 @@ public class HttpTransfer
                 outputstreamwriter.flush();
                 outputstreamwriter.close();
             }
-            id1.a(true);
-            id1.a(httpurlconnection.getResponseCode());
+            ij1.a(true);
+            ij1.a(httpurlconnection.getResponseCode());
             InputStream inputstream;
             if((inputstream = httpurlconnection.getInputStream()) != null)
-                id1.b(a(inputstream));
-            break MISSING_BLOCK_LABEL_618;
+                ij1.b(a(inputstream));
+            break MISSING_BLOCK_LABEL_669;
         }
         catch(Exception exception)
         {
@@ -104,12 +110,12 @@ public class HttpTransfer
             stringbuffer2.append(exception.toString());
             stringbuffer2.append(")");
             d.setError("network", null, stringbuffer2.toString());
-            id1.a(false);
-            id1.a(exception.toString());
+            ij1.a(false);
+            ij1.a(exception.toString());
         }
         if(httpurlconnection != null)
             httpurlconnection.disconnect();
-        break MISSING_BLOCK_LABEL_628;
+        break MISSING_BLOCK_LABEL_679;
         Exception exception1;
         exception1;
         if(httpurlconnection != null)
@@ -117,13 +123,13 @@ public class HttpTransfer
         throw exception1;
         if(httpurlconnection != null)
             httpurlconnection.disconnect();
-        return id1;
+        return ij1;
     }
 
     private static void a()
     {
         TrustManager atrustmanager[] = {
-            new ic()
+            new ii()
         };
         SSLContext sslcontext;
         (sslcontext = SSLContext.getInstance("TLS")).init(null, atrustmanager, new SecureRandom());
@@ -151,11 +157,11 @@ public class HttpTransfer
         return s;
     }
 
-    public id uploadFile(HttpRequest httprequest)
+    public ij uploadFile(HttpRequest httprequest)
     {
-        id id1;
+        ij ij1;
         HttpURLConnection httpurlconnection;
-        id1 = new id(httprequest.getRequestId());
+        ij1 = new ij(httprequest.getRequestId());
         httpurlconnection = null;
         StringBuffer stringbuffer;
         (httpurlconnection = (HttpURLConnection)(new URL(httprequest.getUrl())).openConnection()).setDoInput(true);
@@ -188,19 +194,19 @@ public class HttpTransfer
         {
             ioexception.getMessage();
         }
-        id1.a(true);
-        id1.b(stringbuffer.toString());
-        id1.a(httpurlconnection.getResponseCode());
+        ij1.a(true);
+        ij1.b(stringbuffer.toString());
+        ij1.a(httpurlconnection.getResponseCode());
         break MISSING_BLOCK_LABEL_332;
         Exception exception;
         exception;
-        id1.a(true);
-        id1.b(stringbuffer.toString());
-        id1.a(httpurlconnection.getResponseCode());
+        ij1.a(true);
+        ij1.b(stringbuffer.toString());
+        ij1.a(httpurlconnection.getResponseCode());
         throw exception;
-        id1.a(true);
-        id1.b(stringbuffer.toString());
-        id1.a(httpurlconnection.getResponseCode());
+        ij1.a(true);
+        ij1.b(stringbuffer.toString());
+        ij1.a(httpurlconnection.getResponseCode());
         break MISSING_BLOCK_LABEL_332;
         MalformedURLException malformedurlexception;
         malformedurlexception;
@@ -209,7 +215,7 @@ public class HttpTransfer
         printStackTrace();
         if(httpurlconnection != null)
             httpurlconnection.disconnect();
-        return id1;
+        return ij1;
     }
 
     private static void a(DataOutputStream dataoutputstream, HashMap hashmap)
@@ -253,6 +259,6 @@ public class HttpTransfer
     private static String b = "--";
     private static String c = "aB03x";
     private MOMLContext d;
-    private static final HostnameVerifier e = new ib();
+    private static final HostnameVerifier e = new ih();
 
 }

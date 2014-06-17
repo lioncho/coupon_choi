@@ -19,6 +19,7 @@ public class HttpRequest
     public HttpRequest(int i)
     {
         d = new ArrayList();
+        e = new ArrayList();
         a = i;
     }
 
@@ -34,6 +35,18 @@ public class HttpRequest
             d.add(new HttpPostFileInfo(momlcontext, s, s1));
             return;
         }
+    }
+
+    public void addHeaderField(String s, String s1)
+    {
+        e.add(new String[] {
+            s, s1
+        });
+    }
+
+    public ArrayList getHederFields()
+    {
+        return e;
     }
 
     private HttpPostFileInfo a(String s)
@@ -129,12 +142,12 @@ public class HttpRequest
 
     public void setContentType(String s)
     {
-        e = s;
+        f = s;
     }
 
     public String getContentType()
     {
-        return e;
+        return f;
     }
 
     public void clearPostFileInfos()
@@ -146,5 +159,6 @@ public class HttpRequest
     private String b;
     private HashMap c;
     private ArrayList d;
-    private String e;
+    private ArrayList e;
+    private String f;
 }
