@@ -1,3 +1,7 @@
 /android/
 /com/
 /.gitignore
+/Http.class
+/HttpPostFileInfo.class
+/HttpRequest.class
+/HttpTransfer.class
