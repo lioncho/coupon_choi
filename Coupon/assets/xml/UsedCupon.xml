@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MOML>
+
+	<FUNCTIONLIST>
+	    
+		<FUNCTION id="toHome">
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchMain&apos;)" />
+		</FUNCTION>
+		
+		<FUNCTION id="toSerch">
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchDetail&apos;)" />
+		</FUNCTION>
+		
+		<FUNCTION id="toLocation">
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchLocation&apos;)" />
+		</FUNCTION>
+		
+		<FUNCTION id="toBrand">
+		    <FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;Brand&apos;)" />
+		</FUNCTION>
+		
+	</FUNCTIONLIST>
+
+	<UI>
+		<UILAYOUT landscape="1080,1920" portrait="1080,1920">
+			<WINDOW align="relative" defaultImg="embed:/res/pri_20/bg.png"
+				layout="0,0,1080,1920">
+
+				<IMAGE align="relative" layout="40,232,1000,250"
+					defaultImg="embed:/res/pri_20/gray_box_arrow_3.png">
+
+					<IMAGE defaultImg="#ff0000" layout="40,40,160,150" />
+
+					<LABEL fontColor="#ffffff" fontSize="72" layout="0,-50,1000,250"
+						text="乐天免税店" textAlign="center" />
+
+					<LABEL fontColor="#ffffff" fontSize="64" layout="240,-50,1000,250"
+						text="(总店)" textAlign="center" />
+
+					<LABEL fontColor="#ff0000" fontSize="48" layout="0,30,1000,250"
+						text="最高 10%折扣" textAlign="center" />
+
+				</IMAGE>
+
+
+				<BUTTON defaultImg="#80756f" layout="540,1200,540,100" onClick="{function.toBrand}">
+				    <LABEL fontColor="#ffffff" fontSize="40" layout="200,15,auto,auto" 
+				    	text="折扣券品牌" textAlign="center" />
+				</BUTTON>
+
+
+
+				<IMAGE defaultImg="#ff0000" layout="140,532,800,360" />
+
+				<IMAGE defaultImg="embed:/res/pri_20/dotted_line.png" layout="47,950,985,4" />
+
+				<BUTTON defaultImg="embed:/res/pri_20/gray_box.png" layout="220,1000,640,130">
+					<LABEL fontColor="#ffffff" fontSize="64" layout="0,0,640,130"
+						text="Mr. Pong쿠폰 使用成功" textAlign="center" />
+				</BUTTON>
+
+				<IMAGE defaultImg="embed:/res/pri_20/gray_box_big_left.png"
+					layout="0,1200,1080,718" />
+
+
+				<LABEL fontColor="#ffffff" fontSize="72" layout="40,1360,1000,560"
+					text="으캬캬캬컁\n으캬캬컄" textAlign="default" />
+
+				<WINDOW defaultImg="#ff0000" layout="0,0,1080,120">
+					<LABEL fontColor="#ffffff" fontSize="72" layout="0,0,1080,120"
+						text="使用成功" textAlign="center" />
+
+					<BUTTON defaultImg="embed:/res/pri/home_button.png" layout="25,15,220,90"
+						onClick="{function.toHome}" />
+					<BUTTON defaultImg="embed:/res/pri/red_position_off.png"
+						layout="815,10,100,100" prossedImg="embed:/res/pri/red_position_on.png" onClick="{function.toLocation}"/>
+					<BUTTON defaultImg="embed:/res/pri/red_search_off.png"
+						layout="940,10,100,100" onClick="{function.toSerch}" prossedImg="embed:/res/pri/red_search_on.png" />
+				</WINDOW>
+			</WINDOW>
+		</UILAYOUT>
+	</UI>
+
+</MOML>

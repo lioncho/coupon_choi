@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MOML>
+	<FUNCTIONLIST>
+	
+		<FUNCTION id="init">
+			<CMD cmd="http.addEventListener('onComplete','use')"/>
+		
+		</FUNCTION>
+		<FUNCTION id="chkPW">
+			<CMD cmd="userVariable.bass=couponPW.text" />
+			
+			<CMD cmd="http.post(-1, 'http://tourcoupon.net/api2/coupon/use/index.php','access_token='+userVariable.access+'|tid='+userVariable.couponId+'|password='+userVariable.bass)" />
+		</FUNCTION>
+		
+		
+		<FUNCTION id="use">
+			
+			<CMD cmd="re=parameter.param[3]"/>
+			<CMD condition="re=='success'">
+				<CMD cmd="device.toastPopup('쿠폰이 사용되었습니다.')"/>
+				<CMD cmd="container.close()"/>
+				<CMD cmd="http.removeEventListener('onComplete','use')"/>
+			</CMD>
+			<CMD condition="re=='password'">
+				<CMD cmd="device.toastPopup('비밀번호가 틀렸습니다.')"/>
+				<CMD cmd="couponPW.text=''"/>
+			</CMD>
+		</FUNCTION>
+
+
+	</FUNCTIONLIST>
+	<CMD cmd="function.init"/>
+
+	<UILAYOUT landscape="1080,1920" portrait="1080,1920">
+		<POPUP defaultImg="embed:/res/pri_14/popup.png" layout="0,-200,1080,2120">
+			<LABEL textAlign="center" layout="0,800,1080,auto" fontSize="63" text="쿠폰 비밀번호를 입력해주세요."/>
+			<EDIT textAlign="hCenter" id="couponPW" layout="240,1000,600,200"
+				placeHolder="비밀번호" fontSize="96" textFormat="password" />
+			<BUTTON fontSize="96" fontColor="#ffffff" text="확인" layout="390,1300,300,150" onClick="{function.chkPW}" defaultImg="embed:/res/pri_14/button.png" />
+		</POPUP>
+
+	</UILAYOUT>
+
+
+
+</MOML>

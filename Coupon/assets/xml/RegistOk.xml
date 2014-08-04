@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MOML>
+
+    <FUNCTIONLIST>
+        <FUNCTION id="func1" >
+            <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;Loading&apos;)" />
+        </FUNCTION>
+    </FUNCTIONLIST>
+
+    <UI>
+        <UILAYOUT
+            landscape="1080,1920"
+            portrait="1080,1920" >
+            <WINDOW
+                align="relative"
+                defaultImg="embed:/res/pri_4/bg.png"
+                layout="0,0,1080,1920" >
+                <WINDOW defaultImg="#ff0000" >
+                    <LABEL
+                        fontColor="#ffffff"
+                        fontSize="72"
+                        layout="0,0,1080,120"
+                        text="邀请好友"
+                        textAlign="center" />
+                </WINDOW>
+
+                <LABEL
+                    fontColor="#ffffff"
+                    fontSize="64"
+                    layout="0,290,1080,120"
+                    text="感谢您成为我们的会员"
+                    textAlign="center" />
+
+                <IMAGE
+                    defaultImg="embed:/res/pri_4/gray_box_1.png"
+                    layout="40,370,1000,501" >
+                    <LABEL
+                        fontColor="#ffffff"
+                        fontSize="80"
+                        layout="30,50,940,501"
+                        multiLine="true"
+                        text="发邀请给好友一起享受旅行折扣优惠吧。为了感谢您成为我们的会员,我们将向您
+所邀请的好友提供韩国最大免税店的邀请
+折扣券。" />
+                </IMAGE>
+
+                <LABEL
+                    fontColor="#ffffff"
+                    fontSize="64"
+                    layout="0,950,1080,120"
+                    text="邀请好友"
+                    textAlign="center" />
+
+                <IMAGE
+                    defaultImg="embed:/res/pri_4/gray_box_2.png"
+                    layout="40,1070,1000,262" >
+                </IMAGE>
+                <IMAGE
+                    defaultImg="embed:/res/pri_4/wechat.png"
+                    layout="100,1140,165,165" />
+                <IMAGE
+                    defaultImg="embed:/res/pri_4/kakao.png"
+                    layout="340,1140,165,165" />
+                <IMAGE
+                    defaultImg="embed:/res/pri_4/line.png"
+                    layout="570,1140,165,165" />
+                <IMAGE
+                    defaultImg="embed:/res/pri_4/sns.png"
+                    layout="800,1140,165,165" />
+
+                <BUTTON
+                    defaultImg="embed:/res/pri_4/red_box.png"
+                    fontSize="72"
+                    layout="340,1600,450,90"
+                    onClick="{function.func1}"
+                    text="건너뛰기" fontColor="#ffffff" />
+            </WINDOW>
+        </UILAYOUT>
+    </UI>
+
+</MOML>

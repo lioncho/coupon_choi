@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MOML>
+
+	<FUNCTIONLIST>
+
+		<FUNCTION id="toHome">
+
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchMain&apos;)" />
+		</FUNCTION>
+
+		<FUNCTION id="toSerch">
+
+			<FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;SerchDetail&apos;)" />
+		</FUNCTION>
+
+		<FUNCTION id="toLocation">
+
+			<FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;SerchLocation&apos;)" />
+		</FUNCTION>
+
+		<FUNCTION id="init">
+				
+			<CMD cmd="http.addEventListener('onComplete','serch')"/>
+			<CMD cmd="http.get(-1,'http://tourcoupon.net/api2/coupon/search/index2.php',userVariable.deLink)"/>		
+		</FUNCTION>
+		
+		<FUNCTION id="serch">
+			<CMD cmd="device.log(parameter.param[3])"/>
+		</FUNCTION>
+
+		<FUNCTION id="setCoupon(setId,cXml)">
+			<CMD cmd="device.log(setId)" />
+			<CMD cmd="title=xpath.evaluateEx(cXml,'/DATA/title/text()')" />
+			<CMD cmd="discount=xpath.evaluateEx(cXml,'/DATA/discount/text()')" />
+			<CMD cmd="downloaded=xpath.evaluateEx(cXml,'/DATA/downloadedcount/text()')" />
+			<CMD cmd="business_name=xpath.evaluateEx(cXml,'/DATA/category/text()')" />
+			<CMD cmd="display_name=xpath.evaluateEx(cXml,'/DATA/campany_name/text()')" />
+			<CMD cmd="catchprice=xpath.evaluateEx(cXml,'/DATA/catchprice/text()')" />
+			<CMD cmd="couponImg=xpath.evaluateEx(cXml,'/DATA/thumbnail/text()')" />
+			<CMD cmd="couponId=xpath.evaluateEx(cXml,'/DATA/id/text()')" />
+			<CMD cmd="device.log(cXml)" />
+			<CMD cmd="userVariable.id=id" />
+			<CMD cmd="setId.title.text=title" />
+			<CMD cmd="setId.discount.text=discount" />
+			<CMD cmd="setId.downloaded.text=downloaded" />
+			<CMD cmd="setId.business_name.text=business_name" />
+			<CMD cmd="setId.display_name.text=display_name" />
+			<CMD cmd="setId.catchprice.text=catchprice" />
+			<CMD cmd="setId.img.defaultImg='http://tourcoupon.net/api2/coupon/image/print.php?code='+couponImg+'&amp;w=195&amp;h=172'" />
+			<CMD cmd="setId.couponId.text=couponId" />
+
+		</FUNCTION>
+
+	</FUNCTIONLIST>
+
+	<CMD cmd="function.init" />
+
+	<UI>
+
+		<UILAYOUT landscape="1080,1920" portrait="1080,1920">
+
+			<WINDOW align="relative" layout="0,0,1080,1920">
+
+				<WINDOW defaultImg="embed:/res/pri_10/bg.png" layout="0,120,1080,1920"
+					scroll="vertical" scrollBarVisible="true">
+
+					<LABEL fontColor="#ffffff" fontSize="72" layout="0,0,1080,120"
+						text="详细搜索" textAlign="center" />
+
+					<WINDOW align="linear:vertical" layout="40,120,1000,2520">
+
+						<IMAGE defaultImg="embed:/res/pri_10/gray_box_arrow_1.png"
+							layout="1000,270" />
+
+						<IMAGE id="c2" align="relative" defaultImg="embed:/res/pri_10/gray_box_2.png" layout="1000,250">
+							<IMAGE defaultImg="#ffffff" id="img" layout="30,40,192,173" />
+							<LABEL text="dds" fontSize="50" layout="245,40,auto,auto"/>
+							<LABEL text="dsvs" fontSize="32" layout="245,100,auto,auto"/>
+							<LABEL text="dss" fontSize="32" layout="245,190,auto,auto"/>
+							<LABEL textAlign="right" text="sdvsd" fontSize="42" layout="0,183,968,auto"/>
+							<IMAGE defaultImg="#ffffff" layout="670,30,300,130"/>
+							<LABEL textColor="#ff0000" textAlign="right" text="dsvsd" fontSize="45" layout="670,45,257,auto"/>
+							<LABEL textAlign="right" text="sdvds" fontSize="28" layout="670,110,257,auto"/>
+							
+						</IMAGE>
+
+						<IMAGE defaultImg="embed:/res/pri_10/gray_box_2.png" layout="1000,250" />
+
+						<IMAGE defaultImg="embed:/res/pri_10/gray_box_2.png" layout="1000,250" />
+
+						<IMAGE defaultImg="embed:/res/pri_10/gray_box_2.png" layout="1000,250" />
+
+						<IMAGE defaultImg="embed:/res/pri_10/gray_box_2.png" layout="1000,250" />
+
+						<IMAGE defaultImg="embed:/res/pri_10/gray_box_2.png" layout="1000,250" />
+
+						<IMAGE defaultImg="embed:/res/pri_10/gray_box_2.png" layout="1000,250" />
+
+						<IMAGE defaultImg="embed:/res/pri_10/gray_box_2.png" layout="1000,250" />
+
+						<IMAGE defaultImg="embed:/res/pri_10/gray_box_2.png" layout="1000,250" />
+					</WINDOW>
+				</WINDOW>
+
+				<WINDOW defaultImg="#ff0000" layout="0,0,1080,120">
+
+					<LABEL fontColor="#ffffff" fontSize="72" layout="0,0,1080,120"
+						text="详细搜索" textAlign="center" />
+
+					<BUTTON defaultImg="embed:/res/pri/home_button.png" layout="25,15,220,90"
+						onClick="{function.toHome}" />
+
+					<BUTTON defaultImg="embed:/res/pri/red_position_off.png"
+						layout="815,10,100,100" onClick="{function.toLocation}"
+						prossedImg="embed:/res/pri/red_position_on.png" />
+
+					<BUTTON defaultImg="embed:/res/pri/red_search_off.png"
+						layout="940,10,100,100" onClick="{function.toSerch}" prossedImg="embed:/res/pri/red_search_on.png" />
+				</WINDOW>
+			</WINDOW>
+		</UILAYOUT>
+	</UI>
+
+</MOML>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MOML>
+
+	<FUNCTIONLIST>
+
+		<FUNCTION id="toHome">
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchMain&apos;)" />
+
+			<FUNCTION id="toSerch">
+				<FUNCTIONITEM
+					cmd="action:go(&apos;root.navigation&apos;,&apos;SerchDetail&apos;)" />
+			</FUNCTION>
+		</FUNCTION>
+
+		<FUNCTION id="toLocation">
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchLocation&apos;)" />
+		</FUNCTION>
+		
+		<FUNCTION id="open1">
+			<CMD cmd="caller.fullId.defaultImg='embed:/res/pri_29/gray_box_on.png'"/>
+		</FUNCTION>
+	</FUNCTIONLIST>
+
+	<UI>
+
+		<UILAYOUT landscape="1080,1920" portrait="1080,1920">
+
+			<WINDOW align="relative" defaultImg="embed:/res/pri_29/bg.png"
+				layout="0,0,1080,1920">
+				
+				<WEBVIEW layout="0,120,1080,1800" src="http://www.tourcoupon.net/api/web/notice" controls="none"/>
+				
+				
+
+				<WINDOW defaultImg="#ff0000" layout="0,0,1080,120">
+
+					<LABEL fontColor="#ffffff" fontSize="72" layout="0,0,1080,120"
+						text="公告" textAlign="center" />
+
+					<BUTTON defaultImg="embed:/res/pri/home_button.png" layout="25,15,220,90"
+						onClick="{function.toHome}" />
+
+					<BUTTON defaultImg="embed:/res/pri/red_position_off.png"
+						layout="815,10,100,100" prossedImg="embed:/res/pri/red_position_on.png" />
+
+					<BUTTON defaultImg="embed:/res/pri/red_search_off.png"
+						layout="940,10,100,100" prossedImg="embed:/res/pri/red_search_on.png"
+						onClick="{function.toSerch}" />
+				</WINDOW>
+			</WINDOW>
+		</UILAYOUT>
+	</UI>
+
+</MOML>

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MOML>
+
+
+
+
+	<FUNCTIONLIST>
+		
+		<FUNCTION id="init">
+			<CMD cmd="function.setStore(json.toXml(file.read('http://tourcoupon.net/api/store/detail/'+userVariable.storeId+'?+userVariable.access)))" />
+		</FUNCTION>
+		<FUNCTION id="setTop(cXml)">
+			<CMD cmd="title=xpath.evaluateEx(cXml,'/DATA/data/company_name/text()')" />
+			<CMD cmd="discount=xpath.evaluateEx(cXml,'/DATA/data/sales_percent/text()')" />
+			<CMD cmd="business_name=xpath.evaluateEx(cXml,'/DATA/data/category/text()')" />
+			<CMD cmd="display_name=xpath.evaluateEx(cXml,'/DATA/data/display_name/text()')" />
+			<CMD cmd="catchprice=xpath.evaluateEx(cXml,'/DATA/data/catchprice/text()')" />
+			<CMD cmd="couponImg=xpath.evaluateEx(cXml,'/DATA/data/thumbnail/text()')" />
+			<CMD cmd="title.text=title" />
+			<CMD cmd="discount.text=discount" />
+			<CMD cmd="business_name.text=business_name" />
+			<CMD cmd="catchprice.text=catchprice_name" />
+
+			<CMD cmd="img.defaultImg='http://tourcoupon.net/api/imgs/thumb/'+couponImg+'?w=160&amp;h=140&amp;t=1'" />
+			<CMD cmd="userVariable.storeId=xpath.evaluateEx(cXml,'/DATA/data/store/id/text()')" />
+		</FUNCTION>
+
+		<FUNCTION id="setStore(cXml)">
+			<CMD cmd="device.log(cXml)" />
+			<CMD cmd="function.setTop(cXml)" />
+
+			<CMD cmd="address=xpath.evaluateEx(cXml,'/DATA/data/address/text()')" />
+			<CMD cmd="phone=xpath.evaluateEx(cXml,'/DATA/data/phone/text()')" />
+			<CMD
+				cmd="working_time=xpath.evaluateEx(cXml,'/DATA/data/working_time/text()')" />
+			<CMD cmd="stay_time=xpath.evaluateEx(cXml,'/DATA/data/stay_time/text()')" />
+			<CMD
+				cmd="company_name=xpath.evaluateEx(cXml,'/DATA/data/company_name/text()')" />
+			<CMD cmd="website=xpath.evaluateEx(cXml,'/DATA/data/website/text()')" />
+			<CMD
+				cmd="wifi_usable=xpath.evaluateEx(cXml,'/DATA/data/wifi_usable/text()')" />
+			<CMD
+				cmd="description=xpath.evaluateEx(cXml,'/DATA/data/description/text()')" />
+
+			<CMD
+				cmd="support_language=xpath.evaluateEx(cXml,'/DATA/data/support_language/text()')" />
+			<CMD cmd="close_at=xpath.evaluateEx(cXml,'/DATA/data/modified/text()')" />
+			
+			<CMD cmd="l.address.l2.text=address" />
+			<CMD cmd="l.phone.l2.text=phone" />
+			<CMD cmd="l.working_time.l2.text=working_time" />
+			<CMD cmd="l.stay_time.l2.text=stay_time" />
+			<CMD cmd="l.company_name.l2.text=company_name" />
+			<CMD cmd="l.website.l2.text=website" />
+			<CMD cmd="l.wifi_usable.l2.text=wifi_usable" />
+			<CMD cmd="l.support_language.l2.text=support_language" />
+			<CMD cmd="l.description.l2.text=description" />
+			<CMD cmd="l.close_at.l2.text=close_at" />
+
+		</FUNCTION>
+
+
+
+
+		<FUNCTION id="toHome">
+
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchMain&apos;)" />
+		</FUNCTION>
+
+		<FUNCTION id="toSerch">
+
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchDetail&apos;)" />
+		</FUNCTION>
+
+		<FUNCTION id="toLocation">
+
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchLocation&apos;)" />
+		</FUNCTION>
+
+		<FUNCTION id="download">
+			<FUNCTIONITEM cmd="action:go('root.navigation','CouponList')" />
+		</FUNCTION>
+	</FUNCTIONLIST>
+
+	<CMD cmd="{function.init}" />
+
+
+
+	<UI>
+
+		<UILAYOUT landscape="1080,1920" portrait="1080,1920">
+
+			<WINDOW align="relative" layout="0,0,1080,1920">
+
+				<WINDOW defaultImg="#ffffff" layout="0,120,1080,1920" scroll="vertical"
+					scrollBarVisible="true">
+
+					<IMAGE defaultImg="embed:/res/pri_8/gray_box_arrow.png"
+						layout="40,40,1000,201" />
+					<IMAGE id="img" layout="70,50,160,140" />
+					<LABEL id="title" fontColor="#ffffff" fontSize="72"
+						layout="40,40,1000,201" text="NULL" textAlign="center" />
+					<IMAGE layout="40,245,42,40" defaultImg="embed:/res/pri_8/star_on.png" />
+					<IMAGE layout="100,245,42,40" defaultImg="embed:/res/pri_8/star_on.png" />
+					<IMAGE layout="160,245,42,40" defaultImg="embed:/res/pri_8/star_on.png" />
+					<IMAGE layout="220,245,42,40" defaultImg="embed:/res/pri_8/star_on.png" />
+					<IMAGE layout="280,245,42,40" defaultImg="embed:/res/pri_8/star_off.png" />
+					<LABEL fontColor="#000000" fontSize="36" layout="350,245,auto,auto"
+						text="(100명/9.32점)" textAlign="center" />
+					<LABEL id="catchprice" fontColor="#000000" fontSize="36"
+						layout="40,295,auto,auto" text="한국 브랜드 파워 1위 면세점" textAlign="center" />
+
+					<LABEL id="business_name" fontColor="#000000" fontSize="36"
+						layout="925,245,auto,auto" text="면세점" textAlign="center" />
+
+					<LABEL id="discount" fontColor="#ff0000" fontSize="96"
+						layout="635,290,auto,auto" text="최대 10%할인" textAlign="center" />
+
+
+					<WINDOW id="l" layout="40,1452,auto,auto" align="linear:vertical">
+						<WINDOW id="address" layout="auto,auto" align="linear:horizontal">
+							<LABEL margin="0,0,0,40" id="l1" fontColor="#a2b23a"
+								fontSize="24" layout="auto,auto" text="地址 : " textAlign="center" />
+							<LABEL id="l2" fontSize="24" layout="auto,auto" text="테스트"
+								textAlign="center" />
+						</WINDOW>
+
+						<WINDOW id="phone" layout="auto,auto" align="linear:horizontal">
+							<LABEL margin="0,0,0,40" fontColor="#a2b23a" fontSize="24"
+								layout="auto,auto" text="联系电话 : " textAlign="center" />
+
+							<LABEL id="l2" fontSize="24" layout="auto,auto" text="테스트"
+								textAlign="center" />
+						</WINDOW>
+						<WINDOW id="working_time" layout="auto,auto" align="linear:horizontal">
+							<LABEL margin="0,0,0,40" id="l3" fontColor="#a2b23a"
+								fontSize="24" layout="auto,auto" text="营业时间 : " textAlign="center" />
+							<LABEL id="l2" fontSize="24" layout="auto,auto" text="테스트"
+								textAlign="center" />
+						</WINDOW>
+						<WINDOW id="close_at" layout="auto,auto" align="linear:horizontal">
+							<LABEL margin="0,0,0,40" id="l4" fontColor="#a2b23a"
+								fontSize="24" layout="auto,auto" text="使用期限 : " textAlign="center" />
+							<LABEL id="l2" fontSize="24" layout="auto,auto" text="테스트"
+								textAlign="center" />
+						</WINDOW>
+						<WINDOW id="stay_time" layout="auto,auto" align="linear:horizontal">
+							<LABEL margin="0,0,0,40" id="l5" fontColor="#a2b23a"
+								fontSize="24" layout="auto,auto" text="公休日 : " textAlign="center" />
+							<LABEL id="l2" fontSize="24" layout="auto,auto" text="테스트"
+								textAlign="center" />
+						</WINDOW>
+						<WINDOW id="company_name" layout="auto,auto" align="linear:horizontal">
+							<LABEL margin="0,0,0,40" id="l6" fontColor="#a2b23a"
+								fontSize="24" layout="auto,auto" text="行业 : " textAlign="center" />
+							<LABEL id="l2" fontSize="24" layout="auto,auto" text="테스트"
+								textAlign="center" />
+						</WINDOW>
+						<WINDOW id="website" layout="auto,auto" align="linear:horizontal">
+							<LABEL margin="0,0,0,40" id="l7" fontColor="#a2b23a"
+								fontSize="24" layout="auto,auto" text="主页 : " textAlign="center" />
+							<LABEL id="l2" fontSize="24" layout="auto,auto" text="테스트"
+								textAlign="center" />
+						</WINDOW>
+						<WINDOW id="wifi_usable" layout="auto,auto" align="linear:horizontal">
+							<LABEL margin="0,0,0,40" id="l8" fontColor="#a2b23a"
+								fontSize="24" layout="auto,auto" text="WiFi : " textAlign="center" />
+							<LABEL id="l2" fontSize="24" layout="auto,auto" text="테스트"
+								textAlign="center" />
+						</WINDOW>
+						<WINDOW id="support_language" layout="auto,auto" align="linear:horizontal">
+							<LABEL margin="0,0,0,40" id="l9" fontColor="#a2b23a"
+								fontSize="24" layout="auto,auto" text="外语支持 : " textAlign="center" />
+							<LABEL id="l2" fontSize="24" layout="auto,auto" text="테스트"
+								textAlign="center" />
+						</WINDOW>
+						<WINDOW id="description" layout="auto,auto" align="linear:horizontal">
+							<LABEL margin="0,0,0,40" id="20" fontColor="#a2b23a"
+								fontSize="24" layout="auto,auto" text="品牌 : " textAlign="center" />
+							<LABEL id="l2" fontSize="24" layout="auto,auto" text="테스트"
+								textAlign="center" />
+						</WINDOW>
+						<WINDOW id="l11" layout="auto,auto" align="linear:horizontal">
+							<LABEL margin="0,0,0,40" id="21" fontColor="#a2b23a"
+								fontSize="24" layout="auto,auto" text="门店 : " textAlign="center" />
+							<LABEL id="l2" fontSize="24" layout="auto,auto" text="테스트"
+								textAlign="center" />
+						</WINDOW>
+					</WINDOW>
+
+
+
+					<BUTTON text="더보기..." defaultImg="embed:/res/pri_8/gray_box_mini.png"
+						layout="780,2060,351,66" />
+
+					<IMAGE defaultImg="embed:/res/pri_8/photo.png" layout="40,430,1000,901" />
+
+					<IMAGE defaultImg="embed:/res/pri_8/twitter.png" layout="190,2260,100,93" />
+
+					<IMAGE defaultImg="embed:/res/pri_8/facebook.png" layout="330,2260,100,93" />
+
+					<IMAGE defaultImg="embed:/res/pri_8/qq_off.png" layout="470,2260,100,93" />
+
+					<IMAGE defaultImg="embed:/res/pri_8/weibo.png" layout="610,2260,100,93" />
+
+					<IMAGE defaultImg="embed:/res/pri_8/renren.png" layout="750,2260,100,93" />
+
+					<IMAGE defaultImg="embed:/res/pri_8/renren_off.png" layout="750,4000,0,0" />
+
+					<IMAGE defaultImg="embed:/res/pri_8/gray_bar.png" layout="0,2400,1080,93" />
+
+					<IMAGE defaultImg="embed:/res/pri_8/gray_bar.png" layout="0,2700,1080,93" />
+
+					<IMAGE defaultImg="embed:/res/pri_8/gray_bar.png" layout="0,3700,1080,93" />
+
+					<BUTTON defaultImg="embed:/res/pri_8/button_off.png" layout="615,2710,360,70"
+						prossedImg="embed:/res/pri_8/button_on.png" />
+					<LABEL fontColor="#ffffff" fontSize="72" layout="40,2400,auto,auto"
+						text="사진" textAlign="center" />
+					<LABEL fontColor="#ffffff" fontSize="72" layout="40,2710,auto,auto"
+						text="정보" textAlign="center" />
+
+
+
+					<BUTTON layout="40,640,400,160" defaultImg="embed:/res/pri_8/orange_box.png" />
+					<BUTTON layout="40,830,400,160" defaultImg="embed:/res/pri_8/green_box.png"
+						onClick="{function.download}" />
+				</WINDOW>
+
+				<WINDOW defaultImg="#ff0000" layout="0,0,1080,120">
+
+					<LABEL fontColor="#ffffff" fontSize="72" layout="0,0,1080,120"
+						text="상세정보" textAlign="center" />
+
+					<BUTTON defaultImg="embed:/res/pri/home_button.png" layout="25,15,220,90"
+						onClick="{function.toHome}" />
+
+					<BUTTON defaultImg="embed:/res/pri/red_position_off.png"
+						layout="815,10,100,100" prossedImg="embed:/res/pri/red_position_on.png"
+						onClick="{function.toLocation}" />
+
+					<BUTTON defaultImg="embed:/res/pri/red_search_off.png"
+						layout="940,10,100,100" onClick="{function.toSerch}" prossedImg="embed:/res/pri/red_search_on.png" />
+				</WINDOW>
+			</WINDOW>
+		</UILAYOUT>
+	</UI>
+
+</MOML>

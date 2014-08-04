@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MOML>
+
+    <FUNCTIONLIST>
+
+        <FUNCTION id="init" >
+
+            <CMD cmd="function.setJob(json.toXml(file.read(&apos;http://tourcoupon.net/api2/coupon/search/category.php?access_token=&apos;+userVariable.acces+&apos;&amp;category=&apos;+userVariable.cate+&apos;&amp;start=&apos;+userVariable.start)))" />
+        </FUNCTION>
+
+        <FUNCTION id="setJob(cXml)" >
+            <CMD cmd="title=xpath.evaluateEx(cXml,&apos;/DATA/data/name/text()&apos;)" />
+            <CMD cmd="title.text=title" />
+            <CMD cmd="discount=xpath.evaluateEx(cXml,&apos;/DATA/data/sales/text()&apos;)" />
+            <CMD cmd="discount.text=discount" />
+            <CMD cmd="company=xpatch.evaluateEx(cXml,&apos;/DATA/data/company/text()&apos;)" />
+            <CMD cmd="company.text=company" />
+            <CMD cmd="business=xpatch.evaluateEx(cXml,&apos;/DATA/data/business/text()&apos;)" />
+            <CMD cmd="business.text=business" />
+            <CMD cmd="thumbnail=xpath.evaluateEx(cXml,&apos;/DATA/data/thumbnail/text()&apos;)" />
+            <CMD cmd="thumbnail.defaultImg='http://tourcoupon.net/api2/upload/thumbnail/+thumbnail" />
+        </FUNCTION>
+
+        <FUNCTION id="toHome" >
+            <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;SerchMain&apos;)" />
+        </FUNCTION>
+
+        <FUNCTION id="toSerch" >
+            <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;SerchDetail&apos;)" />
+        </FUNCTION>
+
+        <FUNCTION id="toLocation" >
+            <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;SerchLocation&apos;)" />
+        </FUNCTION>
+        
+        <FUNCTION id="toDetail">
+            <FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;Detail&apos;)" />
+        </FUNCTION>
+    </FUNCTIONLIST>
+
+    <UI>
+
+        <UILAYOUT
+            landscape="1080,1920"
+            portrait="1080,1920" >
+
+            <WINDOW
+                align="relative"
+                layout="0,0,1080,1920" >
+
+                <WINDOW
+                    align="linear:vertical"
+                    defaultImg="embed:/res/pri_7/bg.png"
+                    layout="0,120,1080,1920"
+                    scroll="vertical"
+                    scrollBarVisible="true" >
+
+                    <!-- 면세점 -->
+                    <BUTTON
+                        align="linear:vCenter"
+                        defaultImg="embed:/res/pri_7/gray_box.png"
+                        layout="1080,250" >
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="370,250" >
+
+                            <IMAGE
+                                defaultImg="embed:/res/pri_7/duty_free.png"
+                                layout="153,160" />
+                        </WINDOW>
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="710,250" >
+
+                            <LABEL
+                                fontColor="#ffffff"
+                                fontSize="96"
+                                text="免税店"
+                                textAlign="center" />
+                        </WINDOW>
+                    </BUTTON>
+
+                    <!-- 백화점 -->
+                    <BUTTON
+                        align="linear:vCenter"
+                        defaultImg="embed:/res/pri_7/gray_box.png"
+                        layout="1080,250" >
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="370,250" >
+
+                            <IMAGE
+                                defaultImg="embed:/res/pri_7/department_store.png"
+                                layout="118,169" />
+                        </WINDOW>
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="710,250" >
+
+                            <LABEL
+                                fontColor="#ffffff"
+                                fontSize="96"
+                                text="百货店"
+                                textAlign="center" />
+                        </WINDOW>
+                    </BUTTON>
+
+                    <!-- 아울렛 -->
+                    <BUTTON
+                        align="linear:vCenter"
+                        defaultImg="embed:/res/pri_7/gray_box.png"
+                        layout="1080,250" >
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="370,250" >
+
+                            <IMAGE
+                                defaultImg="embed:/res/pri_7/outlet_store.png"
+                                layout="155,122" />
+                        </WINDOW>
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="710,250" >
+
+                            <LABEL
+                                fontColor="#ffffff"
+                                fontSize="96"
+                                text="奥特莱特"
+                                textAlign="center" />
+                        </WINDOW>
+                    </BUTTON>
+
+                    <!-- 전문점 -->
+                    <BUTTON
+                        align="linear:vCenter"
+                        defaultImg="embed:/res/pri_7/gray_box.png"
+                        layout="1080,250" >
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="370,250" >
+
+                            <IMAGE
+                                defaultImg="embed:/res/pri_7/specialty_store.png"
+                                layout="160,176" />
+                        </WINDOW>
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="710,250" >
+
+                            <LABEL
+                                fontColor="#ffffff"
+                                fontSize="96"
+                                text="专门店"
+                                textAlign="center" />
+                        </WINDOW>
+                    </BUTTON>
+
+                    <!-- 관광지/민속촌 -->
+                    <BUTTON
+                        align="linear:vCenter"
+                        defaultImg="embed:/res/pri_7/gray_box.png"
+                        layout="1080,250" >
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="370,250" >
+
+                            <IMAGE
+                                defaultImg="embed:/res/pri_7/tourist_attraction.png"
+                                layout="179,129" />
+                        </WINDOW>
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="710,250" >
+
+                            <LABEL
+                                fontColor="#ffffff"
+                                fontSize="96"
+                                text="旅游区/民俗村"
+                                textAlign="center" />
+                        </WINDOW>
+                    </BUTTON>
+
+                    <!-- 테마파크/놀이공원 -->
+                    <BUTTON
+                        align="linear:vCenter"
+                        defaultImg="embed:/res/pri_7/gray_box.png"
+                        layout="1080,250" >
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="370,250" >
+
+                            <IMAGE
+                                defaultImg="embed:/res/pri_7/theme_park.png"
+                                layout="149,186" />
+                        </WINDOW>
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="710,250" >
+
+                            <LABEL
+                                fontColor="#ffffff"
+                                fontSize="96"
+                                text="主题公园/游乐场"
+                                textAlign="center" />
+                        </WINDOW>
+                    </BUTTON>
+
+                    <!-- 카지노 -->
+                    <BUTTON
+                        align="linear:vCenter"
+                        defaultImg="embed:/res/pri_7/gray_box.png"
+                        layout="1080,250" >
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="370,250" >
+
+                            <IMAGE
+                                defaultImg="embed:/res/pri_7/casino.png"
+                                layout="174,145" />
+                        </WINDOW>
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="710,250" >
+
+                            <LABEL
+                                fontColor="#ffffff"
+                                fontSize="96"
+                                text="赌场"
+                                textAlign="center" />
+                        </WINDOW>
+                    </BUTTON>
+
+                    <!-- 호텔/숙박 -->
+                    <BUTTON
+                        align="linear:vCenter"
+                        defaultImg="embed:/res/pri_7/gray_box.png"
+                        layout="1080,250" >
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="370,250" >
+
+                            <IMAGE
+                                defaultImg="embed:/res/pri_7/accommodation.png"
+                                layout="186,121" />
+                        </WINDOW>
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="710,250" >
+
+                            <LABEL
+                                fontColor="#ffffff"
+                                fontSize="96"
+                                text="宾馆/住宿"
+                                textAlign="center" />
+                        </WINDOW>
+                    </BUTTON>
+
+                    <!-- 음식점/맛집 -->
+                    <BUTTON
+                        align="linear:vCenter"
+                        defaultImg="embed:/res/pri_7/gray_box.png"
+                        layout="1080,250" >
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="370,250" >
+
+                            <IMAGE
+                                defaultImg="embed:/res/pri_7/restaurant.png"
+                                layout="118,186" />
+                        </WINDOW>
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="710,250" >
+
+                            <LABEL
+                                fontColor="#ffffff"
+                                fontSize="96"
+                                text="餐饮/美食"
+                                textAlign="center" />
+                        </WINDOW>
+                    </BUTTON>
+
+                    <!-- 병원/의료/건강 -->
+                    <BUTTON
+                        align="linear:vCenter"
+                        defaultImg="embed:/res/pri_7/gray_box.png"
+                        layout="1080,250" >
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="370,250" >
+
+                            <IMAGE
+                                defaultImg="embed:/res/pri_7/clinic.png"
+                                layout="190,124" />
+                        </WINDOW>
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="710,250" >
+
+                            <LABEL
+                                fontColor="#ffffff"
+                                fontSize="96"
+                                text="医院/医疗/健康"
+                                textAlign="center" />
+                        </WINDOW>
+                    </BUTTON>
+
+                    <!-- 미용/화장품 -->
+                    <BUTTON
+                        align="linear:vCenter"
+                        defaultImg="embed:/res/pri_7/gray_box.png"
+                        layout="1080,250" >
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="370,250" >
+
+                            <IMAGE
+                                defaultImg="embed:/res/pri_7/beauty.png"
+                                layout="93,175" />
+                        </WINDOW>
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="710,250" >
+
+                            <LABEL
+                                fontColor="#ffffff"
+                                fontSize="96"
+                                text="美容/化妆品"
+                                textAlign="center" />
+                        </WINDOW>
+                    </BUTTON>
+
+                    <!-- 편의시설 -->
+                    <BUTTON
+                        align="linear:vCenter"
+                        defaultImg="embed:/res/pri_7/gray_box.png"
+                        layout="1080,250" >
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="370,250" >
+
+                            <IMAGE
+                                defaultImg="embed:/res/pri_7/amenities.png"
+                                layout="117,169" />
+                        </WINDOW>
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="710,250" >
+
+                            <LABEL
+                                fontColor="#ffffff"
+                                fontSize="96"
+                                text="便利设施"
+                                textAlign="center" />
+                        </WINDOW>
+                    </BUTTON>
+
+                    <!-- 기타 -->
+                    <BUTTON
+                        align="linear:vCenter"
+                        defaultImg="embed:/res/pri_7/gray_box.png"
+                        layout="1080,250" >
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="370,250" >
+
+                            <IMAGE
+                                defaultImg="embed:/res/pri_7/etc.png"
+                                layout="145,133" />
+                        </WINDOW>
+
+                        <WINDOW
+                            align="linear:center"
+                            layout="710,250" >
+
+                            <LABEL
+                                fontColor="#ffffff"
+                                fontSize="96"
+                                text="其他"
+                                textAlign="center" />
+                        </WINDOW>
+                    </BUTTON>
+                </WINDOW>
+
+                <WINDOW
+                    defaultImg="#ff0000"
+                    layout="0,0,1080,120" >
+
+                    <LABEL
+                        fontColor="#ffffff"
+                        fontSize="72"
+                        layout="0,0,1080,120"
+                        text="按行业搜索"
+                        textAlign="center" />
+
+                    <BUTTON
+                        defaultImg="embed:/res/pri/home_button.png"
+                        layout="25,15,220,90"
+                        onClick="{function.toHome}" />
+
+                    <BUTTON
+                        defaultImg="embed:/res/pri/red_position_off.png"
+                        layout="815,10,100,100"
+                        onClick="{function.toLocation}"
+                        prossedImg="embed:/res/pri/red_position_on.png" />
+
+                    <BUTTON
+                        defaultImg="embed:/res/pri/red_search_off.png"
+                        layout="940,10,100,100"
+                        onClick="{function.toSerch}"
+                        prossedImg="embed:/res/pri/red_search_on.png" />
+                </WINDOW>
+            </WINDOW>
+        </UILAYOUT>
+    </UI>
+
+</MOML>

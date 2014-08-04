@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MOML>
+
+	<FUNCTIONLIST>
+
+		<FUNCTION id="toHome">
+			<FUNCTIONITEM cmd="action:go(&apos;root.navigation&apos;,&apos;SerchMain&apos;)" />
+		</FUNCTION>
+
+		<FUNCTION id="toDetail">
+			<CMD cmd="userVariable.deLink='access_token='+userVariable.access+'|keyword='+string.encoding(key.text,'utf-8')+'|category='+string.encoding(select.text,'utf-8')+'|language='+string.encoding(sLang.text,'utf-8')+'|wifi='+userVariable.isWifi+'|address='+string.encoding(sLogin.text,'utf-8')+'|rating='+string.encoding(string.sub(sRate.text, 0, string.find(ssRate.sRate.text, '점이하')),'utf-8') " />
+			<CMD cmd="action:go(&apos;root.navigation&apos;,&apos;Detail&apos;)" />
+			<CMD cmd="device.log(userVariable.deLink)"/>
+		</FUNCTION>
+
+		<FUNCTION id="toLocation">
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchLocation&apos;)" />
+		</FUNCTION>
+
+		<FUNCTION id="func1">
+			<CMD cmd="d2.selected=false" />
+			<CMD cmd="userVariable.isWifi='1'"/>
+		</FUNCTION>
+
+		<FUNCTION id="func2">
+			<CMD cmd="d1.selected=false" />
+			<CMD cmd="userVariable.isWifi='0'"/>
+		</FUNCTION>
+
+		
+		
+
+	</FUNCTIONLIST>
+	
+
+
+	<UI>
+
+		<UILAYOUT landscape="1080,1920" portrait="1080,1920">
+
+			<WINDOW align="relative" defaultImg="embed:/res/pri_9/bg.png"
+				layout="0,0,1080,1920">
+				
+				<WINDOW align="linear:vertical" layout="40,250,1001,1500">
+
+					<IMAGE  align="relative" defaultImg="embed:/res/pri_9/gray_box_1.png"
+						layout="1001,142">
+
+						<EDIT id="key" layout="328,17,650,120" fontColor="#000000" fontSize="45"
+							placeholder="키워드를 입력해주세요" />
+
+						<LABEL fontColor="#ffffff" fontSize="72" layout="0,0,360,141"
+							text="关键字" textAlign="center" />
+
+					</IMAGE>
+
+					<SPINNER id="ssLogin" fontColor="#00ffffff" align="relative"
+						defaultImg="embed:/res/pri_9/gray_box_2.png" layout="1001,142"
+						dataSource="/data/spinnerData_login.xml" dataList="/DATA/ITEMLIST/ITEM"
+						textPath="NAME/text()" onChange="{sLogin.text=caller.text}">
+
+						<LABEL fontColor="#ffffff" fontSize="72" layout="0,0,360,141"
+							text="地区" textAlign="center" />
+
+						<LABEL id="sLogin" fontColor="#ffffff" fontSize="72"
+							layout="400,0,620,141" text="当前位置" textAlign="center" />
+					</SPINNER>
+
+					<SPINNER id="ssBusi" fontColor="#00ffffff" align="relative"
+						defaultImg="embed:/res/pri_9/gray_box_2.png" layout="1001,142"
+						dataSource="/data/spinnerData_business.xml" dataList="/DATA/ITEMLIST/ITEM"
+						textPath="NAME/text()" onChange="{select.text=caller.text}">
+
+						<LABEL fontColor="#ffffff" fontSize="72" layout="0,0,360,141"
+							text="行业" textAlign="center" />
+
+						<LABEL id="select" fontColor="#ffffff" fontSize="72"
+							layout="400,0,620,141" text="所有行业" textAlign="center" />
+					</SPINNER>
+
+					<SPINNER id="ssRate" fontColor="#00ffffff" align="relative"
+						defaultImg="embed:/res/pri_9/gray_box_2.png" layout="1001,142"
+						dataSource="/data/spinnerData_rate.xml" dataList="/DATA/ITEMLIST/ITEM"
+						textPath="NAME/text()" onChange="{sRate.text=caller.text}">
+
+						<LABEL fontColor="#ffffff" fontSize="72" layout="0,0,360,141"
+							text="评分" textAlign="center" />
+
+						<LABEL id="sRate" fontColor="#ffffff" fontSize="72"
+							layout="400,0,620,141" text="전체평점" textAlign="center" />
+					</SPINNER>
+
+					<SPINNER id="ssLang" fontColor="#00ffffff" align="relative"
+						defaultImg="embed:/res/pri_9/gray_box_2.png" layout="1001,142"
+						dataSource="/data/spinnerData_lang.xml" dataList="/DATA/ITEMLIST/ITEM"
+						textPath="NAME/text()" onChange="{sLang.text=caller.text}">
+
+						<LABEL fontColor="#ffffff" fontSize="72" layout="0,0,360,141"
+							text="外语支持" textAlign="center" />
+
+						<LABEL id="sLang" fontColor="#ffffff" fontSize="72"
+							layout="400,0,620,141" text="전체언어" textAlign="center" />
+					</SPINNER>
+
+					<IMAGE align="relative" defaultImg="embed:/res/pri_9/gray_box_3.png"
+						layout="1001,140">
+
+						<LABEL fontColor="#ffffff" fontSize="72" layout="0,0,360,141"
+							text="WI-FI" textAlign="center" />
+
+						<CHECKBOX id="d1" defaultImg="embed:/res/pri_9/check_dot_off.png"
+							layout="415,50,59,58" checkedImg="embed:/res/pri_9/check_dot_on.png"
+							onClick="{function.func1}" />
+
+						<LABEL fontColor="#ffffff" fontSize="50" layout="465,0,auto,auto"
+							text="支持" textAlign="center" />
+
+						<CHECKBOX id="d2" defaultImg="embed:/res/pri_9/check_dot_off.png"
+							layout="615,50,59,58" checkedImg="embed:/res/pri_9/check_dot_on.png"
+							onClick="{function.func2}" />
+
+						<LABEL fontColor="#ffffff" fontSize="50" layout="665,0,auto,auto"
+							text="不支持" textAlign="center" />
+
+					</IMAGE>
+				</WINDOW>
+
+				<BUTTON fontColor="#ffffff" defaultImg="embed:/res/pri_9/gray_box.png"
+					fontSize="72" layout="314,1580,452,91" onClick="{function.toDetail}"
+					text="搜索" />
+
+				<WINDOW defaultImg="#ff0000" layout="0,0,1080,120">
+
+					<LABEL fontColor="#ffffff" fontSize="72" layout="0,0,1080,120"
+						text="详细搜索" textAlign="center" />
+
+					<BUTTON defaultImg="embed:/res/pri/home_button.png" layout="25,15,220,90"
+						onClick="{function.toHome}" />
+
+					<BUTTON defaultImg="embed:/res/pri/red_position_off.png"
+						layout="815,10,100,100" prossedImg="embed:/res/pri/red_position_on.png"
+						onClick="{function.toLocation}" />
+
+					<BUTTON defaultImg="embed:/res/pri/red_search_off.png"
+						layout="940,10,100,100" prossedImg="embed:/res/pri/red_search_on.png" />
+				</WINDOW>
+			</WINDOW>
+		</UILAYOUT>
+	</UI>
+
+</MOML>

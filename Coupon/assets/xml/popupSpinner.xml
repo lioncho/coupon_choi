@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MOML version="1.0.0">
+    
+  <THEMES id="themepopup" >
+	<THEME id="thspinner" style="comboBox"  layout="180,60"  prompt="SELECT" selected="0" 
+	    dataList="/DATA/ITEMLIST/ITEM"  dataValue="./NAME/text()"  />
+  </THEMES>
+    
+    <FUNCTIONLIST>
+
+<!--    <FUNCTION id="updateDB(region)">
+       		<FUNCTIONITEM condition="{region=='서울'}"  cmd="{spinner2.dataSource='url:./data/spinnerData_seoul.xml'}" />
+       		<FUNCTIONITEM condition="{region=='인천'}"  cmd="{spinner2.dataSource='url:./data/spinnerData_incheon.xml'}" />
+       		<FUNCTIONITEM condition="{region=='선택'}"  cmd="{spinner2.dataSource=''}" />
+       		<FUNCTIONITEM cmd="{device.toastPopup('선택:' +region + ' '}"/>
+	    </FUNCTION>  -->
+		
+  		<FUNCTION id="popularcate(cate)" >
+  		    <FUNCTIONITEM condition="{select=='등록순'}" cmd="{cate2.dataSource='url:/xml/data/spinnerData_SerchPopularity.xml'}" />
+  		    <FUNCTIONITEM condition="{select=='구매순'}" cmd="{cate2.dataSource='url:/xml/data/spinnerData_SerchPopularity.xml'}" />
+  		    <FUNCTIONITEM condition="{select=='평점순'}" cmd="{cate2.dataSource='url:/xml/data/spinnerData_SerchPopularity.xml'}" />
+  		    <FUNCTIONITEM condition="{select=='다운로드순'}" cmd="{cate2.dataSource='url:/xml/data/spinnerData_SerchPopularity.xml'}" />\
+  		    <FUNCTIONITEM cmd="{device.toastPopup('선택 :' + cate + ' '}" />
+   		</FUNCTION>
+  		
+  		<FUNCTION id="changRange">
+  		   	<FUNCTIONITEM cmd="{root.cate1.text=cate1.text}" />
+         	<FUNCTIONITEM cmd="{root.cate2.text=cate2.text}" />
+          	<FUNCTIONITEM cmd="{container.close()}" />
+		</FUNCTION>
+		
+	</FUNCTIONLIST>
+	
+	<UI>
+		<UILAYOUT portrait="480,770" theme="themepopup" >
+		    <WINDOW layout="0,0,480,770" defaultImg="#5049515d" onClick="{}">
+				<POPUP type="dialog" layout="200,100,280,370" defaultImg="#837c7c"
+				   hideEffect="slide:150,up" >  <!--  showEffect="slide:150,down"  -->
+			    
+					<WINDOW id="box" layout="40,10,200,300" align="linear:vertical|center">
+					    
+							<SPINNER id="RegistRange" themeId="thspinner"  dataSource="url:/xml/spinnerData_SerchPopularity.xml" 
+							    dataList="/DATA/ITEMLIST/ITEM" dataValue="./NAME/text()" onChange="{function.popularcate(cate1.text)}" />
+	
+<!-- 							<SPINNER id="cate2" themeId="thspinner"  />   -->
+							<BUTTON layout="150,60" text="O K" onClick="{function.changLabel}" />						
+					</WINDOW>
+				</POPUP>
+			</WINDOW>
+		</UILAYOUT>
+	</UI>
+</MOML>	

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<DATA>
+	<ITEMLIST>
+		<ITEM>
+			<NAME>할인율</NAME>
+			<URL>http://tourcoupon.net/api2/coupon/popular/index.php?access_token=538f1f2612ccf9.51589275&start=0&sort=pop_discount</URL>
+	  	</ITEM>    
+		<ITEM>
+			<NAME>평점수</NAME>
+			<URL>http://tourcoupon.net/api2/coupon/popular/index.php?access_token=538f1f2612ccf9.51589275&start=0&sort=pop_rate </URL>
+	  	</ITEM>
+		<ITEM>
+			<NAME>다운로드수</NAME>
+			<URL>http://tourcoupon.net/api2/coupon/popular/index.php?access_token=538f1f2612ccf9.51589275&start=0&sort=pop_download </URL>
+	  	</ITEM>
+	
+ 	</ITEMLIST>
+</DATA>

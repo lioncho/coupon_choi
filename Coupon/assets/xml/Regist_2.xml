@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MOML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	version="1.1.5" xsi:noNamespaceSchemaLocation="http://www.applusform.com/xsd/moml_ui.xsd">
+
+	<FUNCTIONLIST>
+	
+		<FUNCTION id="init">
+			<CMD cmd="http.addEventListener('onComplete','login')"/>
+			
+			
+		</FUNCTION>
+		<FUNCTION id="func1">
+		
+			<CMD condition="(d1.selected)and(d2.selected)">
+				<ELSECMD cmd="device.toastPopup('모두 동의해주시길 바랍니다.')"/>
+				<CMD cmd="http.post(-1,'http://tourcoupon.net/api/authorize/signin','region=CHINA|username='+device.phoneNumber+'|language=zh-TW|market_id=12345')"/>
+			</CMD>
+			
+		</FUNCTION>
+		
+		<FUNCTION id="login">
+			<!-- <CMD cmd="{userVariable.accec=string.sub(parameter.param[3],32,23)}"/> -->
+			<CMD cmd="userVariable.access=xpath.evaluateEx(json.toXml(parameter.param[3]),'/DATA/access_token/text()')"/>
+			<CMD cmd="{device.log(userVariable.access)}"/>
+			<CMD cmd="http.removeEventListener('onComplete','login')"/>
+			<CMD cmd="action:go(&apos;root.navigation&apos;,&apos;RegistOk&apos;)" />
+		</FUNCTION>
+	</FUNCTIONLIST>
+	
+	<CMD cmd="{function.init}"/>
+
+	<UI>
+		<UILAYOUT landscape="1080,1920" portrait="1080,1920">
+			<WINDOW align="relative" defaultImg="embed:/res/pri_3/bg.png"
+				layout="0,0,1080,1920">
+				<WINDOW defaultImg="#ff0000">
+					<LABEL fontColor="#ffffff" fontSize="72" layout="0,0,1080,120"
+						text="会员申请" textAlign="center" />
+				</WINDOW>
+				<WINDOW align="linear:vertical" layout="40,250,1000,566">
+					<IMAGE align="relative" defaultImg="embed:/res/pri_3/join_gray_box_1.png"
+						layout="1000,141">
+						<LABEL fontColor="#ffffff" fontSize="72" layout="0,0,360,141"
+							text="国家" textAlign="center" />
+						<LABEL fontColor="#ffffff" fontSize="72" layout="400,0,620,141"
+							text="中国" textAlign="center" />
+					</IMAGE>
+					<IMAGE align="relative" defaultImg="embed:/res/pri_3/join_gray_box_2.png"
+						layout="1000,142">
+						<LABEL fontColor="#ffffff" fontSize="72" layout="0,0,360,141"
+							text="手机号码" textAlign="center" />
+						<LABEL fontColor="#ffffff" fontSize="72" layout="400,0,620,141"
+							text="{device.phoneNumber}" textAlign="center" />
+					</IMAGE>
+					<IMAGE align="relative" defaultImg="embed:/res/pri_3/join_gray_box_3.png"
+						layout="1000,141">
+						<LABEL fontColor="#ffffff" fontSize="72" layout="0,0,360,141"
+							text="使用语言" textAlign="center" />
+						<LABEL fontColor="#ffffff" fontSize="72" layout="400,0,620,141"
+							text="中文(简体)" textAlign="center" />
+					</IMAGE>
+					<IMAGE align="relative" defaultImg="embed:/res/pri_3/join_gray_box_4.png"
+						layout="1000,142">
+						<LABEL fontColor="#ffffff" fontSize="72" layout="0,0,360,141"
+							text="쿠폰추천업체" textAlign="center" />
+						<LABEL fontColor="#ffffff" fontSize="72" layout="400,0,620,141"
+							text="하나투어" textAlign="center" />
+					</IMAGE>
+				</WINDOW>
+
+				<CHECKBOX id="d1" checkedImg="embed:/res/pri_3/check_on.png"
+					defaultImg="embed:/res/pri_3/check_off.png" layout="115,1090,45,45" />
+
+				<LABEL fontColor="#ffffff" fontSize="42" layout="190,1090,1000,60"
+					text="同意使用条款" />
+
+				<CHECKBOX id="d2" checkedImg="embed:/res/pri_3/check_on.png"
+					defaultImg="embed:/res/pri_3/check_off.png" layout="115,1300,45,45" />
+
+				<LABEL fontColor="#ffffff" fontSize="42" layout="190,1300,1000,60"
+					text="同意个人信息保护政策" />
+
+				<BUTTON fontColor="#ffffff" defaultImg="embed:/res/pri_3/gray_box.png" fontSize="72"
+					layout="340,1600,450,90" onClick="{function.func1}" text="确认" />
+			</WINDOW>
+		</UILAYOUT>
+		<!-- 알람 -->
+
+	</UI>
+
+</MOML>

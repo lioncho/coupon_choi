@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MOML>
+
+	<FUNCTIONLIST>
+
+		<FUNCTION id="init">
+			<CMD
+				cmd="function.setCoupon(json.toXml(file.read('http://tourcoupon.net/api/coupon/detail/'+userVariable.couponId+'?access_token=538f1f2612ccf9.51589275')))" />
+		</FUNCTION>
+
+		<FUNCTION id="setCoupon(cXml)">
+			<CMD cmd="device.log(cXml)" />
+			<CMD cmd="title=xpath.evaluateEx(cXml,'/DATA/data/title/text()')" />
+			<CMD cmd="up.title.text=title" />
+			<CMD cmd="discount=xpath.evaluateEx(cXml,'/DATA/data/discount/text()')" />
+			<CMD cmd="up.discount.text=discount" />
+			<CMD cmd="start_at=xpath.evaluateEx(cXml,'/DATA/data/start_at/text()')" />
+			<CMD cmd="start_at.text=start_at" />
+			<CMD cmd="close_at=xpath.evaluateEx(cXml,'/DATA/data/close_at/text()')" />
+			<CMD cmd="close_at.text=close_at" />
+			<CMD cmd="thumbnail=xpath.evaluateEx(cXml,'/DATA/data/thumbnail/text()')" />
+			<CMD
+				cmd="up.thumbnail.defaultImg='http://tourcoupon.net/api/imgs/thumb/'+thumbnail+'?w=195&amp;h=172&amp;t=1'" />
+			<CMD cmd="couponImg=xpath.evaluateEx(cXml,'/DATA/data/couponImg/text()')" />
+			<CMD
+				cmd="couponImg.defaultImg='http://tourcoupon.net/api/imgs/thumb/'+couponImg+'?w=800&amp;h=360&amp;t=1'" />
+
+		</FUNCTION>
+
+		<FUNCTION id="toHome">
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchMain&apos;)" />
+		</FUNCTION>
+
+		<FUNCTION id="toSerch">
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchDetail&apos;)" />
+		</FUNCTION>
+
+		<FUNCTION id="toLocation">
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchLocation&apos;)" />
+		</FUNCTION>
+
+		<FUNCTION id="toBrand">
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;Brand&apos;)" />
+		</FUNCTION>
+
+		<FUNCTION id="use">
+			<CMD cmd="url:usePopup.xml" target="root.new" />
+		</FUNCTION>
+
+	</FUNCTIONLIST>
+
+	<CMD cmd="function.init" />
+
+	<UI>
+		<UILAYOUT landscape="1080,1920" portrait="1080,1920">
+			<WINDOW align="relative" defaultImg="embed:/res/pri_14/bg.png"
+				layout="0,0,1080,1920">
+
+				<IMAGE id="up" align="relative" layout="40,232,1000,250"
+					defaultImg="embed:/res/pri_14/gray_box_arrow_3.png">
+
+					<IMAGE id="thumbnail" defaultImg="#ff0000" layout="40,40,160,150" />
+
+					<LABEL id="title" fontColor="#ffffff" fontSize="72"
+						layout="0,-50,1000,250" text="乐天免税店" textAlign="center" />
+
+					<LABEL fontColor="#ffffff" fontSize="64" layout="240,-50,1000,250"
+						text="(总店)" textAlign="center" />
+
+					<LABEL id="discount" fontColor="#ff0000" fontSize="48"
+						layout="0,30,1000,250" text="最高 10%折扣" textAlign="center" />
+
+				</IMAGE>
+
+
+				<BUTTON defaultImg="#80756f" layout="540,1200,540,100"
+					onClick="{function.toBrand}">
+					<LABEL fontColor="#ffffff" fontSize="40" layout="200,15,auto,auto"
+						text="折扣券品牌" textAlign="center" />
+				</BUTTON>
+
+
+
+				<IMAGE id="couponImg" defaultImg="#ff0000" layout="140,532,800,360" />
+
+				<LABEL fontColor="#ffffff" fontSize="28" layout="230,790,auto,auto"
+					text="대 상 점 :" textAlign="center" />
+
+				<LABEL fontColor="#ffffff" fontSize="28" layout="350,790,auto,auto"
+					text="대상점 대상" textAlign="center" />
+
+
+
+				<LABEL fontColor="#ffffff" fontSize="28" layout="230,830,auto,auto"
+					text="유효기간 :" textAlign="center" />
+
+				<LABEL id="start_at" fontColor="#ffffff" fontSize="28"
+					layout="350,830,auto,auto" text="시작날짜" textAlign="center" />
+
+				<LABEL fontColor="#ffffff" fontSize="28" layout="590,830,auto,auto"
+					text="~" textAlign="center" />
+
+				<LABEL id="close_at" fontColor="#ffffff" fontSize="28"
+					layout="615,830,auto,auto" text="끝나는날짜" textAlign="center" />
+
+
+				<IMAGE defaultImg="embed:/res/pri_19/dotted_line.png" layout="47,950,985,4" />
+
+				<BUTTON onClick="{function.use}" defaultImg="embed:/res/pri_19/red_box.png"
+					layout="220,1000,640,130">
+					<LABEL fontColor="#ffffff" fontSize="64" layout="0,0,640,130"
+						text="Tour Coupon 使用" textAlign="center" />
+				</BUTTON>
+
+				<IMAGE defaultImg="embed:/res/pri_19/gray_box_big_left.png"
+					layout="0,1200,1080,718" />
+
+
+				<LABEL fontColor="#ffffff" fontSize="72" layout="40,1360,1000,560"
+					text="으캬캬캬컁\n으캬캬컄" textAlign="default" />
+
+				<WINDOW defaultImg="#ff0000" layout="0,0,1080,120">
+					<LABEL fontColor="#ffffff" fontSize="72" layout="0,0,1080,120"
+						text="使用折扣券" textAlign="center" />
+
+					<BUTTON defaultImg="embed:/res/pri/home_button.png" layout="25,15,220,90"
+						onClick="{function.toHome}" />
+					<BUTTON defaultImg="embed:/res/pri/red_position_off.png"
+						layout="815,10,100,100" prossedImg="embed:/res/pri/red_position_on.png"
+						onClick="{function.toLocation}" />
+					<BUTTON defaultImg="embed:/res/pri/red_search_off.png"
+						layout="940,10,100,100" onClick="{function.toSerch}" prossedImg="embed:/res/pri/red_search_on.png" />
+				</WINDOW>
+			</WINDOW>
+		</UILAYOUT>
+	</UI>
+
+</MOML>

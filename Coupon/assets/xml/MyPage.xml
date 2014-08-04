@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MOML>
+
+	<FUNCTIONLIST>
+
+		<FUNCTION id="init">
+			<CMD
+				cmd="cXml=file.read('http://www.tourcoupon.net/api2/coupon/test3.php?access_token='+userVariable.access+'&amp;type=1')" />
+			<CMD cmd="device.log(cXml)" />
+			<CMD cmd="cXml = string.replace(cXml, '\n', '')" />
+			<CMD cmd="couponList.dataSource=cXml"/>
+
+		</FUNCTION>
+
+		<FUNCTION id="toHome">
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchMain&apos;)" />
+		</FUNCTION>
+
+		<FUNCTION id="toSerch">
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchDetail&apos;)" />
+		</FUNCTION>
+
+		<FUNCTION id="toLocation">
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchLocation&apos;)" />
+		</FUNCTION>
+
+		<FUNCTION id="toSerch">
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchDetail&apos;)" />
+		</FUNCTION>
+
+		<FUNCTION id="toSetting">
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;Setting&apos;)" />
+		</FUNCTION>
+
+		<FUNCTION id="toTreasure">
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;TreasureInfo&apos;)" />
+		</FUNCTION>
+
+		<FUNCTION id="toMyPage">
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;MyPage&apos;)" />
+		</FUNCTION>
+
+		<FUNCTION id="toUsedCoupon">
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;UsedCupon&apos;)" />
+		</FUNCTION>
+
+		<FUNCTION id="use">
+			<CMD cmd="userVariable.couponId=caller.couponId.text" />
+			<CMD cmd="action:go(&apos;root.navigation&apos;,&apos;UseCupon&apos;)" />
+		</FUNCTION>
+
+	</FUNCTIONLIST>
+
+
+	<DATASOURCELIST>
+
+
+		<DATASOURCE id="mainItem" src="'http://www.tourcoupon.net/api2/coupon/test3.php?access_token='+userVariable.access+'&amp;type=1'" />
+	</DATASOURCELIST>
+
+
+
+	<UI>
+		<UILAYOUT landscape="1080,1920" portrait="1080,1920">
+			<WINDOW defaultImg="embed:/res/pri_18/bg.png" layout="0,120,1080,1920"
+				scroll="vertical" scrollBarVisible="true">
+
+				<IMAGE defaultImg="embed:/res/pri_18/gray_box_1.png" layout="40,30,1000,450" />
+
+				<WINDOW layout="40,30,500,450">
+					<BUTTON layout="100,30,310,310" defaultImg="embed:/res/pri_18/practicable_off.png"
+						onClick="{function.toUseCoupon}" prossedImg="embed:/res/pri_18/practicable_on.png" />
+					<LABEL fontColor="#ffffff" fontSize="64" layout="0,350,500,auto"
+						text="可使用" textAlign='center' />
+				</WINDOW>
+
+
+				<WINDOW layout="540,30,500,450">
+					<BUTTON layout="100,30,310,310" defaultImg="embed:/res/pri_18/finish_off.png"
+						onClick="{function.toUsedCoupon}" prossedImg="embed:/res/pri_18/finish_on.png" />
+					<LABEL fontColor="#ffffff" fontSize="64" layout="0,350,500,auto"
+						text="已结束" textAlign='center' />
+				</WINDOW>
+
+
+
+
+				<!-- <LIST defaultImg="#ffffff" id="couponList" layout="40,590,1000,auto" 
+					dataSource="peopledata.xml" dataList="/DATA/LIST" divider="none"> <LISTLAYOUT> 
+					<IMAGE layout="0,0,1000,397" defaultImg="embed:/res/pri_18/gray_box_2.png" 
+					onClick="function.use(c1)"> <IMAGE id="img" defaultImg="embed:/res/pri_18/gray_box_2.png" 
+					layout="37,40,196,173" /> <LABEL id="title" fontColor="#ffffff" fontSize="64" 
+					layout="253,40,auto,auto" text="{xpath.evaluate('./name/text()')}" /> <LABEL 
+					id="display_name" fontColor="#ffffff" fontSize="24" layout="253,100,auto,auto" 
+					text="{xpath.evaluate('./category/text()')}" /> <LABEL id="business_name" 
+					fontColor="#ffffff" fontSize="24" layout="253,190,auto,auto" text="{xpath.evaluate('./company_name/text()')}" 
+					/> <IMAGE layout="680,20,980,152" defaultImg="#ffffff" /> <LABEL id="catchprice" 
+					fontColor="#ffffff" fontSize="24" layout="460,185,auto,auto" text="{xpath.evaluate('./catchprice/text()')}" 
+					/> <LABEL textAlign="right" id="discount" fontColor="#ff0000" fontSize="45" 
+					layout="680,45,260,auto" text="{xpath.evaluate('./discount/text()')}" /> 
+					<LABEL textAlign="right" id="downloaded" fontColor="#000000" fontSize="24" 
+					layout="680,110,260,auto" text="{xpath.evaluate('./downloadcount/text()')}"/> 
+					<LABEL id="couponId" text="{xpath.evaluate('./ticket_id/text()')}"/> </IMAGE>53d92cea97a484.14078831
+					
+					</LISTLAYOUT> </LIST> -->
+				<LIST id="couponList" layout="40,590,1000,950" 
+					dataList="/data/list" defaultImg="#00ffffff" divider="none">
+					<LISTLAYOUT >
+						<IMAGE margin="0,30,0,0" onClick="function.use" layout="0,0,1000,397" defaultImg="embed:/res/pri_18/gray_box_2.png"
+							>
+							<IMAGE id="img" defaultImg="'http://tourcoupon.net/api2/coupon/image/print.php?code='+{xpath.evaluate('./thumbnail/text()')}+'&amp;w=195&amp;h=172'"
+								layout="37,40,196,173" />
+							<LABEL id="title" fontColor="#ffffff" fontSize="64"
+								layout="253,40,auto,auto" text="{xpath.evaluate('./title/text()')}" />
+							<LABEL id="display_name" fontColor="#ffffff" fontSize="24"
+								layout="253,100,auto,auto" text="{xpath.evaluate('./category/text()')}" />
+							<LABEL id="business_name" fontColor="#ffffff" fontSize="24"
+								layout="253,190,auto,auto" text="{xpath.evaluate('./company_name/text()')}" />
+							<IMAGE layout="680,20,980,152" defaultImg="#ffffff" />
+							<LABEL id="catchprice" fontColor="#ffffff" fontSize="24"
+								layout="460,185,auto,auto" text="{xpath.evaluate('./catchprice/text()')}" />
+							<LABEL textAlign="right" id="discount" fontColor="#ff0000"
+								fontSize="45" layout="680,45,260,auto" text="{xpath.evaluate('./discount/text()')}" />
+							<LABEL textAlign="right" id="downloaded" fontColor="#000000"
+								fontSize="24" layout="680,110,260,auto"
+								text="{xpath.evaluate('./downloadcount/text()')}" />
+							<LABEL id="couponId" text="{xpath.evaluate('./ticket_id/text()')}" />
+						</IMAGE>
+					</LISTLAYOUT>
+				</LIST>
+
+
+
+
+			</WINDOW>
+
+			<WINDOW defaultImg="#ff0000" layout="0,0,1080,120">
+
+				<LABEL fontColor="#ffffff" fontSize="72" layout="0,0,1080,120"
+					text="사용가능 쿠폰" textAlign="center" />
+
+				<BUTTON defaultImg="embed:/res/pri/home_button.png" layout="25,15,220,90"
+					onClick="{function.toHome}" />
+
+				<BUTTON defaultImg="embed:/res/pri/red_position_off.png"
+					layout="815,10,100,100" prossedImg="embed:/res/pri/red_position_on.png"
+					onClick="{function.toLocation}" />
+
+				<BUTTON defaultImg="embed:/res/pri/red_search_off.png"
+					layout="940,10,100,100" prossedImg="embed:/res/pri/red_search_on.png"
+					onClick="{function.toSerch}" />
+			</WINDOW>
+
+			<WINDOW align="linear:horizontal" defaultImg="#ffffff" layout="0,1750,1080,170">
+				<BUTTON defaultImg="embed:/res/pri/gray_search_off.png"
+					layout="270,170" onClick="{function.toSerch}" pressedImg="embed:/res/pri/gray_search_on.png" />
+
+				<BUTTON defaultImg="embed:/res/pri/gray_coupon_off.png"
+					layout="270,170" pressedImg="embed:/res/pri/gray_coupon_on.png"
+					onClick="{function.toMyPage}" />
+
+				<BUTTON defaultImg="embed:/res/pri/gray_treasure_off.png"
+					layout="270,170" pressedImg="embed:/res/pri/gray_treasure_on.png"
+					onClick="{function.toTreasure}" />
+
+				<BUTTON defaultImg="embed:/res/pri/gray_set_off.png" layout="270,170"
+					onClick="{function.toSetting}" />
+			</WINDOW>
+		</UILAYOUT>
+	</UI>
+
+</MOML>

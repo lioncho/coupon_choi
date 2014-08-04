@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DATA>
+    <ITEMLIST>
+        <ITEM>
+            <NAME>전체지역</NAME>
+        </ITEM>
+        <ITEM>
+            <NAME>서울</NAME>
+        </ITEM>
+        <ITEM>
+            <NAME>부산</NAME>
+        </ITEM>
+        <ITEM>
+            <NAME>대구</NAME>
+        </ITEM>
+        <ITEM>
+            <NAME>대전</NAME>
+        </ITEM>
+        <ITEM>
+            <NAME>광주</NAME>
+        </ITEM>
+        <ITEM>
+            <NAME>인천</NAME>
+        </ITEM>
+        <ITEM>
+            <NAME>울산</NAME>
+        </ITEM>
+    </ITEMLIST>
+</DATA>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DATA>
+    <ITEMLIST>
+        <ITEM>
+            <NAME>전체평점</NAME>
+        </ITEM>
+        <ITEM>
+            <NAME>1점이하</NAME>
+        </ITEM>
+        <ITEM>
+            <NAME>2점이하</NAME>
+        </ITEM>
+        <ITEM>
+            <NAME>3점이하</NAME>
+        </ITEM>
+        <ITEM>
+            <NAME>4점이하</NAME>
+        </ITEM>
+        <ITEM>
+            <NAME>5점이하</NAME>
+        </ITEM>
+        <ITEM>
+            <NAME>6점이하</NAME>
+        </ITEM>
+        <ITEM>
+            <NAME>7점이하</NAME>
+        </ITEM>
+        <ITEM>
+            <NAME>8점이하</NAME>
+        </ITEM>
+        <ITEM>
+            <NAME>9점이하</NAME>
+        </ITEM>
+        <ITEM>
+            <NAME>10점이하</NAME>
+        </ITEM>
+    </ITEMLIST>
+</DATA>

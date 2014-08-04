@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MOML>
+
+	<FUNCTIONLIST>
+
+		<FUNCTION id="toHome">
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchMain&apos;)" />
+		</FUNCTION>
+		
+		<FUNCTION id="toSerch">
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchDetail&apos;)" />
+		</FUNCTION>
+
+		<FUNCTION id="toLocation">
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchLocation&apos;)" />
+		</FUNCTION>
+
+	</FUNCTIONLIST>
+
+	<UI>
+	    <UILAYOUT landscape="1080,1920" portrait="1080,1920">
+	        
+	        <WINDOW align="relative" defaultImg="embed:/res/pri_26/bg.png"
+				layout="0,0,1080,1920">
+				
+				<IMAGE defaultImg="embed:/res/pri_26/gray_box_big.png" layout="45,240,1000,900" />
+				<IMAGE defaultImg="embed:/res/pri_26/logo.png" layout="190,295,700,530" />
+				<IMAGE defaultImg="embed:/res/pri_26/ci.png" layout="355,1680,368,53" />
+				
+				<LABEL fontColor="#ffffff" fontSize="60" layout="380,920,auto,auto"
+						text="当前版本: V 1.0" textAlign="center" />
+				<LABEL fontColor="#ffffff" fontSize="60" layout="380,1000,auto,auto"
+						text="最新版本: V 1.0" textAlign="center" />
+
+				
+				<LABEL fontColor="#ffffff" fontSize="60" layout="480,1320,auto,auto"
+						text="客服" textAlign="center" />
+				<LABEL fontColor="#ffffff" fontSize="60" layout="210,1390,auto,auto"
+						text="电话: +82-2-70-7590-9950" textAlign="center" />
+				<LABEL fontColor="#ffffff" fontSize="60" layout="270,1460,auto,auto"
+						text="邮件: help@advaloon.com " textAlign="center" />
+				
+				<WINDOW defaultImg="#ff0000" layout="0,0,1080,120">
+	  	      		<LABEL fontColor="#ffffff" fontSize="72" layout="0,0,1080,120"
+							text="版本及客服" textAlign="center" />
+
+					<BUTTON defaultImg="embed:/res/pri/home_button.png" layout="25,15,220,90"
+							onClick="{function.toHome}" />
+
+					<BUTTON defaultImg="embed:/res/pri/red_position_off.png"
+							layout="815,10,100,100" prossedImg="embed:/res/pri/red_position_on.png"
+							onClick="{function.toLocation}" />
+
+					<BUTTON defaultImg="embed:/res/pri/red_search_off.png"
+							layout="940,10,100,100" onClick="{function.toSerch}" prossedImg="embed:/res/pri/red_search_on.png" />
+				</WINDOW>
+
+			</WINDOW>	
+			
+	    </UILAYOUT>
+	</UI>
+
+</MOML>

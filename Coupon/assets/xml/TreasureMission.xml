@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MOML>
+
+	<FUNCTIONLIST>
+		<FUNCTION id="toHome">
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchMain&apos;)" />
+		</FUNCTION>
+		<FUNCTION id="toSerch">
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchDetail&apos;)" />
+		</FUNCTION>
+		<FUNCTION id="toLocation">
+
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchLocation&apos;)" />
+		</FUNCTION>
+	</FUNCTIONLIST>
+
+	<UI>
+		<UILAYOUT landscape="1080,1920" portrait="1080,1920">
+			<WINDOW align="relative" defaultImg="embed:/res/pri_23/bg.png"
+				layout="0,0,1080,1920">
+				<WINDOW align="linear:vertical|hCenter" layout="0,120,1080,1800">
+					<IMAGE defaultImg="embed:/res/pri_23/memo.png" layout="140,158"
+						margin="450,40,0,0" />
+
+					<LABEL fontColor="#ffffff" fontSize="72" margin="180,40,0,0"
+						text="寻宝系统有1个信息到达. " textAlign="center" />
+					<LABEL fontColor="#ffffff" fontSize="72" margin="380,80,0,0"
+						text="最新任务" textAlign="center" />
+
+					<IMAGE align="relative" defaultImg="embed:/res/pri_23/gary_arrow_box_1.png"
+						layout="1000,630" margin="0,0,0,0">
+						<LABEL fontColor="#ffffff" fontSize="64" layout="30,60,960,auto"
+							minFontSize="0" multiLine="true"
+							text="2013年12月30日24:00之前，请您到当前所
+在位置的乐天免税店7楼，扫描**쿠폰的宝物
+二维码。如果没有在规定的时间内赶到任务
+会自动失败。
+幸运在等着您~~~亲！"
+							textAlign="center" />
+					</IMAGE>
+
+					<LABEL fontColor="#ffffff" fontSize="72" margin="380,80,0,0"
+						text="任务地点" textAlign="center" />
+
+					<IMAGE align="linear:vertical|center" defaultImg="embed:/res/pri_23/gary_arrow_box_2.png"
+						layout="1000,242" margin="0,0,0,0">
+						<LABEL fontColor="#ffffff" fontSize="64" layout="780,80"
+							text="乐天免税店 总店 7楼 500米半径内" textAlign="center" />
+					</IMAGE>
+
+					<BUTTON align="linear:vertical|center" defaultImg="embed:/res/pri_23/gray_box.png"
+						layout="480,90" margin="260,80">
+						<LABEL fontColor="#ffffff" fontSize="64" text="地 图"
+							textAlign="center" />
+					</BUTTON>
+				</WINDOW>
+				<WINDOW defaultImg="#ff0000" layout="0,0,1080,120">
+					<BUTTON defaultImg="embed:/res/pri/home_button.png" layout="25,15,220,90"
+						onClick="{function.toHome}" />
+					<BUTTON defaultImg="embed:/res/pri/red_position_off.png"
+						layout="815,10,100,100" prossedImg="embed:/res/pri/red_position_on.png" onClick="{function.toLocation}"/>
+					<BUTTON defaultImg="embed:/res/pri/red_search_off.png"
+						layout="940,10,100,100" onClick="{function.toSerch}" prossedImg="embed:/res/pri/red_search_on.png" />
+				</WINDOW>
+			</WINDOW>
+		</UILAYOUT>
+	</UI>
+
+</MOML>

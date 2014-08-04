@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MOML>
+
+    <UI>
+        <UILAYOUT
+            landscape="1080,1920"
+            portrait="1080,1920" >
+            
+            <QRCODE layout="295,225" type="text" defaultImg="#000000"/>
+        </UILAYOUT>
+    </UI>
+
+</MOML>

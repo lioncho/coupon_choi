@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MOML>
+
+	<FUNCTIONLIST>
+
+		<FUNCTION id="init">
+			<CMD cmd="http.addEventListener('onComplete','onDownC')"/>
+			<CMD cmd="function.setCoupon(json.toXml(file.read('http://tourcoupon.net/api2/coupon/download/coupon_info.php?access_token='+userVariable.access+'&amp;tid='+userVariable.couponId)))" />
+		</FUNCTION>
+		
+		<FUNCTION id="onDownC">
+		
+			<CMD cmd="device.log(parameter.param[1])"/>
+			<CMD cmd="device.log(parameter.param[2])"/>
+			<CMD cmd="device.log(parameter.param[3])"/>
+			<CMD cmd="device.log(parameter.param[4])"/>
+			<CMD cmd="device.log(parameter.param[5])"/>
+			<CMD cmd="http.removeEventListener('onComplete','onDownC')"/>
+			
+		</FUNCTION>
+
+		<FUNCTION id="setCoupon(cXml)">
+			<CMD cmd="device.log(cXml)" />
+			<CMD cmd="title=xpath.evaluateEx(cXml,'/DATA/data/title/text()')" />
+			<CMD cmd="up.title.text=title" />
+			<CMD cmd="discount=xpath.evaluateEx(cXml,'/DATA/data/discount/text()')" />
+			<CMD cmd="up.discount.text=discount" />
+			<CMD cmd="discount2.text=discount" />
+			<CMD cmd="start_at=xpath.evaluateEx(cXml,'/DATA/data/start_at/text()')" />
+			<CMD cmd="start_at.text=start_at" />
+			<CMD cmd="close_at=xpath.evaluateEx(cXml,'/DATA/data/close_at/text()')" />
+			<CMD cmd="close_at.text=close_at" />
+			<CMD cmd="thumbnail=xpath.evaluateEx(cXml,'/DATA/data/thumbnail/text()')" />
+			<CMD
+				cmd="up.thumbnail.defaultImg='http://tourcoupon.net/api2/coupon/image/print.php?code='+thumbnail+'&amp;w=195&amp;h=172'" />
+			<CMD
+				cmd="emporium=xpath.evaluateEx(cXml,'/DATA/data/working_position/text()')" />
+			<CMD cmd="emporium.text=emporium" />
+			<CMD
+				cmd="coupon_image=xpath.evaluateEx(cXml,'/DATA/data/coupon_image/text()')" />
+			<CMD
+				cmd="coupon_image.defaultImg='http://tourcoupon.net/api2/coupon/image/print.php?code='+coupon_image+'&amp;w=195&amp;h=172'" />
+			<CMD cmd="couponID=xpath.evaluateEx(cXml,'/DATA/data/id/text()')" />
+			<CMD cmd="couponID.text=couponID" />
+			<CMD cmd="favorite=xpath.evaluateEx(cXml,'/DATA/data/favorite/text()')" />
+			<CMD
+				cmd="userVariable.isDown=xpath.evaluateEx(cXml,'/DATA/data/downloaded/text()')" />
+			<CMD condition="userVariable.isDown=='YES'">
+				<CMD cmd="DownBtn.defaultImg = 'embed:/res/pri_20/gray_box.png'" />
+				<CMD cmd="DownBtn2.defaultImg = 'embed:/res/pri_14/download_on.png'" />
+			</CMD>
+
+		</FUNCTION>
+
+		<FUNCTION id="toHome">
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchMain&apos;)" />
+		</FUNCTION>
+
+		<FUNCTION id="toSerch">
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchDetail&apos;)" />
+		</FUNCTION>
+
+		<FUNCTION id="toLocation">
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchLocation&apos;)" />
+		</FUNCTION>
+
+		<FUNCTION id="toBrand">
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;Brand&apos;)" />
+		</FUNCTION>
+
+		<FUNCTION id="down">
+			<CMD condition="userVariable.isDown=='NO'">
+				<CMD cmd="http.post(-1, &apos;http://tourcoupon.net/api2/coupon/download/coupon_download.php&apos;,&apos;access_token='+userVariable.access+'|tid=&apos;+userVariable.couponId)" />
+				<CMD cmd="userVariable.isUpdate=1" />
+				<CMD cmd="DownBtn.defaultImg = 'embed:/res/pri_20/gray_box.png'" />
+				<CMD cmd="DownBtn.DownText.text = 'Mr.Pong다운로드 완료'" />
+				<CMD cmd="DownBtn2.defaultImg = 'embed:/res/pri_14/download_on.png'" />
+				<CMD cmd="device.toastPopup('다운로드 되었습니다.')"/>
+				<CMD cmd="userVariable.isDown='YES'"/>
+			</CMD>
+
+		</FUNCTION>
+
+
+
+		<FUNCTION id="favorTouch">
+			<CMD condition="(favorBtn.selected)and(favorit=='0')">
+				<CMD
+					cmd="http.post(-1, 'http://tourcoupon.net/api2/coupon/favorite/view.php','access_token='+userVariable.access+'|tid='+userVariable.couponId+'|like=1')" />
+				<CMD cmd="device.toastPopup('즐겨찾기 설정')" />
+				<CMD cmd="favorit=='1'" />
+				<ELSECMD>
+					<CMD
+						cmd="http.post(-1, &apos;http://tourcoupon.net/api2/coupon/favorite/view.php','access_token='+userVariable.access+'|tid='+userVariable.couponId+'|like=0')" />
+					<CMD cmd="device.toastPopup('즐겨찾기 해제')" />
+					<CMD cmd="favorit=='0'" />
+				</ELSECMD>
+			</CMD>
+		</FUNCTION>
+
+	</FUNCTIONLIST>
+
+	
+
+
+
+	<UI>
+		<UILAYOUT landscape="1080,1920" portrait="1080,1920">
+			<WINDOW align="relative" defaultImg="embed:/res/pri_14/bg.png"
+				layout="0,0,1080,1920">
+
+				<IMAGE id="up" align="relative" layout="40,232,1000,250"
+					defaultImg="embed:/res/pri_14/gray_box_arrow_3.png">
+
+					<IMAGE id="thumbnail" defaultImg="#ff0000" layout="40,40,195,172" />
+
+					<LABEL id="title" fontColor="#ffffff" fontSize="72"
+						layout="240,-50,750,250" text="乐天免税店" textAlign="center" />
+
+					<LABEL id="discount" fontColor="#ff0000" fontSize="48"
+						layout="0,30,1000,250" text="最高 10%折扣" textAlign="center" />
+
+				</IMAGE>
+
+
+
+				<CHECKBOX id="favorBtn" defaultImg="embed:/res/pri_14/attention_off.png"
+					layout="200,1200,136,136" checkedImg="embed:/res/pri_14/attention_on.png"
+					onClick="{function.favorTouch}">
+				</CHECKBOX>
+
+				<BUTTON defaultImg="embed:/res/pri_14/sharing_off.png"
+					layout="450,1200,136,136">
+				</BUTTON>
+
+				<BUTTON id="DownBtn2" defaultImg="embed:/res/pri_14/download_off.png"
+					layout="700,1200,136,136"
+					onClick="{function.down}">
+				</BUTTON>
+
+
+
+				<BUTTON defaultImg="#80756f" layout="540,1400,540,74"
+					onClick="{function.toBrand}">
+					<LABEL fontColor="#ffffff" fontSize="40" layout="200,15,auto,auto"
+						text="折扣券品牌" textAlign="center" />
+				</BUTTON>
+
+				<IMAGE defaultImg="#ffffff" layout="140,532,800,360" />
+
+				<IMAGE defaultImg="embed:/res/pri_14/coupon_border.png"
+					layout="140,532,800,360" />
+
+				<IMAGE id="coupon_image" defaultImg="#ff0000" layout="200,600,195,172" />
+
+				<LABEL fontColor="#000000" layout="410,630,auto,auto" text="할인쿠폰번호."
+					fontSize="45" />
+
+				<LABEL id="couponID" fontColor="#ff0000" layout="700,615,auto,auto"
+					text="쿠폰아이디" fontSize="60" />
+
+				<LABEL id="discount2" fontColor="#000000" layout="560, 670, auto, auto"
+					text="할 인 율 퍼 센 트" textAlign="cneter" fontSize="50" />
+
+				<LABEL fontColor="#000000" fontSize="28" layout="230,790,auto,auto"
+					text="대 상 점 :" textAlign="center" />
+
+				<LABEL id="emporium" fontColor="#000000" fontSize="28"
+					layout="350,790,auto,auto" text="대상점 대상" textAlign="center" />
+
+
+
+				<LABEL fontColor="#000000" fontSize="28" layout="230,830,auto,auto"
+					text="유효기간 :" textAlign="center" />
+
+				<LABEL id="start_at" fontColor="#000000" fontSize="28"
+					layout="350,830,auto,auto" text="시작날짜" textAlign="center" />
+
+				<LABEL fontColor="#000000" fontSize="28" layout="590,830,auto,auto"
+					text="~" textAlign="center" />
+
+				<LABEL id="close_at" fontColor="#000000" fontSize="28"
+					layout="615,830,auto,auto" text="끝나는날짜" textAlign="center" />
+
+
+				<IMAGE defaultImg="embed:/res/pri_14/dotted_line.png" layout="47,950,985,4" />
+
+				<BUTTON id="DownBtn"
+					onClick="{function.down}"
+					defaultImg="embed:/res/pri_14/red_box.png" layout="220,1000,640,130">
+					<LABEL id="DownText" fontColor="#ffffff" fontSize="64"
+						layout="-40,0,640,130" text="Mr.Pong다운로드" textAlign="center" />
+				</BUTTON>
+
+				<IMAGE defaultImg="embed:/res/pri_14/gray_box_big_left.png"
+					layout="0,1400,1080,518" />
+				<LABEL fontColor="#ffffff" fontSize="72" layout="40,1560,1000,560"
+					text="상세설명" textAlign="default" />
+
+				<LABEL fontColor="#ffffff" fontSize="40" layout="200,1420,auto,auto"
+					text="注意事项" textAlign="center" />
+
+
+				<WINDOW defaultImg="#ff0000" layout="0,0,1080,120">
+					<LABEL fontColor="#ffffff" fontSize="72" layout="0,0,1080,120"
+						text="折扣券下载" textAlign="center" />
+
+					<BUTTON defaultImg="embed:/res/pri/home_button.png" layout="25,15,220,90"
+						onClick="{function.toHome}" />
+
+					<BUTTON defaultImg="embed:/res/pri/red_position_off.png"
+						layout="815,10,100,100" prossedImg="embed:/res/pri/red_position_on.png"
+						onClick="{function.toLocation}" />
+
+					<BUTTON defaultImg="embed:/res/pri/red_search_off.png"
+						layout="940,10,100,100" onClick="{function.toSerch}" prossedImg="embed:/res/pri/red_search_on.png" />
+
+				</WINDOW>
+			</WINDOW>
+		</UILAYOUT>
+	</UI>
+
+</MOML>

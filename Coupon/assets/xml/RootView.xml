@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MOML version="1.0.0">
+    
+	<UI>
+		<UILAYOUT landscape="1080,1920" portrait="1080,1920">
+			<NAVIGATIONCONTAINER id="navigation" layout="0,0,1080,1920" selectedItem="Splash">
+				<VIEWITEM transitionInEffect="none" transitionOutEffect="none" id="Splash" src="Splash.xml" />
+				<VIEWITEM id="Regist_1" src="Regist_1.xml" /> 
+				<VIEWITEM id="Regist_2" src="Regist_2.xml" />
+				<VIEWITEM id="RegistOk" src="RegistOk.xml" />
+				<VIEWITEM id="Loading" src="Loading.xml" />
+				<VIEWITEM id="SerchMain" onFinishTransition="function.caller.SerchMain.init" src="Serch/SerchMain.xml" />
+				<VIEWITEM transitionInEffect="none" transitionOutEffect="none" id="SerchJob" src="Serch/SerchJob.xml" />
+				<VIEWITEM id="Info" src="Info/Info.xml" />
+				<VIEWITEM id="SerchDetail" src="Serch/SerchDetail.xml" />
+				<VIEWITEM id="Detail" src="DetailSerch/Detail.xml" />
+				<VIEWITEM id="SerchPopularity" src="Serch/SerchPopularity.xml" />
+				<VIEWITEM id="PictureInfo" src="Info/PictureInfo.xml" />
+				<VIEWITEM id="Setting" src="Setting/Setting.xml" />
+				<VIEWITEM id="UseCupon" src="UseCupon.xml" /> 
+				<VIEWITEM id="UsedCupon" src="UsedCupon.xml" /> 
+				<VIEWITEM id="Treasure" src="Treasure.xml" /> 
+				<VIEWITEM id="TreasureInfo" src="TreasureInfo.xml" /> 
+				<VIEWITEM id="TreasureMission" src="TreasureMission.xml" /> 
+				<VIEWITEM id="NoticeAgree" src="NoticeAgree.xml" /> 
+				<VIEWITEM id="QRCode" src="QRCode.xml" />
+				<VIEWITEM id="SerchLocation" src="Serch/SerchLocation.xml" />
+				<VIEWITEM id="SerchRecommend" src="Serch/SerchRecommend.xml" />
+				<VIEWITEM id="ShowAppraise" src="ShowAppraise.xml" />
+				<VIEWITEM id="Appraise" src="Appraise.xml" />
+				<VIEWITEM id="Brand" src="Brand.xml" />
+				<VIEWITEM id="Notice" src="Notice.xml" />
+				<VIEWITEM id="CouponList" src="CouponList.xml"/>
+				<VIEWITEM id="Download" onFinishTransition="function.caller.Download.init" src="Download.xml"/>
+				<VIEWITEM id="MyPage" onFinishTransition="function.caller.MyPage.init" src="MyPage.xml"/>
+				<VIEWITEM id="Test" src="Test.xml"/>
+				<VIEWITEM id="Version" src="Version.xml"/>
+				<VIEWITEM id="Accessterms" src="Accessterms.xml"/>
+				<VIEWITEM id="PrivacyPolicyStatement" src="PrivacyPolicyStatement.xml"/>
+				
+			</NAVIGATIONCONTAINER>
+		</UILAYOUT>
+	</UI>
+
+</MOML>

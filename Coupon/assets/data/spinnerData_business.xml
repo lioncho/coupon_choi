@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DATA>
+    <ITEMLIST>
+        <ITEM>
+            <NAME>전체업종</NAME>
+        </ITEM>
+        <ITEM>
+            <NAME>면세점</NAME>
+        </ITEM>
+        <ITEM>
+            <NAME>백화점</NAME>
+        </ITEM>
+        <ITEM>
+            <NAME>아울렛</NAME>
+        </ITEM>
+        <ITEM>
+            <NAME>전문점</NAME>
+        </ITEM>
+        <ITEM>
+            <NAME>관광지/민속촌</NAME>
+        </ITEM>
+        <ITEM>
+            <NAME>테마파크/놀이공원</NAME>
+        </ITEM>
+        <ITEM>
+            <NAME>카지노</NAME>
+        </ITEM>
+        <ITEM>
+            <NAME>호텔/숙박</NAME>
+        </ITEM>
+        <ITEM>
+            <NAME>음식점/맛집</NAME>
+        </ITEM>
+        <ITEM>
+            <NAME>병원/의료/건강</NAME>
+        </ITEM>
+        <ITEM>
+            <NAME>미용/화장품</NAME>
+        </ITEM>
+        <ITEM>
+            <NAME>편의시설</NAME>
+        </ITEM>
+        <ITEM>
+            <NAME>기타</NAME>
+        </ITEM>
+    </ITEMLIST>
+</DATA>

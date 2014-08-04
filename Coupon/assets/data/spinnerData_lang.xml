@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DATA>
+    <ITEMLIST>
+        <ITEM>
+            <NAME>전체언어</NAME>
+        </ITEM>
+        <ITEM>
+            <NAME>중국어</NAME>
+        </ITEM>
+        <ITEM>
+            <NAME>영어</NAME>
+        </ITEM>
+        <ITEM>
+        	<NAME>일본어</NAME>
+        </ITEM>
+        <ITEM>
+            <NAME>한국어</NAME>
+        </ITEM>
+    </ITEMLIST>
+</DATA>

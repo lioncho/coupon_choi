@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MOML>
+
+    <FUNCTIONLIST>
+        <FUNCTION id="func1" >
+            <FUNCTIONITEM cmd="action:go('root.navigation','Regist_2')" />
+        </FUNCTION>
+        
+        
+    </FUNCTIONLIST>
+
+    <UI>
+        <UILAYOUT
+            landscape="1080,1920"
+            portrait="1080,1920" >
+            <WINDOW
+                align="relative"
+                defaultImg="embed:/res/pri_2/bg.png"
+                layout="0,0,1080,1920" >
+                <IMAGE dafaultImg="embed:/res/pri_2/bg.png" />
+
+                <WINDOW defaultImg="#ff0000" >
+                    <LABEL
+                        fontColor="#ffffff"
+                        fontSize="72"
+                        layout="0,0,1080,120"
+                        text="韩国旅行折扣券?"
+                        textAlign="center" />
+                </WINDOW>
+
+                <IMAGE
+                    defaultImg="embed:/res/pri_2/gray_box_bog.png"
+                    layout="40,240,1000,1000" />
+
+                <BUTTON
+                    defaultImg="embed:/res/pri_2/gray_box.png"
+                    fontSize="48"
+                    layout="310,1320,450,90"
+                    onClick="{function.func1}"
+                    text="会员申请"
+                    fontColor="#ffffff"
+                     />
+            </WINDOW>
+        </UILAYOUT>
+    </UI>
+
+</MOML>

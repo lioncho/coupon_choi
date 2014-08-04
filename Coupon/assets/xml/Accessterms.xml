@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MOML>
+
+	<FUNCTIONLIST>
+
+		<FUNCTION id="toHome">
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchMain&apos;)" />
+		</FUNCTION>
+		
+		<FUNCTION id="toSerch">
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchDetail&apos;)" />
+		</FUNCTION>
+
+		<FUNCTION id="toLocation">
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchLocation&apos;)" />
+		</FUNCTION>
+		
+		<FUNCTION id="toPrivacy">
+		    <FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;PrivacyPolicyStatement&apos;)" />
+		</FUNCTION>
+
+	</FUNCTIONLIST>
+
+	<UI>
+	    <UILAYOUT landscape="1080,1920" portrait="1080,1920">
+	        
+	        <WINDOW align="relative" defaultImg="embed:/res/pri_30/bg.png"
+				layout="0,0,1080,1920">
+				
+	            <IMAGE defaultImg="embed:/res/pri_30/gray_box_left.png" layout="0,120,1080,1920" />
+	            <LABEL fontColor="#ffffff" fontSize="50" layout="180,152,auto,auto"
+							text="使用条款" textAlign="center" />
+	            
+	            <BUTTON defaultImg="#80756f" layout="540,120,540,112" onClick="{function.toPrivacy}">
+				    <LABEL fontColor="#ffffff" fontSize="50" layout="90,30,auto,auto" 
+				    	text="个人信息保护政策" textAlign="center" />
+				</BUTTON>
+	            
+	            <LABEL fontColor="#ffffff" fontSize="40" layout="30,300,auto,auto"
+							text="使用条款, 使用条款, 使用条款, 使用条款, 使用条款, 使用条款" textAlign="center" />
+
+				<WINDOW defaultImg="#ff0000" layout="0,0,1080,120">
+	  	      		<LABEL fontColor="#ffffff" fontSize="72" layout="0,0,1080,120"
+							text="使用条款" textAlign="center" />
+
+					<BUTTON defaultImg="embed:/res/pri/home_button.png" layout="25,15,220,90"
+							onClick="{function.toHome}" />
+
+					<BUTTON defaultImg="embed:/res/pri/red_position_off.png"
+							layout="815,10,100,100" prossedImg="embed:/res/pri/red_position_on.png"
+							onClick="{function.toLocation}" />
+
+					<BUTTON defaultImg="embed:/res/pri/red_search_off.png"
+							layout="940,10,100,100" onClick="{function.toSerch}" prossedImg="embed:/res/pri/red_search_on.png" />
+				</WINDOW>
+
+			</WINDOW>	
+			
+	    </UILAYOUT>
+	</UI>
+
+</MOML>

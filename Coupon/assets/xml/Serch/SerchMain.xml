@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MOML>
+	<!--<MOML version="1.1.5" xmlns:xsi=http://www.w3.org/2001/XMLSchema-instance 
+		xsi:noNamespaceSchemaLocation="http://www.applusform.com/xsd/moml_ui.xsd"> -->
+
+
+	<FUNCTIONLIST>
+
+		<FUNCTION id="init">
+			<CMD cmd="function.setCoupon(c1,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?access_token='+userVariable.access+'&amp;start=0&amp;sort=date')))" />
+			<CMD cmd="function.setCoupon(c2,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?access_token='+userVariable.access+'&amp;start=1&amp;sort=date')))" />
+			<CMD cmd="function.setCoupon(c3,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?access_token='+userVariable.access+'&amp;start=2&amp;sort=date')))" />
+			<CMD cmd="function.setCoupon(c4,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?access_token='+userVariable.access+'&amp;start=0&amp;sort=new')))" />
+			<CMD cmd="function.setCoupon(c5,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?access_token='+userVariable.access+'&amp;start=1&amp;sort=new')))" />
+			<CMD cmd="function.setCoupon(c6,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?access_token='+userVariable.access+'&amp;start=2&amp;sort=new')))" />
+			<CMD cmd="device.log(userVariable.acces)" />
+		</FUNCTION>
+
+		<FUNCTION id="setCoupon(setId,cXml)">
+			<CMD cmd="device.log(setId)" />
+			<CMD cmd="title=xpath.evaluateEx(cXml,'/DATA/title/text()')" />
+			<CMD cmd="discount=xpath.evaluateEx(cXml,'/DATA/discount/text()')" />
+			<CMD cmd="downloaded=xpath.evaluateEx(cXml,'/DATA/downloadedcount/text()')" />
+			<CMD cmd="business_name=xpath.evaluateEx(cXml,'/DATA/category/text()')" />
+			<CMD cmd="display_name=xpath.evaluateEx(cXml,'/DATA/campany_name/text()')" />
+			<CMD cmd="catchprice=xpath.evaluateEx(cXml,'/DATA/catchprice/text()')" />
+			<CMD cmd="couponImg=xpath.evaluateEx(cXml,'/DATA/thumbnail/text()')" />
+			<CMD cmd="couponId=xpath.evaluateEx(cXml,'/DATA/id/text()')" />
+			<CMD cmd="device.log(cXml)" />
+			<CMD cmd="userVariable.id=id" />
+			<CMD cmd="setId.title.text=title" />
+			<CMD cmd="setId.discount.text=discount" />
+			<CMD cmd="setId.downloaded.text=downloaded" />
+			<CMD cmd="setId.business_name.text=business_name" />
+			<CMD cmd="setId.display_name.text=display_name" />
+			<CMD cmd="setId.catchprice.text=catchprice" />
+			<CMD cmd="setId.img.defaultImg='http://tourcoupon.net/api2/coupon/image/print.php?code='+couponImg+'&amp;w=195&amp;h=172'" />
+			<CMD cmd="setId.couponId.text=couponId" />
+
+		</FUNCTION>
+
+
+		<FUNCTION id="func1">
+
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;Loading&apos;)" />
+		</FUNCTION>
+
+		<FUNCTION id="toJob">
+
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchJob&apos;)" />
+		</FUNCTION>
+
+		<FUNCTION id="toPopularity">
+
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchPopularity&apos;)" />
+		</FUNCTION>
+
+		<FUNCTION id="toDetail">
+
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchJob&apos;)" />
+		</FUNCTION>
+
+		<FUNCTION id="toLocation">
+
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchLocation&apos;)" />
+		</FUNCTION>
+
+		<FUNCTION id="toRecommend">
+
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchRecommend&apos;)" />
+		</FUNCTION>
+
+		<FUNCTION id="toSerch">
+
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchDetail&apos;)" />
+		</FUNCTION>
+
+		<FUNCTION id="toSetting">
+
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;Setting&apos;)" />
+		</FUNCTION>
+
+		<FUNCTION id="toTreasure">
+
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;Treasure&apos;)" />
+		</FUNCTION>
+		<FUNCTION id="toMyPage">
+
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;MyPage&apos;)" />
+		</FUNCTION>
+
+		<FUNCTION id="download(_id)">
+			<CMD cmd="userVariable.couponId=_id.couponId.text" />
+			<CMD cmd="action:go(&apos;root.navigation&apos;,&apos;Download&apos;)" />
+		</FUNCTION>
+	</FUNCTIONLIST>
+
+	
+
+
+	<UI>
+
+		<UILAYOUT landscape="1080,1920" portrait="1080,1920">
+
+				<WINDOW defaultImg="embed:/res/pri_6/bg.png" layout="0,0,1080,1820"
+					scroll="vertical" scrollBarVisible="true">
+
+					<IMAGE defaultImg="embed:/res/pri_6/gray_box_1.png" layout="40,230,1000,727" />
+
+					<WINDOW onClick="{function.toJob}" layout="40,230,500,363">
+
+						<BUTTON onClick="{function.toJob}" defaultImg="embed:/res/pri_6/business_off.png"
+							layout="115,25,250,250" pressedImg="embed:/res/pri_6/business_on.png" />
+
+						<LABEL fontColor="#ffffff" fontSize="64" layout="0,280,500,auto"
+							text="按行业搜索" textAlign='center' />
+					</WINDOW>
+
+					<WINDOW layout="540,230,500,363" onClick="{function.toLocation}">
+
+						<BUTTON onClick="{function.toLocation}" defaultImg="embed:/res/pri_6/position_off.png"
+							layout="115,25,250,250" pressedImg="embed:/res/pri_6/position_on.png" />
+						<LABEL fontColor="#ffffff" fontSize="64" layout="0,280,500,auto"
+							text="按位置搜索" textAlign='center' />
+					</WINDOW>
+
+
+					<WINDOW layout="40,594,500,363" onClick="{function.toPopularity}">
+
+						<BUTTON onClick="{function.toPopularity}" defaultImg="embed:/res/pri_6/favorite_off.png"
+							layout="115,25,250,250" pressedImg="embed:/res/pri_6/favorite_on.png" />
+						<LABEL fontColor="#ffffff" fontSize="64" layout="0,280,500,auto"
+							text="人气折扣券" textAlign='center' />
+					</WINDOW>
+
+					<WINDOW layout="540,594,500,363" onClick="{function.toRecommend}">
+
+						<BUTTON onClick="{function.toRecommend}" defaultImg="embed:/res/pri_6/recommend_off.png"
+							layout="115,25,250,250" pressedImg="embed:/res/pri_6/recommend_on.png" />
+
+						<LABEL fontColor="#ffffff" fontSize="64" layout="0,280,500,auto"
+							text="推荐折扣券" textAlign='center' />
+					</WINDOW>
+
+					<LABEL fontColor="#ffffff" fontSize="72" layout="0,990,1080,80"
+						text="本周的人气折扣券" textAlign="center" />
+
+					<WINDOW align="linear:vertical" layout="40,1075,1000,770">
+
+						<IMAGE defaultImg="embed:/res/pri_6/gray_box_arrow_1.png"
+							layout="1000,270" />
+
+						<IMAGE defaultImg="embed:/res/pri_6/gray_box_2.png" layout="1000,250" />
+
+						<IMAGE defaultImg="embed:/res/pri_6/gray_box_2.png" layout="1000,250" />
+					</WINDOW>
+
+					<WINDOW align="linear:vertical" layout="40,1975,1000,900">
+
+						<IMAGE defaultImg="embed:/res/pri_6/gray_box_arrow_1.png"
+							layout="1000,270" />
+
+						<IMAGE defaultImg="embed:/res/pri_6/gray_box_2.png" layout="1000,250" />
+
+						<IMAGE defaultImg="embed:/res/pri_6/gray_box_2.png" layout="1000,250" />
+					</WINDOW>
+
+					<WINDOW id="c1" layout="40,1075,1000,250" onClick="{function.download(c1)}">
+						<IMAGE id="img" layout="30,40,195,172" defaultImg="#ffffff" />
+						<LABEL ellipsis="end" id="title" fontSize="72" fontColor="#ffffff" 
+							layout="245,40,420,72" text="NULL" />
+						<LABEL id="display_name" fontColor="#ffffff" fontSize="48"
+							layout="245,100,auto,auto" text="" />
+						<LABEL id="business_name" fontColor="#ffffff" fontSize="36"
+							layout="245,190,auto,auto" text="" />
+						<LABEL id="catchprice" fontColor="#ffffff" fontSize="63"
+							layout="315,183,655,auto" text="" textAlign="right" />
+						<IMAGE layout="670,30,300,130" defaultImg="#ffffff" />
+
+						<LABEL id="discount" fontColor="#ff0000" fontSize="36"
+							layout="760,45,auto,auto" text="% 할인" />
+						<LABEL id="downloaded" fontColor="#000000" fontSize="24"
+							layout="850,110,auto,auto" text="0" />
+						<LABEL id="couponId" layout="0,0,0,0" text="" />
+					</WINDOW>
+
+					<WINDOW id="c2" layout="40,1325,1000,250" onClick="{function.download(c2)}">
+						<IMAGE id="img" layout="30,40,195,172" defaultImg="#ffffff" />
+						<LABEL ellipsis="end" id="title" fontSize="72" fontColor="#ffffff" 
+							layout="245,40,420,72" text="NULL" />
+						<LABEL id="display_name" fontColor="#ffffff" fontSize="48"
+							layout="245,100,auto,auto" text="" />
+						<LABEL id="business_name" fontColor="#ffffff" fontSize="36"
+							layout="245,190,auto,auto" text="" />
+						<LABEL id="catchprice" fontColor="#ffffff" fontSize="63"
+							layout="315,183,655,auto" text="" textAlign="right" />
+						<IMAGE layout="670,30,300,130" defaultImg="#ffffff" />
+
+						<LABEL id="discount" fontColor="#ff0000" fontSize="36"
+							layout="760,45,auto,auto" text="% 할인" />
+						<LABEL id="downloaded" fontColor="#000000" fontSize="24"
+							layout="850,110,auto,auto" text="0" />
+						<LABEL id="couponId" layout="0,0,0,0" text="" />
+					</WINDOW>
+
+					<WINDOW id="c3" layout="40,1605,1000,250" onClick="{function.download(c3)}">
+						<IMAGE id="img" layout="30,40,195,172" defaultImg="#ffffff" />
+						<LABEL ellipsis="end" id="title" fontSize="72" fontColor="#ffffff" 
+							layout="245,40,420,72" text="NULL" />
+						<LABEL id="display_name" fontColor="#ffffff" fontSize="48"
+							layout="245,100,auto,auto" text="" />
+						<LABEL id="business_name" fontColor="#ffffff" fontSize="36"
+							layout="245,190,auto,auto" text="" />
+						<LABEL id="catchprice" fontColor="#ffffff" fontSize="63"
+							layout="315,173,655,auto" text="" textAlign="right" />
+						<IMAGE layout="670,30,300,130" defaultImg="#ffffff" />
+
+						<LABEL id="discount" fontColor="#ff0000" fontSize="36"
+							layout="760,45,auto,auto" text="% 할인" />
+						<LABEL id="downloaded" fontColor="#000000" fontSize="24"
+							layout="850,110,auto,auto" text="0" />
+						<LABEL id="couponId" layout="0,0,0,0" text="" />
+					</WINDOW>
+
+					<WINDOW id="c4" layout="40,1975,1000,250" onClick="{function.download(c4)}">
+						<IMAGE id="img" layout="30,40,195,172" defaultImg="#ffffff" />
+						<LABEL ellipsis="end" id="title" fontSize="72" fontColor="#ffffff" 
+							layout="245,40,420,72" text="NULL" />
+						<LABEL id="display_name" fontColor="#ffffff" fontSize="48"
+							layout="245,100,auto,auto" text="" />
+						<LABEL id="business_name" fontColor="#ffffff" fontSize="36"
+							layout="245,190,auto,auto" text="" />
+						<LABEL id="catchprice" fontColor="#ffffff" fontSize="63"
+							layout="315,183,655,auto" text="" textAlign="right" />
+						<IMAGE layout="670,30,300,130" defaultImg="#ffffff" />
+
+						<LABEL id="discount" fontColor="#ff0000" fontSize="36"
+							layout="760,45,auto,auto" text="% 할인" />
+						<LABEL id="downloaded" fontColor="#000000" fontSize="24"
+							layout="850,110,auto,auto" text="0" />
+						<LABEL id="couponId" layout="0,0,0,0" text="" />
+					</WINDOW>
+
+					<WINDOW id="c5" layout="40,2225,1000,250" onClick="{function.download(c5)}">
+						<IMAGE id="img" layout="30,40,195,172" defaultImg="#ffffff" />
+						<LABEL ellipsis="end" id="title" fontSize="72" fontColor="#ffffff" 
+							layout="245,40,420,72" text="NULL" />
+						<LABEL id="display_name" fontColor="#ffffff" fontSize="48"
+							layout="245,100,auto,auto" text="" />
+						<LABEL id="business_name" fontColor="#ffffff" fontSize="36"
+							layout="245,190,auto,auto" text="" />
+						<LABEL id="catchprice" fontColor="#ffffff" fontSize="63"
+							layout="315,183,655,auto" text="" textAlign="right" />
+						<IMAGE layout="670,30,300,130" defaultImg="#ffffff" />
+
+						<LABEL id="discount" fontColor="#ff0000" fontSize="36"
+							layout="760,45,auto,auto" text="% 할인" />
+						<LABEL id="downloaded" fontColor="#000000" fontSize="24"
+							layout="850,110,auto,auto" text="0" />
+						<LABEL id="couponId" layout="0,0,0,0" text="" />
+					</WINDOW>
+
+					<WINDOW id="c6" layout="40,2475,1000,250" onClick="{function.download(c6)}">
+						<IMAGE id="img" layout="30,40,195,172" defaultImg="#ffffff" />
+						<LABEL ellipsis="end" id="title" fontSize="72" fontColor="#ffffff" 
+							layout="245,40,420,72" text="NULL" />
+						<LABEL id="display_name" fontColor="#ffffff" fontSize="48"
+							layout="245,100,auto,auto" text="" />
+						<LABEL id="business_name" fontColor="#ffffff" fontSize="36"
+							layout="245,190,auto,auto" text="" />
+						<LABEL id="catchprice" fontColor="#ffffff" fontSize="63"
+							layout="315,183,655,auto" text="" textAlign="right" />
+						<IMAGE layout="670,30,300,130" defaultImg="#ffffff" />
+
+						<LABEL id="discount" fontColor="#ff0000" fontSize="36"
+							layout="760,45,auto,auto" text="% 할인" />
+						<LABEL id="downloaded" fontColor="#000000" fontSize="24"
+							layout="850,110,auto,auto" text="0" />
+						<LABEL id="couponId" layout="0,0,0,0" text="" />
+					</WINDOW>
+
+					<LABEL fontColor="#ffffff" fontSize="72" layout="0,1890,1080,80"
+						text="本周的人气折扣券" textAlign="center" />
+
+
+				</WINDOW>
+
+				<WINDOW defaultImg="#ff0000" layout="0,0,1080,120">
+
+					<LABEL fontColor="#ffffff" fontSize="72" layout="0,0,1080,120"
+						text="折扣券搜索" textAlign="center" />
+
+					<BUTTON defaultImg="embed:/res/pri/home_button.png" layout="25,15,220,90" />
+
+					<BUTTON defaultImg="embed:/res/pri/red_position_off.png"
+						layout="815,10,100,100" prossedImg="embed:/res/pri/red_position_on.png"
+						onClick="{function.toLocation}" />
+
+					<BUTTON defaultImg="embed:/res/pri/red_search_off.png"
+						layout="940,10,100,100" onClick="{function.toSerch}" prossedImg="embed:/res/pri/red_search_on.png" />
+				</WINDOW>
+
+				<WINDOW align="linear:horizontal" defaultImg="#ffffff"
+					layout="0,1750,1080,170">
+
+					<BUTTON defaultImg="embed:/res/pri/gray_search_off.png"
+						layout="270,170" onClick="{function.toSerch}" pressedImg="embed:/res/pri/gray_search_on.png" />
+
+					<BUTTON defaultImg="embed:/res/pri/gray_coupon_off.png"
+						layout="270,170" pressedImg="embed:/res/pri/gray_coupon_on.png"
+						onClick="{function.toMyPage}" />
+
+					<BUTTON defaultImg="embed:/res/pri/gray_treasure_off.png"
+						layout="270,170" pressedImg="embed:/res/pri/gray_treasure_on.png"
+						onClick="{function.toTreasure}" />
+
+					<BUTTON pressedImg="embed:/res/pri/gray_set_on.png"
+						defaultImg="embed:/res/pri/gray_set_off.png" layout="270,170"
+						onClick="{function.toSetting}" />
+				</WINDOW>
+		</UILAYOUT>
+	</UI>
+
+</MOML>
