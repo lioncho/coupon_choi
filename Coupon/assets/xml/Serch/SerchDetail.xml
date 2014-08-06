@@ -8,7 +8,7 @@
 		</FUNCTION>
 
 		<FUNCTION id="toDetail">
-			<CMD cmd="userVariable.deLink='access_token='+userVariable.access+'|keyword='+string.encoding(key.text,'utf-8')+'|category='+string.encoding(select.text,'utf-8')+'|language='+string.encoding(sLang.text,'utf-8')+'|wifi='+userVariable.isWifi+'|address='+string.encoding(sLogin.text,'utf-8')+'|rating='+string.encoding(string.sub(sRate.text, 0, string.find(ssRate.sRate.text, '점이하')),'utf-8') " />
+			<CMD cmd="userVariable.deLink='access_token='+saveVariable.access+'|keyword='+string.encoding(key.text,'utf-8')+'|category='+string.encoding(select.text,'utf-8')+'|language='+string.encoding(sLang.text,'utf-8')+'|wifi='+userVariable.isWifi+'|address='+string.encoding(sLogin.text,'utf-8')+'|rating='+string.encoding(string.sub(sRate.text, 0, string.find(ssRate.sRate.text, '점이하')),'utf-8') " />
 			<CMD cmd="action:go(&apos;root.navigation&apos;,&apos;Detail&apos;)" />
 			<CMD cmd="device.log(userVariable.deLink)"/>
 		</FUNCTION>
@@ -88,7 +88,7 @@
 							text="评分" textAlign="center" />
 
 						<LABEL id="sRate" fontColor="#ffffff" fontSize="72"
-							layout="400,0,620,141" text="전체평점" textAlign="center" />
+							layout="400,0,620,141" text="所有评分" textAlign="center" />
 					</SPINNER>
 
 					<SPINNER id="ssLang" fontColor="#00ffffff" align="relative"
@@ -100,7 +100,7 @@
 							text="外语支持" textAlign="center" />
 
 						<LABEL id="sLang" fontColor="#ffffff" fontSize="72"
-							layout="400,0,620,141" text="전체언어" textAlign="center" />
+							layout="400,0,620,141" text="所有语言" textAlign="center" />
 					</SPINNER>
 
 					<IMAGE align="relative" defaultImg="embed:/res/pri_9/gray_box_3.png"

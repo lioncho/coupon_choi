@@ -37,6 +37,7 @@
 				<VIEWITEM id="Version" src="Version.xml"/>
 				<VIEWITEM id="Accessterms" src="Accessterms.xml"/>
 				<VIEWITEM id="PrivacyPolicyStatement" src="PrivacyPolicyStatement.xml"/>
+				<VIEWITEM id="QRView" src="QRView.xml"/>
 				
 			</NAVIGATIONCONTAINER>
 		</UILAYOUT>

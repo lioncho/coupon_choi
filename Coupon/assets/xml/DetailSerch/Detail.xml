@@ -22,7 +22,8 @@
 		<FUNCTION id="init">
 				
 			<CMD cmd="http.addEventListener('onComplete','serch')"/>
-			<CMD cmd="http.get(-1,'http://tourcoupon.net/api2/coupon/search/index2.php',userVariable.deLink)"/>		
+			<!-- <CMD cmd="http.get(-1,'http://tourcoupon.net/api2/coupon/search/index2.php',userVariable.deLink)"/> -->		
+			<CMD cmd="http.get(-1,'http://tourcoupon.net/api2/coupon/search/index3.php','access_token=53cc90a461ac96.65280186|keyword=|address=%EC%A0%84%EC%B2%B4%EC%A3%BC%EC%86%8C|category=%EB%A9%B4%EC%84%B8%EC%A0%90|rating=%EC%A0%84%EC%B2%B4%ED%8F%89%EC%A0%90|wifi=1|language=%EC%A0%84%EC%B2%B4%EC%96%B8%EC%96%B4')"/>
 		</FUNCTION>
 		
 		<FUNCTION id="serch">

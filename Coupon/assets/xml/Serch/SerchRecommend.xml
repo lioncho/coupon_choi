@@ -4,15 +4,15 @@
 	<FUNCTIONLIST>
 
 		<FUNCTION id="init">
-			<CMD cmd="function.setCoupon(c1,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?sort=recommand&amp;access_token='+userVariable.access+'&amp;start=0')))" />
-			<CMD cmd="function.setCoupon(c2,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?sort=recommand&amp;access_token='+userVariable.access+'&amp;start=1')))" />
-			<CMD cmd="function.setCoupon(c3,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?sort=recommand&amp;access_token='+userVariable.access+'&amp;start=2')))" />
-			<CMD cmd="function.setCoupon(c4,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?sort=recommand&amp;access_token='+userVariable.access+'&amp;start=3')))" />
-			<CMD cmd="function.setCoupon(c5,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?sort=recommand&amp;access_token='+userVariable.access+'&amp;start=4')))" />
-			<CMD cmd="function.setCoupon(c6,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?sort=recommand&amp;access_token='+userVariable.access+'&amp;start=5')))" />
-			<CMD cmd="function.setCoupon(c7,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?sort=recommand&amp;access_token='+userVariable.access+'&amp;start=6')))" />
-			<CMD cmd="function.setCoupon(c8,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?sort=recommand&amp;access_token='+userVariable.access+'&amp;start=7')))" />
-			<CMD cmd="function.setCoupon(c9,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?sort=recommand&amp;access_token='+userVariable.access+'&amp;start=8')))" />
+			<CMD cmd="function.setCoupon(c1,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?sort=recommand&amp;access_token='+saveVariable.access+'&amp;start=0')))" />
+			<CMD cmd="function.setCoupon(c2,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?sort=recommand&amp;access_token='+saveVariable.access+'&amp;start=1')))" />
+			<CMD cmd="function.setCoupon(c3,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?sort=recommand&amp;access_token='+saveVariable.access+'&amp;start=2')))" />
+			<CMD cmd="function.setCoupon(c4,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?sort=recommand&amp;access_token='+saveVariable.access+'&amp;start=3')))" />
+			<CMD cmd="function.setCoupon(c5,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?sort=recommand&amp;access_token='+saveVariable.access+'&amp;start=4')))" />
+			<CMD cmd="function.setCoupon(c6,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?sort=recommand&amp;access_token='+saveVariable.access+'&amp;start=5')))" />
+			<CMD cmd="function.setCoupon(c7,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?sort=recommand&amp;access_token='+saveVariable.access+'&amp;start=6')))" />
+			<CMD cmd="function.setCoupon(c8,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?sort=recommand&amp;access_token='+saveVariable.access+'&amp;start=7')))" />
+			<CMD cmd="function.setCoupon(c9,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?sort=recommand&amp;access_token='+saveVariable.access+'&amp;start=8')))" />
 
 		</FUNCTION>
 

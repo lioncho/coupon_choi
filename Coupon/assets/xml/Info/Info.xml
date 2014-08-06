@@ -7,7 +7,7 @@
 	<FUNCTIONLIST>
 		
 		<FUNCTION id="init">
-			<CMD cmd="function.setStore(json.toXml(file.read('http://tourcoupon.net/api/store/detail/'+userVariable.storeId+'?+userVariable.access)))" />
+			<CMD cmd="function.setStore(json.toXml(file.read('http://tourcoupon.net/api/store/detail/'+userVariable.storeId+'?+saveVariable.access)))" />
 		</FUNCTION>
 		<FUNCTION id="setTop(cXml)">
 			<CMD cmd="title=xpath.evaluateEx(cXml,'/DATA/data/company_name/text()')" />

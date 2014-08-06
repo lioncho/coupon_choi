@@ -5,7 +5,7 @@
 
 		<FUNCTION id="init">
 			<CMD cmd="http.addEventListener('onComplete','onDownC')"/>
-			<CMD cmd="function.setCoupon(json.toXml(file.read('http://tourcoupon.net/api2/coupon/download/coupon_info.php?access_token='+userVariable.access+'&amp;tid='+userVariable.couponId)))" />
+			<CMD cmd="function.setCoupon(json.toXml(file.read('http://tourcoupon.net/api2/coupon/download/coupon_info.php?access_token='+saveVariable.access+'&amp;tid='+userVariable.couponId)))" />
 		</FUNCTION>
 		
 		<FUNCTION id="onDownC">
@@ -74,7 +74,7 @@
 
 		<FUNCTION id="down">
 			<CMD condition="userVariable.isDown=='NO'">
-				<CMD cmd="http.post(-1, &apos;http://tourcoupon.net/api2/coupon/download/coupon_download.php&apos;,&apos;access_token='+userVariable.access+'|tid=&apos;+userVariable.couponId)" />
+				<CMD cmd="http.post(-1, &apos;http://tourcoupon.net/api2/coupon/download/coupon_download.php&apos;,&apos;access_token='+saveVariable.access+'|tid=&apos;+userVariable.couponId)" />
 				<CMD cmd="userVariable.isUpdate=1" />
 				<CMD cmd="DownBtn.defaultImg = 'embed:/res/pri_20/gray_box.png'" />
 				<CMD cmd="DownBtn.DownText.text = 'Mr.Pong다운로드 완료'" />
@@ -90,12 +90,12 @@
 		<FUNCTION id="favorTouch">
 			<CMD condition="(favorBtn.selected)and(favorit=='0')">
 				<CMD
-					cmd="http.post(-1, 'http://tourcoupon.net/api2/coupon/favorite/view.php','access_token='+userVariable.access+'|tid='+userVariable.couponId+'|like=1')" />
+					cmd="http.post(-1, 'http://tourcoupon.net/api2/coupon/favorite/view.php','access_token='+saveVariable.access+'|tid='+userVariable.couponId+'|like=1')" />
 				<CMD cmd="device.toastPopup('즐겨찾기 설정')" />
 				<CMD cmd="favorit=='1'" />
 				<ELSECMD>
 					<CMD
-						cmd="http.post(-1, &apos;http://tourcoupon.net/api2/coupon/favorite/view.php','access_token='+userVariable.access+'|tid='+userVariable.couponId+'|like=0')" />
+						cmd="http.post(-1, &apos;http://tourcoupon.net/api2/coupon/favorite/view.php','access_token='+saveVariable.access+'|tid='+userVariable.couponId+'|like=0')" />
 					<CMD cmd="device.toastPopup('즐겨찾기 해제')" />
 					<CMD cmd="favorit=='0'" />
 				</ELSECMD>

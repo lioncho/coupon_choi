@@ -7,12 +7,12 @@
 			<FUNCTIONITEM
 				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchMain&apos;)" />
 		</FUNCTION>
-		
+
 		<FUNCTION id="toSerch">
 			<FUNCTIONITEM
 				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchDetail&apos;)" />
 		</FUNCTION>
-		
+
 		<FUNCTION id="toLocation">
 			<FUNCTIONITEM
 				cmd="action:go(&apos;root.navigation&apos;,&apos;SerchLocation&apos;)" />
@@ -27,17 +27,22 @@
 			<FUNCTIONITEM
 				cmd="action:go(&apos;root.navigation&apos;,&apos;Treasure&apos;)" />
 		</FUNCTION>
-		
+
 		<FUNCTION id="toMypage">
 			<FUNCTIONITEM
 				cmd="action:go(&apos;root.navigation&apos;,&apos;MyPage&apos;)" />
 		</FUNCTION>
-		
+
 		<FUNCTION id="toTreasureInfo">
-		    <FUNCTIONITEM
-				cmd="action:go(&apos;root.navigation&apos;,&apos;TreasureInfo&apos;)" /> 
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;TreasureInfo&apos;)" />
 		</FUNCTION>
 		
+		<FUNCTION id="toQRView">
+			<FUNCTIONITEM
+				cmd="action:go(&apos;root.navigation&apos;,&apos;QRView&apos;)" />
+		</FUNCTION>
+
 	</FUNCTIONLIST>
 
 	<UI>
@@ -49,22 +54,45 @@
 
 			<WINDOW align="relative" layout="0,0,1080,1920">
 
-				<WINDOW defaultImg="embed:/res/pri_6/bg.png" layout="0,0,1080,1920"
+				<WINDOW defaultImg="embed:/res/pri_21/bg.png" layout="0,0,1080,1920"
 					scroll="vertical" scrollBarVisible="true">
 					<BUTTON fontColor="#ffffff" fontSize="72" text="扫二维码"
 						defaultImg="embed:/res/pri_21/orange_box.png" layout="0,165,400,150"
-						textAlign="center" />
+						textAlign="center" onClick="{function.toQRView}" />
 					<BUTTON fontColor="#ffffff" fontSize="48" text="使用介绍"
 						defaultImg="embed:/res/pri_21/gray_box.png" layout="560,214,450,90"
-						textAlign="center"
-						onClick="{function.toTreasureInfo}"/>
-						
-						
-						<!-- <IMAGE defaultImg="embed:/res/ -->
-						
-						<LABEL fontColor="#ffffff" fontSize="72" layout="0,1034,1080,auto"
-						text="邀请好友" textAlign="center" /> 
+						textAlign="center" onClick="{function.toTreasureInfo}" />
 
+					<IMAGE defaultImg="embed:/res/pri_21/botext.png" layout="40,430,1000,620" />
+
+
+					<!-- <IMAGE defaultImg="embed:/res/ -->
+					<LABEL fontColor="#ffffff" fontSize="72" layout="0,1034,1080,auto"
+						text="邀请好友" textAlign="center" />
+						
+					<IMAGE defaultImg="embed:/res/pri_21/gray_list_arrow_box.png" layout="40,1180,1000,123" >
+						<LABEL fontColor="#ffffff" fontSize="72" layout="0,20,235,100"
+						text="地区" textAlign="center" />
+						<LABEL fontColor="#ffffff" fontSize="72" layout="235,20,230,100"
+						text="行业" textAlign="center" />
+						<LABEL fontColor="#ffffff" fontSize="72" layout="465,20,535,100"
+						text="地点" textAlign="center" />
+						
+					
+					</IMAGE>
+
+					<IMAGE defaultImg="embed:/res/pri_21/gray_list_box.png" layout="40,1300,1000,123" >
+						<LABEL fontColor="#ffffff" fontSize="72" layout="0,20,235,100"
+						text="" textAlign="center" />
+						<LABEL fontColor="#ffffff" fontSize="72" layout="235,20,230,100"
+						text="" textAlign="center" />
+						<LABEL fontColor="#ffffff" fontSize="72" layout="465,20,535,100"
+						text="주위에 보물이 없습니다." textAlign="center" />
+						
+					
+					</IMAGE>					
+				
+				
 
 				</WINDOW>
 
@@ -73,8 +101,8 @@
 					<LABEL fontColor="#ffffff" fontSize="72" layout="0,0,1080,120"
 						text="折扣券搜索" textAlign="center" />
 
-					<BUTTON defaultImg="embed:/res/pri/home_button.png" layout="25,15,220,90" 
-					    onClick="{function.toHome}"/>
+					<BUTTON defaultImg="embed:/res/pri/home_button.png" layout="25,15,220,90"
+						onClick="{function.toHome}" />
 
 					<BUTTON defaultImg="embed:/res/pri/red_position_off.png"
 						layout="815,10,100,100" onClick="{function.toLocation}"

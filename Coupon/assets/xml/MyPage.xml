@@ -4,8 +4,7 @@
 	<FUNCTIONLIST>
 
 		<FUNCTION id="init">
-			<CMD
-				cmd="cXml=file.read('http://www.tourcoupon.net/api2/coupon/test3.php?access_token='+userVariable.access+'&amp;type=1')" />
+			<CMD cmd="cXml=file.read('http://www.tourcoupon.net/api2/coupon/test3.php?access_token='+saveVariable.access+'&amp;type=1')" />
 			<CMD cmd="device.log(cXml)" />
 			<CMD cmd="cXml = string.replace(cXml, '\n', '')" />
 			<CMD cmd="couponList.dataSource=cXml"/>
@@ -59,12 +58,6 @@
 
 	</FUNCTIONLIST>
 
-
-	<DATASOURCELIST>
-
-
-		<DATASOURCE id="mainItem" src="'http://www.tourcoupon.net/api2/coupon/test3.php?access_token='+userVariable.access+'&amp;type=1'" />
-	</DATASOURCELIST>
 
 
 

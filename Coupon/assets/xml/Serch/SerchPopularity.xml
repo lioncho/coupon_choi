@@ -8,23 +8,23 @@
 		<FUNCTION id="init(order)">
 
 			<CMD
-				cmd="function.setCoupon(c1,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?sort='+order+'&amp;access_token='+userVariable.access+'&amp;start=0')))" />
+				cmd="function.setCoupon(c1,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?sort='+order+'&amp;access_token='+saveVariable.access+'&amp;start=0')))" />
 			<CMD
-				cmd="function.setCoupon(c2,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?sort='+order+'&amp;access_token='+userVariable.access+'&amp;start=1')))" />
+				cmd="function.setCoupon(c2,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?sort='+order+'&amp;access_token='+saveVariable.access+'&amp;start=1')))" />
 			<CMD
-				cmd="function.setCoupon(c3,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?sort='+order+'&amp;access_token='+userVariable.access+'&amp;start=2')))" />
+				cmd="function.setCoupon(c3,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?sort='+order+'&amp;access_token='+saveVariable.access+'&amp;start=2')))" />
 			<CMD
-				cmd="function.setCoupon(c4,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?sort='+order+'&amp;access_token='+userVariable.access+'&amp;start=3')))" />
+				cmd="function.setCoupon(c4,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?sort='+order+'&amp;access_token='+saveVariable.access+'&amp;start=3')))" />
 			<CMD
-				cmd="function.setCoupon(c5,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?sort='+order+'&amp;access_token='+userVariable.access+'&amp;start=4')))" />
+				cmd="function.setCoupon(c5,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?sort='+order+'&amp;access_token='+saveVariable.access+'&amp;start=4')))" />
 			<CMD
-				cmd="function.setCoupon(c6,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?sort='+order+'&amp;access_token='+userVariable.access+'&amp;start=5')))" />
+				cmd="function.setCoupon(c6,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?sort='+order+'&amp;access_token='+saveVariable.access+'&amp;start=5')))" />
 			<CMD
-				cmd="function.setCoupon(c7,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?sort='+order+'&amp;access_token='+userVariable.access+'&amp;start=6')))" />
+				cmd="function.setCoupon(c7,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?sort='+order+'&amp;access_token='+saveVariable.access+'&amp;start=6')))" />
 			<CMD
-				cmd="function.setCoupon(c8,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?sort='+order+'&amp;access_token='+userVariable.access+'&amp;start=7')))" />
+				cmd="function.setCoupon(c8,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?sort='+order+'&amp;access_token='+saveVariable.access+'&amp;start=7')))" />
 			<CMD
-				cmd="function.setCoupon(c9,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?sort='+order+'&amp;access_token='+userVariable.access+'&amp;start=8')))" />
+				cmd="function.setCoupon(c9,json.toXml(file.read('http://tourcoupon.net/api2/coupon/popular/index.php?sort='+order+'&amp;access_token='+saveVariable.access+'&amp;start=8')))" />
 
 
 		</FUNCTION>
@@ -45,6 +45,7 @@
 			<CMD
 				cmd="couponImg=xpath.evaluateEx(cXml,&apos;/DATA/thumbnail/text()&apos;)" />
 
+			<CMD cmd="couponId=xpath.evaluateEx(cXml,'/DATA/id/text()')"/>
 			<CMD cmd="device.log(cXml)" />
 
 			<CMD cmd="setId.company_name.text=company_name" />
@@ -52,6 +53,9 @@
 			<CMD cmd="setId.discount.text=discount" />
 
 			<CMD cmd="setId.downloaded.text=downloaded" />
+			
+			<CMD cmd="setId.couponId.text=couponId"/>
+			
 
 			<CMD
 				cmd="setId.img.defaultImg='http://tourcoupon.net/api2/coupon/image/print.php?code='+couponImg+'&amp;w=195&amp;h=172'" />
@@ -77,14 +81,19 @@
 
 		<FUNCTION id="change">
 			<CMD condition="caller.text=='할인율'">
-				<CMD cmd="function.init('pop_discount')"/>
+				<CMD cmd="function.init('pop_discount')" />
 			</CMD>
 			<CMD condition="caller.text=='평점수'">
-				<CMD cmd="function.init('pop_rate')"/>
+				<CMD cmd="function.init('pop_rate')" />
 			</CMD>
 			<CMD condition="caller.text=='다운로드수'">
-				<CMD cmd="function.init('pop_download')"/>
+				<CMD cmd="function.init('pop_download')" />
 			</CMD>
+		</FUNCTION>
+
+		<FUNCTION id="download(_id)">
+			<CMD cmd="userVariable.couponId=_id.couponId.text" />
+			<CMD cmd="action:go(&apos;root.navigation&apos;,&apos;Download&apos;)" />
 		</FUNCTION>
 
 
@@ -102,7 +111,8 @@
 
 				<SPINNER dataList="/DATA/ITEMLIST/ITEM" dataSource="/data/spinnerData_SerchPopularity.xml"
 					defaultImg="embed:/res/pri_11/gray_box.png" index="0" layout="40,237,1000,140"
-					textPath="NAME/text()" title="인기쿠폰" onChange="{te.text=caller.text,function.change}">
+					textPath="NAME/text()" title="인기쿠폰"
+					onChange="{te.text=caller.text,function.change}">
 					<LABEL id="te" fontSize="70" layout="400,30,auto,auto" text="할인율"
 						textAlign="center" />
 				</SPINNER>
@@ -128,7 +138,22 @@
 
 				<IMAGE defaultImg="embed:/res/pri_11/list_off.png" layout="740,1430,300,450" />
 
-				<WINDOW id="c1" layout="40,430,300,450">
+				<WINDOW id="c1" layout="40,430,300,450" onClick="{function.download(c1)}">
+
+					<IMAGE id="img" layout="0,0,300,300" />
+
+					<LABEL id="company_name" fontSize="72" layout="0,320,300,auto"
+						textAlign="center" />
+
+					<LABEL id="discount" fontSize="32" layout="0,390,190,auto"
+						textAlign="center" />
+
+					<LABEL id="downloaded" fontSize="28" layout="190,390,110,auto"
+						textAlign="center" />
+					<LABEL id="couponId" />
+				</WINDOW>
+
+				<WINDOW id="c2" layout="390,430,300,450" onClick="{function.download(c2)}">
 
 					<IMAGE id="img" layout="0,0,300,300" />
 
@@ -142,7 +167,7 @@
 						textAlign="center" />
 				</WINDOW>
 
-				<WINDOW id="c2" layout="390,430,300,450">
+				<WINDOW id="c3" layout="740,430,300,450" onClick="{function.download(c3)}">
 
 					<IMAGE id="img" layout="0,0,300,300" />
 
@@ -154,9 +179,10 @@
 
 					<LABEL id="downloaded" fontSize="28" layout="190,390,110,auto"
 						textAlign="center" />
+					<LABEL id="couponId" />
 				</WINDOW>
 
-				<WINDOW id="c3" layout="740,430,300,450">
+				<WINDOW id="c4" layout="40,930,300,450" onClick="{function.download(c4)}">
 
 					<IMAGE id="img" layout="0,0,300,300" />
 
@@ -168,9 +194,10 @@
 
 					<LABEL id="downloaded" fontSize="28" layout="190,390,110,auto"
 						textAlign="center" />
+					<LABEL id="couponId" />
 				</WINDOW>
 
-				<WINDOW id="c4" layout="40,930,300,450">
+				<WINDOW id="c5" layout="390,930,300,450" onClick="{function.download(c5)}">
 
 					<IMAGE id="img" layout="0,0,300,300" />
 
@@ -182,9 +209,10 @@
 
 					<LABEL id="downloaded" fontSize="28" layout="190,390,110,auto"
 						textAlign="center" />
+					<LABEL id="couponId" />
 				</WINDOW>
 
-				<WINDOW id="c5" layout="390,930,300,450">
+				<WINDOW id="c6" layout="740,930,300,450" onClick="{function.download(c6)}">
 
 					<IMAGE id="img" layout="0,0,300,300" />
 
@@ -196,9 +224,10 @@
 
 					<LABEL id="downloaded" fontSize="28" layout="190,390,110,auto"
 						textAlign="center" />
+					<LABEL id="couponId" />
 				</WINDOW>
 
-				<WINDOW id="c6" layout="740,930,300,450">
+				<WINDOW id="c7" layout="40,1430,300,450" onClick="{function.download(c7)}">
 
 					<IMAGE id="img" layout="0,0,300,300" />
 
@@ -210,9 +239,10 @@
 
 					<LABEL id="downloaded" fontSize="28" layout="190,390,110,auto"
 						textAlign="center" />
+					<LABEL id="couponId" />
 				</WINDOW>
 
-				<WINDOW id="c7" layout="40,1430,300,450">
+				<WINDOW id="c8" layout="390,1430,300,450" onClick="{function.download(c8)}">
 
 					<IMAGE id="img" layout="0,0,300,300" />
 
@@ -224,9 +254,10 @@
 
 					<LABEL id="downloaded" fontSize="28" layout="190,390,110,auto"
 						textAlign="center" />
+					<LABEL id="couponId" />
 				</WINDOW>
 
-				<WINDOW id="c8" layout="390,1430,300,450">
+				<WINDOW id="c9" layout="740,1430,300,450" onClick="{function.download(c9)}">
 
 					<IMAGE id="img" layout="0,0,300,300" />
 
@@ -238,20 +269,7 @@
 
 					<LABEL id="downloaded" fontSize="28" layout="190,390,110,auto"
 						textAlign="center" />
-				</WINDOW>
-
-				<WINDOW id="c9" layout="740,1430,300,450">
-
-					<IMAGE id="img" layout="0,0,300,300" />
-
-					<LABEL id="company_name" fontSize="72" layout="0,320,300,auto"
-						textAlign="center" />
-
-					<LABEL id="discount" fontSize="32" layout="0,390,190,auto"
-						textAlign="center" />
-
-					<LABEL id="downloaded" fontSize="28" layout="190,390,110,auto"
-						textAlign="center" />
+					<LABEL id="couponId" />
 				</WINDOW>
 
 				<WINDOW defaultImg="#ff0000" layout="0,0,1080,120">

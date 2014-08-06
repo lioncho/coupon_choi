@@ -73,7 +73,7 @@
                     fontSize="72"
                     layout="340,1600,450,90"
                     onClick="{function.func1}"
-                    text="건너뛰기" fontColor="#ffffff" />
+                    text="跳过" fontColor="#ffffff" />
             </WINDOW>
         </UILAYOUT>
     </UI>

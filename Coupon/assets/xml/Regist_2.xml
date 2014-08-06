@@ -20,8 +20,9 @@
 		
 		<FUNCTION id="login">
 			<!-- <CMD cmd="{userVariable.accec=string.sub(parameter.param[3],32,23)}"/> -->
-			<CMD cmd="userVariable.access=xpath.evaluateEx(json.toXml(parameter.param[3]),'/DATA/access_token/text()')"/>
-			<CMD cmd="{device.log(userVariable.access)}"/>
+			<!-- <CMD cmd="saveVariable.access=xpath.evaluateEx(json.toXml(parameter.param[3]),'/DATA/access_token/text()')"/> -->
+			<CMD cmd="saveVariable.access='53e0a069747ef5.08651979'"/>
+			<CMD cmd="{device.log(saveVariable.access)}"/>
 			<CMD cmd="http.removeEventListener('onComplete','login')"/>
 			<CMD cmd="action:go(&apos;root.navigation&apos;,&apos;RegistOk&apos;)" />
 		</FUNCTION>

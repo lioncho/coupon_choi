@@ -10,7 +10,7 @@
 		<FUNCTION id="chkPW">
 			<CMD cmd="userVariable.bass=couponPW.text" />
 			
-			<CMD cmd="http.post(-1, 'http://tourcoupon.net/api2/coupon/use/index.php','access_token='+userVariable.access+'|tid='+userVariable.couponId+'|password='+userVariable.bass)" />
+			<CMD cmd="http.post(-1, 'http://tourcoupon.net/api2/coupon/use/index.php','access_token='+saveVariable.access+'|tid='+userVariable.couponId+'|password='+userVariable.bass)" />
 		</FUNCTION>
 		
 		

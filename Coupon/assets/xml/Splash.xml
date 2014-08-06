@@ -6,17 +6,15 @@
 		<UILAYOUT portrait="1080,1920" landscape="1080,1920">
 			<WINDOW align="relative">
 				<IMAGE layout="0,0,1080,1920" defaultImg="embed:/res/pri_1/bg.png" />
-				<IMAGE layout="200,430,700,530" defaultImg="embed:/res/pri_1/logo.png" />
-
 			</WINDOW>
 		</UILAYOUT>
 	</UI>
 
-	<!-- <FUNCTIONCALL condition="userVariable.access==''"
+	<!-- <FUNCTIONCALL condition="saveVariable.access==''"
 		cmd="action:go('root.navigation','Regist_1')" elseCmd="action:go('root.navigation','SerchMain')"
 		delay="2000" /> -->
 		
-		<CMD cmd="action:go('root.navigation','Regist_1')" delay="2000"/>
+		<CMD condition="saveVariable.access==''" elseCmd="action:go('root.navigation','SerchMain')" cmd="action:go('root.navigation','Regist_1')" delay="1000"/>
 
 
 </MOML>
